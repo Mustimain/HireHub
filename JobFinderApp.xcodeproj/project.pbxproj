@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B588F2B9B1558CA8A9A6DA37 /* Pods_JobFinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */; };
 		CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */; };
 		CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */; };
 		CF62B3E22BDEA0B60020E29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3E12BDEA0B60020E29E /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderApp.debug.xcconfig"; path = "Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderApp.release.xcconfig"; path = "Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp.release.xcconfig"; sourceTree = "<group>"; };
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B588F2B9B1558CA8A9A6DA37 /* Pods_JobFinderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1696380E3C01F334D2BCCB26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */,
+				CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6C28A8C8CF0FD90F2745D9E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF62B3D12BDEA0B60020E29E = {
 			isa = PBXGroup;
 			children = (
 				CF62B3DC2BDEA0B60020E29E /* JobFinderApp */,
 				CF62B3DB2BDEA0B60020E29E /* Products */,
+				1696380E3C01F334D2BCCB26 /* Pods */,
+				6C28A8C8CF0FD90F2745D9E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF62B3EE2BDEA0B80020E29E /* Build configuration list for PBXNativeTarget "JobFinderApp" */;
 			buildPhases = (
+				34841ED7120BC8FBD022B6A0 /* [CP] Check Pods Manifest.lock */,
 				CF62B3D62BDEA0B60020E29E /* Sources */,
 				CF62B3D72BDEA0B60020E29E /* Frameworks */,
 				CF62B3D82BDEA0B60020E29E /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34841ED7120BC8FBD022B6A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobFinderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF62B3D62BDEA0B60020E29E /* Sources */ = {
@@ -287,6 +338,7 @@
 		};
 		CF62B3EF2BDEA0B80020E29E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +367,7 @@
 		};
 		CF62B3F02BDEA0B80020E29E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
