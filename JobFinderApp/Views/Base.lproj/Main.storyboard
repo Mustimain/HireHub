@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu9-Dx-taL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835.8778625954199" y="-283.0985915492958"/>
+            <point key="canvasLocation" x="2079" y="-325"/>
         </scene>
         <!--User Register View Controller-->
         <scene sceneID="cwK-A1-lew">
@@ -244,7 +244,7 @@
         <!--Favori İlanlar-->
         <scene sceneID="cAa-wo-gev">
             <objects>
-                <viewController id="mDI-QZ-qAX" customClass="UserHomeTabbarControllerViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mDI-QZ-qAX" customClass="UserFavoritesViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sy4-Jq-uY3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,7 +260,7 @@
         <!--Raporlar-->
         <scene sceneID="l6f-F5-Yl7">
             <objects>
-                <viewController id="y9A-Nz-jHD" sceneMemberID="viewController">
+                <viewController id="y9A-Nz-jHD" customClass="UserReportsViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WQ7-Oz-gFS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +276,7 @@
         <!--Hesabım-->
         <scene sceneID="4Zj-2P-cih">
             <objects>
-                <viewController id="RR5-iE-Cfd" sceneMemberID="viewController">
+                <viewController id="RR5-iE-Cfd" customClass="UserProfileViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gn-jm-aCs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,7 +292,7 @@
         <!--Ana Sayfa-->
         <scene sceneID="HL5-yi-67O">
             <objects>
-                <viewController id="9cE-bn-Ao1" sceneMemberID="viewController">
+                <viewController id="9cE-bn-Ao1" customClass="UserHomeViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17F-rr-K9C">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

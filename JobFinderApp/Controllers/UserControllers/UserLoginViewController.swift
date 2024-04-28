@@ -16,9 +16,17 @@ class UserLoginViewController: UIViewController {
     
 
     @IBAction func LoginButton(_ sender: Any) {
-        
-        if let userRegisterVC = storyboard?.instantiateViewController(withIdentifier: "UserRegisterViewController") as? UserRegisterViewController{
-            navigationController?.pushViewController(userRegisterVC, animated: true)
+        Task { @MainActor in
+            
+            let email = "email";
+            let pass = "password"
+            
+            var res = try await UserService().UserLogin(email: email, password: pass)
+            /*
+            if let userRegisterVC = storyboard?.instantiateViewController(withIdentifier: "UserRegisterViewController") as? UserRegisterViewController{
+                navigationController?.pushViewController(userRegisterVC, animated: true)
+            }
+             */
         }
     }
 

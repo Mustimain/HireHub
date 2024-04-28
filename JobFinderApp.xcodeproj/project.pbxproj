@@ -17,6 +17,13 @@
 		CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */; };
 		CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */; };
 		CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */; };
+		CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */; };
+		CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */; };
+		CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */; };
+		CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */; };
+		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
+		CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */; };
+		CF62B4122BDEBF970020E29E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4112BDEBF970020E29E /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +41,13 @@
 		CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
 		CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTabbarController.swift; sourceTree = "<group>"; };
+		CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
+		CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesViewController.swift; sourceTree = "<group>"; };
+		CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReportsViewController.swift; sourceTree = "<group>"; };
+		CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		CF62B4112BDEBF970020E29E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +100,7 @@
 		CF62B3DC2BDEA0B60020E29E /* JobFinderApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF62B4092BDEB0760020E29E /* Protocols */,
 				CF62B3F42BDEA3990020E29E /* Services */,
 				CF62B3F32BDEA38B0020E29E /* Controllers */,
 				CF62B3F22BDEA3850020E29E /* Models */,
@@ -110,6 +125,7 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CF62B40C2BDEBE0F0020E29E /* UserModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +143,7 @@
 		CF62B3F42BDEA3990020E29E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF62B40E2BDEBE2E0020E29E /* UserServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -137,6 +154,10 @@
 				CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */,
 				CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */,
 				CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */,
+				CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */,
+				CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */,
+				CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */,
+				CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */,
 			);
 			path = UserControllers;
 			sourceTree = "<group>";
@@ -146,6 +167,38 @@
 			children = (
 			);
 			path = CompanyControllers;
+			sourceTree = "<group>";
+		};
+		CF62B4092BDEB0760020E29E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B40D2BDEBE1E0020E29E /* UserProtocols */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CF62B40C2BDEBE0F0020E29E /* UserModels */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B40A2BDEB0940020E29E /* User.swift */,
+			);
+			path = UserModels;
+			sourceTree = "<group>";
+		};
+		CF62B40D2BDEBE1E0020E29E /* UserProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */,
+			);
+			path = UserProtocols;
+			sourceTree = "<group>";
+		};
+		CF62B40E2BDEBE2E0020E29E /* UserServices */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B4112BDEBF970020E29E /* UserService.swift */,
+			);
+			path = UserServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,12 +298,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
+				CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */,
+				CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */,
 				CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */,
 				CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
+				CF62B4122BDEBF970020E29E /* UserService.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
 				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
+				CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
+				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
+				CF62B40B2BDEB0940020E29E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
