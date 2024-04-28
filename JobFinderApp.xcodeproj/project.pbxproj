@@ -24,6 +24,7 @@
 		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
 		CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */; };
 		CF62B4122BDEBF970020E29E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4112BDEBF970020E29E /* UserService.swift */; };
+		CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		CF62B4112BDEBF970020E29E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */,
 				CF62B3E62BDEA0B80020E29E /* Assets.xcassets */,
 				CF62B3EB2BDEA0B80020E29E /* Info.plist */,
+				CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */,
 			);
 			path = JobFinderApp;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				CF62B3D62BDEA0B60020E29E /* Sources */,
 				CF62B3D72BDEA0B60020E29E /* Frameworks */,
 				CF62B3D82BDEA0B60020E29E /* Resources */,
+				B70037DA00FB5DA017F85548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF62B3E72BDEA0B80020E29E /* Assets.xcassets in Resources */,
+				CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */,
 				CF62B3EA2BDEA0B80020E29E /* Base in Resources */,
 				CF62B3E52BDEA0B60020E29E /* Base in Resources */,
 			);
@@ -289,6 +294,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B70037DA00FB5DA017F85548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -464,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KH7VSW3F9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JobFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -493,6 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KH7VSW3F9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JobFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

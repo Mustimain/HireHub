@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User{
+struct User : Codable{
     
     var  userID : String?
     var  firstName : String?
@@ -20,21 +20,6 @@ class User{
     var  cvPath : String?
     var  emailVerification : Bool?
     var  createDate : Date?
-    
-    
-    init(userID: String? = nil, firstName: String? = nil, lastName: String? = nil, job: String? = nil, experienceYear: String? = nil, email: String? = nil, password: String? = nil, phoneNumber: String? = nil, cvPath: String? = nil, emailVerification: Bool? = nil, createDate: Date? = nil) {
-        self.userID = userID
-        self.firstName = firstName
-        self.lastName = lastName
-        self.job = job
-        self.experienceYear = experienceYear
-        self.email = email
-        self.password = password
-        self.phoneNumber = phoneNumber
-        self.cvPath = cvPath
-        self.emailVerification = emailVerification
-        self.createDate = createDate
-    }
     
    
 

@@ -16,10 +16,23 @@ class UserRegisterViewController: UIViewController {
     }
 
     @IBAction func UserTabbarNavgaitonButton(_ sender: Any) {
-        
-        if let userTabbarNavigationVC = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
-            navigationController?.setNavigationBarHidden(true, animated: false)
-            navigationController?.pushViewController(userTabbarNavigationVC, animated: true)
+        Task { @MainActor in
+            
+            
+            var testUser = User()
+            testUser.userID = "deneme"
+            testUser.firstName = "Mustafa"
+            testUser.lastName = "Ceylan"
+            
+            var res = try await UserService().UserRegister(user: testUser)
+            
+            /*
+             if let userTabbarNavigationVC = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
+             navigationController?.setNavigationBarHidden(true, animated: false)
+             navigationController?.pushViewController(userTabbarNavigationVC, animated: true)
+             }
+             
+             */
         }
     }
 

@@ -6,16 +6,33 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseCore
 
 class UserService : AuthProtocol {
+    
+    let db = Firestore.firestore()
+    
     func UserRegister(user: User) async throws -> Bool {
-        return true;
+        
+        if (user.userID?.count ?? 0 > 0){
+            do {
+                try db.collection("Users").document("deneme").setData(from: user)
+                return true;
+            } catch let error {
+              print("Error writing city to Firestore: \(error)")
+                return false;
+
+            }
+        }
+
+        return false;
     }
     
     func UserLogin(email: String, password: String) async throws -> Bool {
         
-        var useremail = email;
-        var userpassword = password;
+        _ = email;
+        _ = password;
         return true;
         
     }
