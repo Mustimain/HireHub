@@ -10,10 +10,13 @@
 		B588F2B9B1558CA8A9A6DA37 /* Pods_JobFinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */; };
 		CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */; };
 		CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */; };
-		CF62B3E22BDEA0B60020E29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3E12BDEA0B60020E29E /* ViewController.swift */; };
 		CF62B3E52BDEA0B60020E29E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CF62B3E42BDEA0B60020E29E /* Base */; };
 		CF62B3E72BDEA0B80020E29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF62B3E62BDEA0B80020E29E /* Assets.xcassets */; };
 		CF62B3EA2BDEA0B80020E29E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CF62B3E92BDEA0B80020E29E /* Base */; };
+		CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3F52BDEA47A0020E29E /* DashboardViewController.swift */; };
+		CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */; };
+		CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */; };
+		CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +26,14 @@
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF62B3E12BDEA0B60020E29E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF62B3E42BDEA0B60020E29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF62B3E62BDEA0B80020E29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF62B3E92BDEA0B80020E29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF62B3EB2BDEA0B80020E29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF62B3F52BDEA47A0020E29E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
+		CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,6 @@
 				BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */,
 				CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +86,66 @@
 		CF62B3DC2BDEA0B60020E29E /* JobFinderApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF62B3F42BDEA3990020E29E /* Services */,
+				CF62B3F32BDEA38B0020E29E /* Controllers */,
+				CF62B3F22BDEA3850020E29E /* Models */,
+				CF62B3F12BDEA37D0020E29E /* Views */,
 				CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */,
 				CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */,
-				CF62B3E12BDEA0B60020E29E /* ViewController.swift */,
-				CF62B3E32BDEA0B60020E29E /* Main.storyboard */,
 				CF62B3E62BDEA0B80020E29E /* Assets.xcassets */,
-				CF62B3E82BDEA0B80020E29E /* LaunchScreen.storyboard */,
 				CF62B3EB2BDEA0B80020E29E /* Info.plist */,
 			);
 			path = JobFinderApp;
+			sourceTree = "<group>";
+		};
+		CF62B3F12BDEA37D0020E29E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B3E32BDEA0B60020E29E /* Main.storyboard */,
+				CF62B3E82BDEA0B80020E29E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF62B3F22BDEA3850020E29E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF62B3F32BDEA38B0020E29E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B3F82BDEA4D70020E29E /* CompanyControllers */,
+				CF62B3F72BDEA4CF0020E29E /* UserControllers */,
+				CF62B3F52BDEA47A0020E29E /* DashboardViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CF62B3F42BDEA3990020E29E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CF62B3F72BDEA4CF0020E29E /* UserControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF62B3F92BDEA4F40020E29E /* UserLoginViewController.swift */,
+				CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */,
+				CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */,
+			);
+			path = UserControllers;
+			sourceTree = "<group>";
+		};
+		CF62B3F82BDEA4D70020E29E /* CompanyControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CompanyControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF62B3E22BDEA0B60020E29E /* ViewController.swift in Sources */,
 				CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */,
+				CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */,
+				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
+				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
+				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
