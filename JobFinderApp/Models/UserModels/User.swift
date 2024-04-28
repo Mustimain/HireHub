@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct User : Codable{
     
-    var  userID : String?
+    @DocumentID var  userID : String? = UUID().uuidString
     var  firstName : String?
     var  lastName : String?
     var  job : String?

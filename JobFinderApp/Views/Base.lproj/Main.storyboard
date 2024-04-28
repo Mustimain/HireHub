@@ -175,6 +175,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Özgeçmiş Yükle">
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="GetData:" destination="KZ5-7r-rtD" eventType="touchUpInside" id="vo5-mm-UVI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="KAYIT OL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-AQ-1Ug">
                                 <rect key="frame" x="138" y="146" width="116" height="34"/>
