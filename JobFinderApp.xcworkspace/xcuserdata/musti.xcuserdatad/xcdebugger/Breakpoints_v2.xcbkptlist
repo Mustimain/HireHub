@@ -14,9 +14,9 @@
             filePath = "JobFinderApp/Controllers/UserControllers/UserRegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "UserTabbarNavgaitonButton(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "RegisterButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

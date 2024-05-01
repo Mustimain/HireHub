@@ -71,7 +71,7 @@
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="LoginButton:" destination="4Li-hJ-QV4" eventType="touchUpInside" id="5S4-87-SL1"/>
+                                    <action selector="LoginButton:" destination="4Li-hJ-QV4" eventType="touchUpInside" id="qbT-Qh-Gtv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-HV-4VR">
@@ -124,6 +124,10 @@
                             <constraint firstItem="9qD-d5-qUr" firstAttribute="bottom" secondItem="Qew-Wz-F8S" secondAttribute="bottom" constant="168" id="z91-Kt-0xQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userEmailInput" destination="0h0-HV-4VR" id="NpJ-WP-H0B"/>
+                        <outlet property="userPasswordInput" destination="Zih-MW-3mv" id="EtQ-vc-nCC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu9-Dx-taL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,8 +149,7 @@
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="LoginButton:" destination="eyU-cg-59W" eventType="touchUpInside" id="80r-Cf-0Hu"/>
-                                    <action selector="LoginButton:" destination="4Li-hJ-QV4" eventType="touchUpInside" id="f6N-mr-06s"/>
+                                    <action selector="LoginButton:" destination="eyU-cg-59W" eventType="touchUpInside" id="NKf-uu-mwX"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yD-Kl-2A2">
@@ -255,7 +258,7 @@
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="UserTabbarNavgaitonButton:" destination="KZ5-7r-rtD" eventType="touchUpInside" id="jEE-3A-nqT"/>
+                                    <action selector="RegisterButton:" destination="zYl-Y6-FWD" eventType="touchUpInside" id="fxZ-1h-oRE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="COMPANY REGISTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-Au-v5g">
@@ -346,111 +349,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-FZ-5OQ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwo-FZ-5OQ">
                                 <rect key="frame" x="43" y="223" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Soyad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjA-kX-56N">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Soyad" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjA-kX-56N">
                                 <rect key="frame" x="43" y="265" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meslek" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLR-tE-u15">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meslek" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLR-tE-u15">
                                 <rect key="frame" x="43" y="307" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deneyim Süresi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-fJ-itO">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Deneyim Süresi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-fJ-itO">
                                 <rect key="frame" x="43" y="349" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lmj-mI-FlR">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lmj-mI-FlR">
                                 <rect key="frame" x="43" y="391" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-gn-2Xi">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-gn-2Xi">
                                 <rect key="frame" x="43" y="433" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-jD-D34">
-                                <rect key="frame" x="43" y="475" width="306" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-jD-D34">
+                                <rect key="frame" x="43" y="517" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asy-L9-xF1">
-                                <rect key="frame" x="43" y="528" width="306" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asy-L9-xF1">
+                                <rect key="frame" x="43" y="570" width="306" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Özgeçmiş Yükle">
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="GetData:" destination="KZ5-7r-rtD" eventType="touchUpInside" id="vo5-mm-UVI"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQG-hS-toe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER REGİSTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-AQ-1Ug">
+                                <rect key="frame" x="91" y="145" width="211" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQG-hS-toe">
                                 <rect key="frame" x="43" y="672" width="306" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Kayıt Ol">
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="UserTabbarNavgaitonButton:" destination="KZ5-7r-rtD" eventType="touchUpInside" id="kFo-g3-s9i"/>
+                                    <action selector="RegisterButton:" destination="KZ5-7r-rtD" eventType="touchUpInside" id="PcN-9x-HUe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yüklenen Özgeçmiş:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-CZ-pvV">
-                                <rect key="frame" x="43" y="583" width="155" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yüklenen Özgeçmiş:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-CZ-pvV">
+                                <rect key="frame" x="43" y="625" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="USER REGİSTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-AQ-1Ug">
-                                <rect key="frame" x="91" y="145" width="211" height="34"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre Tekrar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ows-gp-cCt">
+                                <rect key="frame" x="43" y="475" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lGq-S1-KEL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="e3H-fJ-itO" firstAttribute="trailing" secondItem="Lmj-mI-FlR" secondAttribute="trailing" id="0FB-nE-gbJ"/>
-                            <constraint firstItem="Tjc-jD-D34" firstAttribute="leading" secondItem="Asy-L9-xF1" secondAttribute="leading" id="165-vw-WUb"/>
-                            <constraint firstItem="wjA-kX-56N" firstAttribute="leading" secondItem="VLR-tE-u15" secondAttribute="leading" id="2la-kS-P5Q"/>
-                            <constraint firstItem="jKY-gn-2Xi" firstAttribute="leading" secondItem="Tjc-jD-D34" secondAttribute="leading" id="5dM-C8-kpS"/>
-                            <constraint firstItem="VLR-tE-u15" firstAttribute="leading" secondItem="e3H-fJ-itO" secondAttribute="leading" id="AZA-qc-KWd"/>
-                            <constraint firstItem="Lmj-mI-FlR" firstAttribute="trailing" secondItem="jKY-gn-2Xi" secondAttribute="trailing" id="Clj-tA-He3"/>
-                            <constraint firstItem="VLR-tE-u15" firstAttribute="trailing" secondItem="e3H-fJ-itO" secondAttribute="trailing" id="DGv-jQ-gci"/>
-                            <constraint firstItem="D9n-AQ-1Ug" firstAttribute="centerX" secondItem="qBV-am-Brv" secondAttribute="centerX" id="DjO-hN-cFI"/>
-                            <constraint firstItem="Asy-L9-xF1" firstAttribute="leading" secondItem="ZRH-CZ-pvV" secondAttribute="leading" id="EwU-rr-Kpc"/>
-                            <constraint firstItem="VLR-tE-u15" firstAttribute="top" secondItem="wjA-kX-56N" secondAttribute="bottom" constant="8" id="FH1-ou-fm9"/>
-                            <constraint firstItem="Lmj-mI-FlR" firstAttribute="top" secondItem="e3H-fJ-itO" secondAttribute="bottom" constant="8" id="MNc-DO-9ln"/>
-                            <constraint firstItem="e3H-fJ-itO" firstAttribute="leading" secondItem="Lmj-mI-FlR" secondAttribute="leading" id="R2J-ND-tDv"/>
-                            <constraint firstItem="jKY-gn-2Xi" firstAttribute="trailing" secondItem="Tjc-jD-D34" secondAttribute="trailing" id="SfZ-M9-ZCC"/>
-                            <constraint firstItem="Tjc-jD-D34" firstAttribute="top" secondItem="jKY-gn-2Xi" secondAttribute="bottom" constant="8" id="StF-b1-hCc"/>
-                            <constraint firstItem="wjA-kX-56N" firstAttribute="top" secondItem="Zwo-FZ-5OQ" secondAttribute="bottom" constant="8" id="XFN-RC-FEJ"/>
-                            <constraint firstItem="Zwo-FZ-5OQ" firstAttribute="leading" secondItem="lGq-S1-KEL" secondAttribute="leading" constant="43" id="Z4I-bX-xL2"/>
-                            <constraint firstItem="wjA-kX-56N" firstAttribute="trailing" secondItem="VLR-tE-u15" secondAttribute="trailing" id="bt2-st-oTk"/>
-                            <constraint firstItem="D9n-AQ-1Ug" firstAttribute="top" secondItem="lGq-S1-KEL" secondAttribute="top" constant="87" id="gkT-BQ-d6D"/>
-                            <constraint firstItem="Asy-L9-xF1" firstAttribute="trailing" secondItem="uQG-hS-toe" secondAttribute="trailing" id="hu5-7u-yMK"/>
-                            <constraint firstItem="D9n-AQ-1Ug" firstAttribute="leading" secondItem="lGq-S1-KEL" secondAttribute="leading" constant="138" id="lHr-SP-lDl"/>
-                            <constraint firstItem="Zwo-FZ-5OQ" firstAttribute="trailing" secondItem="wjA-kX-56N" secondAttribute="trailing" id="m7G-bX-Uoh"/>
-                            <constraint firstItem="uQG-hS-toe" firstAttribute="top" secondItem="ZRH-CZ-pvV" secondAttribute="bottom" constant="68" id="mX4-VD-Nwp"/>
-                            <constraint firstItem="ZRH-CZ-pvV" firstAttribute="leading" secondItem="uQG-hS-toe" secondAttribute="leading" id="oRu-A4-haR"/>
-                            <constraint firstItem="Zwo-FZ-5OQ" firstAttribute="leading" secondItem="wjA-kX-56N" secondAttribute="leading" id="pcA-gh-Xk1"/>
-                            <constraint firstItem="ZRH-CZ-pvV" firstAttribute="top" secondItem="Asy-L9-xF1" secondAttribute="bottom" constant="20" id="pmc-xt-uCx"/>
-                            <constraint firstItem="Asy-L9-xF1" firstAttribute="top" secondItem="Tjc-jD-D34" secondAttribute="bottom" constant="19" id="qSQ-MJ-TEs"/>
-                            <constraint firstItem="D9n-AQ-1Ug" firstAttribute="centerX" secondItem="Zwo-FZ-5OQ" secondAttribute="centerX" id="tAR-CW-E00"/>
-                            <constraint firstItem="Tjc-jD-D34" firstAttribute="trailing" secondItem="Asy-L9-xF1" secondAttribute="trailing" id="u7S-IY-GiJ"/>
-                            <constraint firstItem="Lmj-mI-FlR" firstAttribute="leading" secondItem="jKY-gn-2Xi" secondAttribute="leading" id="ugz-G5-cCf"/>
-                            <constraint firstItem="e3H-fJ-itO" firstAttribute="top" secondItem="VLR-tE-u15" secondAttribute="bottom" constant="8" id="upV-nh-XOI"/>
-                            <constraint firstItem="jKY-gn-2Xi" firstAttribute="top" secondItem="Lmj-mI-FlR" secondAttribute="bottom" constant="8" id="wut-4K-ACs"/>
-                            <constraint firstItem="Zwo-FZ-5OQ" firstAttribute="top" secondItem="D9n-AQ-1Ug" secondAttribute="bottom" constant="43" id="yS1-Gw-wuh"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="Lmj-mI-FlR" id="aNT-5G-oYt"/>
+                        <outlet property="experienceYearInput" destination="e3H-fJ-itO" id="0ID-Ag-4Tr"/>
+                        <outlet property="firstNameInput" destination="Zwo-FZ-5OQ" id="vgd-Z6-7Cb"/>
+                        <outlet property="jobInput" destination="VLR-tE-u15" id="EaL-Kt-u1z"/>
+                        <outlet property="lastNameInput" destination="wjA-kX-56N" id="aIW-ui-X3m"/>
+                        <outlet property="passwordInput" destination="jKY-gn-2Xi" id="7Ug-hv-ngN"/>
+                        <outlet property="phoneNumberInput" destination="Tjc-jD-D34" id="ITl-9B-8hf"/>
+                        <outlet property="rePasswordInput" destination="Ows-gp-cCt" id="w5h-6A-VV1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBI-xf-SNa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -564,6 +557,7 @@
                 <tabBarController storyboardIdentifier="CompanyHomeTabbarController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wvI-d8-YdK" customClass="CompanyHomeTabbarController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHs-sr-yE7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

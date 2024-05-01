@@ -9,42 +9,54 @@ import UIKit
 
 class UserRegisterViewController: UIViewController {
 
+    
+    @IBOutlet weak var firstNameInput: UITextField!
+    
+    @IBOutlet weak var lastNameInput: UITextField!
+    @IBOutlet weak var jobInput: UITextField!
+    @IBOutlet weak var experienceYearInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var rePasswordInput: UITextField!
+    @IBOutlet weak var phoneNumberInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func GetData(_ sender: Any) {
+    @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
             
-            do {
-               // let users = try await AuthService().UserLogin(email: "deneme", password: "selam")
-           
-            } catch {
+            
+            var registerUser = User()
+            registerUser.firstName = firstNameInput.text ?? ""
+            registerUser.lastName = lastNameInput.text ?? ""
+            registerUser.email = emailInput.text ?? ""
+            registerUser.createDate = Date.now
+            registerUser.cvPath = ""
+            registerUser.emailVerification = true
+            registerUser.experienceYear = experienceYearInput.text ?? ""
+            registerUser.job = jobInput.text ?? ""
+            registerUser.password = passwordInput.text ?? ""
+            registerUser.phoneNumber = phoneNumberInput.text ?? ""
+            
+            var res = try await AuthService().UserRegister(user: registerUser)
+            
+            if res == true{
                 
+                let alert = UIAlertController(title: "Başarılı", message: "Kayıt Başarılı", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default) { action in
+                    
                 }
-           
+                
+                alert.addAction(action)
+                self.present(alert, animated: true,completion: nil)
+                
+            }
         }
-    }
-    @IBAction func UserTabbarNavgaitonButton(_ sender: Any) {
-        Task { @MainActor in
-            
-            
-            var testUser = User()
-            testUser.firstName = "Mustafa"
-            testUser.lastName = "Ceylan"
-            testUser.email = "deneme"
-            testUser.createDate = Date.now
-            testUser.cvPath = ""
-            testUser.emailVerification = true
-            testUser.experienceYear = "1"
-            testUser.job = "deneme"
-            testUser.password = "asdasd"
-            testUser.phoneNumber = "asdasd"
-            
-             var res = try await AuthService().UserRegister(user: testUser)
-         
             
             /*
              if let userTabbarNavigationVC = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
@@ -54,6 +66,6 @@ class UserRegisterViewController: UIViewController {
              
              */
         }
+        
     }
 
-}
