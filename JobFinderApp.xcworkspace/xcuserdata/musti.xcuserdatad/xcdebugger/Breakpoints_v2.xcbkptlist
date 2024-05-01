@@ -14,57 +14,9 @@
             filePath = "JobFinderApp/Controllers/UserControllers/UserRegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "UserTabbarNavgaitonButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9509C42-9595-4722-9581-BD29C10D6653"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JobFinderApp/Services/UserServices/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "UserRegister(user:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B18C57BB-809D-48E7-B101-A932FD5E5C26"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JobFinderApp/Services/UserServices/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "UserRegister(user:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ADA5308B-3978-4BD8-8040-210F275C4117"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JobFinderApp/Services/UserServices/UserService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "UserRegister(user:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -80,54 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
-            landmarkName = "UserService"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8F4C9819-2D97-4582-AC7C-8A0DEC8618C0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JobFinderApp/Controllers/UserControllers/UserRegisterViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "GetData(_:)"
+            landmarkName = "UserLogin(email:password:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8F4C9819-2D97-4582-AC7C-8A0DEC8618C0 - 88872373019a6a08"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in JobFinderApp.UserRegisterViewController.GetData(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/UserControllers/UserRegisterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-               <Location
-                  uuid = "8F4C9819-2D97-4582-AC7C-8A0DEC8618C0 - 88872373019a6a08"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in JobFinderApp.UserRegisterViewController.GetData(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/UserControllers/UserRegisterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

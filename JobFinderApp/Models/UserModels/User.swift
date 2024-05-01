@@ -22,6 +22,4 @@ struct User : Codable{
     var  emailVerification : Bool?
     var  createDate : Date?
     
-   
-
 }

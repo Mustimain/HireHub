@@ -19,13 +19,10 @@ class UserRegisterViewController: UIViewController {
         Task { @MainActor in
             
             do {
-                let users = try await UserService().UserLogin(email: "deneme", password: "selam")
-                
-                for user in users {
-                    print(user)
-                }
+               // let users = try await AuthService().UserLogin(email: "deneme", password: "selam")
+           
             } catch {
-                  // Handle errors appropriately, e.g., display an error message to the user
+                
                 }
            
         }
@@ -46,7 +43,7 @@ class UserRegisterViewController: UIViewController {
             testUser.password = "asdasd"
             testUser.phoneNumber = "asdasd"
             
-             var res = try await UserService().UserRegister(user: testUser)
+             var res = try await AuthService().UserRegister(user: testUser)
          
             
             /*

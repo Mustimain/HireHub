@@ -23,8 +23,16 @@
 		CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */; };
 		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
 		CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */; };
-		CF62B4122BDEBF970020E29E /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4112BDEBF970020E29E /* UserService.swift */; };
 		CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */; };
+		CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DA2BE2C1B000999945 /* Company.swift */; };
+		CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DD2BE2C3BC00999945 /* AuthService.swift */; };
+		CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83E32BE2C79900999945 /* CompanyLoginViewController.swift */; };
+		CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83E52BE2C7AA00999945 /* CompanyRegisterViewController.swift */; };
+		CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83E72BE2C7D600999945 /* CompanyHomeTabbarController.swift */; };
+		CFAE83EA2BE2C86A00999945 /* CompanyAdvertiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83E92BE2C86A00999945 /* CompanyAdvertiseViewController.swift */; };
+		CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */; };
+		CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */; };
+		CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +56,16 @@
 		CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
-		CF62B4112BDEBF970020E29E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CFAE83DA2BE2C1B000999945 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		CFAE83DD2BE2C3BC00999945 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CFAE83E32BE2C79900999945 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
+		CFAE83E52BE2C7AA00999945 /* CompanyRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyRegisterViewController.swift; sourceTree = "<group>"; };
+		CFAE83E72BE2C7D600999945 /* CompanyHomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHomeTabbarController.swift; sourceTree = "<group>"; };
+		CFAE83E92BE2C86A00999945 /* CompanyAdvertiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAdvertiseViewController.swift; sourceTree = "<group>"; };
+		CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJobApplicationViewController.swift; sourceTree = "<group>"; };
+		CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyReportsViewController.swift; sourceTree = "<group>"; };
+		CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +144,7 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83D92BE2C19C00999945 /* CompanyModels */,
 				CF62B40C2BDEBE0F0020E29E /* UserModels */,
 			);
 			path = Models;
@@ -146,7 +163,7 @@
 		CF62B3F42BDEA3990020E29E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CF62B40E2BDEBE2E0020E29E /* UserServices */,
+				CFAE83DC2BE2C3AB00999945 /* AuthService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,6 +185,13 @@
 		CF62B3F82BDEA4D70020E29E /* CompanyControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFAE83E32BE2C79900999945 /* CompanyLoginViewController.swift */,
+				CFAE83E52BE2C7AA00999945 /* CompanyRegisterViewController.swift */,
+				CFAE83E72BE2C7D600999945 /* CompanyHomeTabbarController.swift */,
+				CFAE83E92BE2C86A00999945 /* CompanyAdvertiseViewController.swift */,
+				CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */,
+				CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */,
+				CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */,
 			);
 			path = CompanyControllers;
 			sourceTree = "<group>";
@@ -196,12 +220,20 @@
 			path = UserProtocols;
 			sourceTree = "<group>";
 		};
-		CF62B40E2BDEBE2E0020E29E /* UserServices */ = {
+		CFAE83D92BE2C19C00999945 /* CompanyModels */ = {
 			isa = PBXGroup;
 			children = (
-				CF62B4112BDEBF970020E29E /* UserService.swift */,
+				CFAE83DA2BE2C1B000999945 /* Company.swift */,
 			);
-			path = UserServices;
+			path = CompanyModels;
+			sourceTree = "<group>";
+		};
+		CFAE83DC2BE2C3AB00999945 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				CFAE83DD2BE2C3BC00999945 /* AuthService.swift */,
+			);
+			path = AuthService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,17 +353,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
+				CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */,
 				CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */,
 				CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */,
 				CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */,
 				CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */,
+				CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */,
+				CFAE83EA2BE2C86A00999945 /* CompanyAdvertiseViewController.swift in Sources */,
+				CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
-				CF62B4122BDEBF970020E29E /* UserService.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
 				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
 				CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */,
+				CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
+				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
+				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,
+				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
 				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
+				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
 				CF62B40B2BDEB0940020E29E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

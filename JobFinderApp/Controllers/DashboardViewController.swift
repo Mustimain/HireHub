@@ -23,7 +23,7 @@ class DashboardViewController: UIViewController {
         
     }
     
-    /*
+    
     @IBAction func CompanyLoginButton(_ sender: Any) {
         
         if let companyLoginVC = storyboard?.instantiateViewController(withIdentifier: "CompanyLoginViewController") as? CompanyLoginViewController{
@@ -31,5 +31,5 @@ class DashboardViewController: UIViewController {
         }
     }
     
-*/
+
 }
