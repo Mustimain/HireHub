@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B588F2B9B1558CA8A9A6DA37 /* Pods_JobFinderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */; };
+		CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E12BE6AC850090C7C7 /* GoogleMaps */; };
+		CF19D2E42BE6AC850090C7C7 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E32BE6AC850090C7C7 /* GoogleMapsBase */; };
+		CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E52BE6AC850090C7C7 /* GoogleMapsCore */; };
+		CF19D2E82BE6AC850090C7C7 /* GoogleMapsM4B in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E72BE6AC850090C7C7 /* GoogleMapsM4B */; };
+		CF19D2EB2BE6ADF60090C7C7 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2EA2BE6ADF60090C7C7 /* FirebaseAnalytics */; };
+		CF19D2ED2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2EC2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion */; };
+		CF19D2EF2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2EE2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift */; };
+		CF19D2F12BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F02BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		CF19D2F32BE6ADF60090C7C7 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F22BE6ADF60090C7C7 /* FirebaseAppCheck */; };
+		CF19D2F62BE6B1AC0090C7C7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */; };
+		CF19D2F82BE6B1C00090C7C7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */; };
 		CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */; };
 		CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */; };
 		CF62B3E52BDEA0B60020E29E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CF62B3E42BDEA0B60020E29E /* Base */; };
@@ -37,9 +47,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderApp.debug.xcconfig"; path = "Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp.debug.xcconfig"; sourceTree = "<group>"; };
-		CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderApp.release.xcconfig"; path = "Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp.release.xcconfig"; sourceTree = "<group>"; };
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,26 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B588F2B9B1558CA8A9A6DA37 /* Pods_JobFinderApp.framework in Frameworks */,
+				CF19D2E42BE6AC850090C7C7 /* GoogleMapsBase in Frameworks */,
+				CF19D2ED2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */,
+				CF19D2F62BE6B1AC0090C7C7 /* FirebaseFirestore in Frameworks */,
+				CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */,
+				CF19D2EF2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift in Frameworks */,
+				CF19D2EB2BE6ADF60090C7C7 /* FirebaseAnalytics in Frameworks */,
+				CF19D2F82BE6B1C00090C7C7 /* FirebaseAuth in Frameworks */,
+				CF19D2E82BE6AC850090C7C7 /* GoogleMapsM4B in Frameworks */,
+				CF19D2F32BE6ADF60090C7C7 /* FirebaseAppCheck in Frameworks */,
+				CF19D2F12BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1696380E3C01F334D2BCCB26 /* Pods */ = {
+		CF19D2F42BE6B1AC0090C7C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */,
-				CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		6C28A8C8CF0FD90F2745D9E6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3369C85AD6791BE1FFECD7F8 /* Pods_JobFinderApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,8 +111,7 @@
 			children = (
 				CF62B3DC2BDEA0B60020E29E /* JobFinderApp */,
 				CF62B3DB2BDEA0B60020E29E /* Products */,
-				1696380E3C01F334D2BCCB26 /* Pods */,
-				6C28A8C8CF0FD90F2745D9E6 /* Frameworks */,
+				CF19D2F42BE6B1AC0090C7C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,17 +252,28 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF62B3EE2BDEA0B80020E29E /* Build configuration list for PBXNativeTarget "JobFinderApp" */;
 			buildPhases = (
-				34841ED7120BC8FBD022B6A0 /* [CP] Check Pods Manifest.lock */,
 				CF62B3D62BDEA0B60020E29E /* Sources */,
 				CF62B3D72BDEA0B60020E29E /* Frameworks */,
 				CF62B3D82BDEA0B60020E29E /* Resources */,
-				B70037DA00FB5DA017F85548 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = JobFinderApp;
+			packageProductDependencies = (
+				CF19D2E12BE6AC850090C7C7 /* GoogleMaps */,
+				CF19D2E32BE6AC850090C7C7 /* GoogleMapsBase */,
+				CF19D2E52BE6AC850090C7C7 /* GoogleMapsCore */,
+				CF19D2E72BE6AC850090C7C7 /* GoogleMapsM4B */,
+				CF19D2EA2BE6ADF60090C7C7 /* FirebaseAnalytics */,
+				CF19D2EC2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion */,
+				CF19D2EE2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift */,
+				CF19D2F02BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				CF19D2F22BE6ADF60090C7C7 /* FirebaseAppCheck */,
+				CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */,
+				CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */,
+			);
 			productName = JobFinderApp;
 			productReference = CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +302,10 @@
 				Base,
 			);
 			mainGroup = CF62B3D12BDEA0B60020E29E;
+			packageReferences = (
+				CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CF62B3DB2BDEA0B60020E29E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,48 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		34841ED7120BC8FBD022B6A0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JobFinderApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B70037DA00FB5DA017F85548 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinderApp/Pods-JobFinderApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF62B3D62BDEA0B60020E29E /* Sources */ = {
@@ -523,21 +502,46 @@
 		};
 		CF62B3EF2BDEA0B80020E29E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC2C65BDA3F7F3604DF16946 /* Pods-JobFinderApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KH7VSW3F9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreInternal/FirebaseFirestoreInternal.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop/RecaptchaInterop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
 				INFOPLIST_FILE = JobFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +549,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musti.JobFinderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -553,21 +561,46 @@
 		};
 		CF62B3F02BDEA0B80020E29E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA85768FF8F00170C56AC0BE /* Pods-JobFinderApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7KH7VSW3F9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreInternal/FirebaseFirestoreInternal.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop/RecaptchaInterop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+				);
 				INFOPLIST_FILE = JobFinderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,6 +608,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.musti.JobFinderApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,6 +640,83 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.4.0;
+			};
+		};
+		CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF19D2E12BE6AC850090C7C7 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		CF19D2E32BE6AC850090C7C7 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsBase;
+		};
+		CF19D2E52BE6AC850090C7C7 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsCore;
+		};
+		CF19D2E72BE6AC850090C7C7 /* GoogleMapsM4B */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMapsM4B;
+		};
+		CF19D2EA2BE6ADF60090C7C7 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CF19D2EC2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		CF19D2EE2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		CF19D2F02BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		CF19D2F22BE6ADF60090C7C7 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF62B3D22BDEA0B60020E29E /* Project object */;
 }

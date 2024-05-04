@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseCore
+import Firebase
 
 
 class AuthService : AuthProtocol {
@@ -19,7 +18,7 @@ class AuthService : AuthProtocol {
             do {
                 try db.collection("Users").document(user.userID ?? "").setData(from: user)
                 return true;
-            } catch let error {
+            } catch _ {
                 return false;
                 
             }
@@ -54,7 +53,7 @@ class AuthService : AuthProtocol {
             do {
                 try db.collection("Companies").document(company.companyID ?? "").setData(from: company)
                 return true;
-            } catch let error {
+            } catch _ {
                 return false;
             }
         }

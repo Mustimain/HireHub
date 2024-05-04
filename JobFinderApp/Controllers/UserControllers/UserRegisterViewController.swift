@@ -42,7 +42,7 @@ class UserRegisterViewController: UIViewController {
             registerUser.password = passwordInput.text ?? ""
             registerUser.phoneNumber = phoneNumberInput.text ?? ""
             
-            var res = try await AuthService().UserRegister(user: registerUser)
+            let res = try await AuthService().UserRegister(user: registerUser)
             
             if res == true{
                 

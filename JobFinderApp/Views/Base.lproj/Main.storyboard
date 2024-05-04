@@ -245,7 +245,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taG-NH-Mmd">
-                                <rect key="frame" x="43" y="672" width="306" height="35"/>
+                                <rect key="frame" x="43" y="757" width="306" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Kayıt Ol">
@@ -262,6 +262,11 @@
                                 <color key="textColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dm-Gn-w1Y" customClass="GMSMapView">
+                                <rect key="frame" x="43" y="559" width="306" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MKf-pQ-h8s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -272,6 +277,7 @@
                         <outlet property="descriptionInput" destination="Hd0-Ms-kjh" id="pbE-2L-cX2"/>
                         <outlet property="emailInput" destination="Dda-Jc-6xe" id="exw-ye-5se"/>
                         <outlet property="employeeSizeInput" destination="hXQ-5D-ywi" id="f50-uI-gwi"/>
+                        <outlet property="mapView" destination="1Dm-Gn-w1Y" id="H71-LT-44a"/>
                         <outlet property="passwordInput" destination="9Zw-SQ-WZX" id="OCq-Fd-Z4Z"/>
                         <outlet property="phoneNumberInput" destination="qnx-rc-hUs" id="nX9-C8-rjJ"/>
                         <outlet property="sectorInput" destination="TVT-kH-iFR" id="psv-rM-Pvg"/>
