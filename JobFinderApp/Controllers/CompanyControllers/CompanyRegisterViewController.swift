@@ -18,24 +18,26 @@ class CompanyRegisterViewController: UIViewController {
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
+    @IBOutlet weak var adressInput: UITextField!
     
+    @IBOutlet weak var mapView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let options = GMSMapViewOptions()
-        options.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        options.frame = self.view.bounds
-        let mapView = GMSMapView(options: options)
-        self.view.addSubview(mapView)
+        options.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0);
 
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
-        // Do any additional setup after loading the view.
+            // GMSMapView'i oluşturun ve istediğiniz konuma ekleyin
+        let googleMapView = GMSMapView(frame: self.mapView.bounds, camera: options.camera!)
+            self.mapView.addSubview(googleMapView)
+
+            // Harita üzerinde bir işaretçi oluşturun
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+            marker.title = "Sydney"
+            marker.snippet = "Australia"
+            marker.map = googleMapView
     }
     
     @IBAction func RegisterButton(_ sender: Any) {
