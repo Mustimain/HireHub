@@ -24,6 +24,7 @@
 		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
 		CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */; };
 		CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */; };
+		CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */; };
 		CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DA2BE2C1B000999945 /* Company.swift */; };
 		CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DD2BE2C3BC00999945 /* AuthService.swift */; };
 		CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83E32BE2C79900999945 /* CompanyLoginViewController.swift */; };
@@ -57,6 +58,7 @@
 		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAddViewController.swift; sourceTree = "<group>"; };
 		CFAE83DA2BE2C1B000999945 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CFAE83DD2BE2C3BC00999945 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CFAE83E32BE2C79900999945 /* CompanyLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLoginViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */,
 				CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */,
 				CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */,
+				CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */,
 			);
 			path = CompanyControllers;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
 				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
 				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
+				CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */,
 				CF62B40B2BDEB0940020E29E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

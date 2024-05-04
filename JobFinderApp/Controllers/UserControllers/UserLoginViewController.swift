@@ -11,10 +11,13 @@ class UserLoginViewController: UIViewController {
 
     @IBOutlet weak var userEmailInput: UITextField!
     @IBOutlet weak var userPasswordInput: UITextField!
+    @IBOutlet weak var userRegisterLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(GoRegisterViewTap))
+        userRegisterLabel.isUserInteractionEnabled = true
+        userRegisterLabel.addGestureRecognizer(tap)
     }
     
 
@@ -24,8 +27,8 @@ class UserLoginViewController: UIViewController {
             let res = try await AuthService().UserLogin(email: userEmailInput.text ?? "", password: userPasswordInput.text ?? "");
             
             if (res == true){
-                if let userRegisterVC = storyboard?.instantiateViewController(withIdentifier: "UserRegisterViewController") as? UserRegisterViewController{
-                    navigationController?.pushViewController(userRegisterVC, animated: true)
+                if let userHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
+                    navigationController?.pushViewController(userHomeTabbarController, animated: true)
                     
                 }
             }
@@ -44,5 +47,13 @@ class UserLoginViewController: UIViewController {
          
             }
         }
+    
+    @objc func GoRegisterViewTap(sender:UITapGestureRecognizer) {
+        
+        if let userRegisterViewController = storyboard?.instantiateViewController(withIdentifier: "UserRegisterViewController") as? UserRegisterViewController{
+            navigationController?.pushViewController(userRegisterViewController, animated: true)
+        }
     }
+    
+}
 

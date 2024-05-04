@@ -14,7 +14,7 @@ struct Company : Codable{
     @DocumentID var  companyID : String? = UUID().uuidString
     var name : String?
     var sectorID : String?
-    var employeeSize : Int?
+    var employeeSize : String?
     var avarageSalary : String?
     var locationLong : String?
     var locationLat : String?

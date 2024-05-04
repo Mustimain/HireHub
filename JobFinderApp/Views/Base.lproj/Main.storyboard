@@ -64,8 +64,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq8-Ew-a17">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq8-Ew-a17">
                                 <rect key="frame" x="43" y="569" width="306" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Giriş Yap">
                                     <color key="baseBackgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,30 +75,35 @@
                                     <action selector="LoginButton:" destination="4Li-hJ-QV4" eventType="touchUpInside" id="qbT-Qh-Gtv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-HV-4VR">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-HV-4VR">
                                 <rect key="frame" x="43" y="353" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zih-MW-3mv">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zih-MW-3mv">
                                 <rect key="frame" x="43" y="406" width="306" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Şifremi Unuttum." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9d-hR-Rc8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Şifremi Unuttum." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9d-hR-Rc8">
                                 <rect key="frame" x="233" y="458" width="116" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USER LOGİN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5I-gr-MQN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USER LOGİN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5I-gr-MQN">
                                 <rect key="frame" x="117.66666666666669" y="202" width="158" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hesabın mı yok? Kayıt Ol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qew-Wz-F8S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hesabın mı yok? Kayıt Ol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qew-Wz-F8S">
                                 <rect key="frame" x="103" y="629" width="187" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,28 +111,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9qD-d5-qUr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="s5I-gr-MQN" firstAttribute="top" secondItem="9qD-d5-qUr" secondAttribute="top" constant="143" id="0dj-SC-3tb"/>
-                            <constraint firstItem="0h0-HV-4VR" firstAttribute="centerX" secondItem="s59-QN-XID" secondAttribute="centerX" id="0m1-Zq-Vx2"/>
-                            <constraint firstItem="M9d-hR-Rc8" firstAttribute="trailing" secondItem="jq8-Ew-a17" secondAttribute="trailing" id="2XV-mW-skb"/>
-                            <constraint firstItem="M9d-hR-Rc8" firstAttribute="top" secondItem="Zih-MW-3mv" secondAttribute="bottom" constant="18" id="8sd-Kn-zn5"/>
-                            <constraint firstItem="0h0-HV-4VR" firstAttribute="leading" secondItem="Zih-MW-3mv" secondAttribute="leading" id="9t8-KA-3yN"/>
-                            <constraint firstItem="0h0-HV-4VR" firstAttribute="trailing" secondItem="Zih-MW-3mv" secondAttribute="trailing" id="APr-0L-NS0"/>
-                            <constraint firstItem="jq8-Ew-a17" firstAttribute="centerX" secondItem="Qew-Wz-F8S" secondAttribute="centerX" id="AZh-dN-HYN"/>
-                            <constraint firstItem="s5I-gr-MQN" firstAttribute="centerX" secondItem="0h0-HV-4VR" secondAttribute="centerX" id="AaK-OF-wFn"/>
-                            <constraint firstItem="Zih-MW-3mv" firstAttribute="trailing" secondItem="M9d-hR-Rc8" secondAttribute="trailing" id="P5k-FI-x6B"/>
-                            <constraint firstItem="0h0-HV-4VR" firstAttribute="leading" secondItem="9qD-d5-qUr" secondAttribute="leading" constant="43" id="Xk1-kc-uJ8"/>
-                            <constraint firstItem="M9d-hR-Rc8" firstAttribute="leading" secondItem="9qD-d5-qUr" secondAttribute="leading" constant="233" id="Z4K-DL-VxN"/>
-                            <constraint firstItem="Qew-Wz-F8S" firstAttribute="top" secondItem="jq8-Ew-a17" secondAttribute="bottom" constant="25" id="dhJ-WH-E27"/>
-                            <constraint firstItem="jq8-Ew-a17" firstAttribute="top" secondItem="M9d-hR-Rc8" secondAttribute="bottom" constant="93" id="nDc-Yx-Bhe"/>
-                            <constraint firstItem="Zih-MW-3mv" firstAttribute="top" secondItem="0h0-HV-4VR" secondAttribute="bottom" constant="19" id="sMd-sz-Yn5"/>
-                            <constraint firstItem="Zih-MW-3mv" firstAttribute="leading" secondItem="jq8-Ew-a17" secondAttribute="leading" id="tJh-4Q-Q5a"/>
-                            <constraint firstItem="9qD-d5-qUr" firstAttribute="bottom" secondItem="Qew-Wz-F8S" secondAttribute="bottom" constant="168" id="z91-Kt-0xQ"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="userEmailInput" destination="0h0-HV-4VR" id="NpJ-WP-H0B"/>
                         <outlet property="userPasswordInput" destination="Zih-MW-3mv" id="EtQ-vc-nCC"/>
+                        <outlet property="userRegisterLabel" destination="Qew-Wz-F8S" id="dLV-27-hqy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu9-Dx-taL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,6 +178,11 @@
                         <viewLayoutGuide key="safeArea" id="27b-OT-oWd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="companyEmailInput" destination="7yD-Kl-2A2" id="YqQ-qR-GWx"/>
+                        <outlet property="companyPasswordInput" destination="oQw-S9-Cv7" id="G5E-oD-yfd"/>
+                        <outlet property="registerLabel" destination="Ccy-nP-P8g" id="rxN-r4-CEe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p0s-ZJ-gBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,10 +266,35 @@
                         <viewLayoutGuide key="safeArea" id="MKf-pQ-h8s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="avarageSalaryInput" destination="wk9-wh-9Qz" id="9tc-TE-eW5"/>
+                        <outlet property="companyNameInput" destination="47D-TZ-87W" id="V83-f9-Pg3"/>
+                        <outlet property="descriptionInput" destination="Hd0-Ms-kjh" id="pbE-2L-cX2"/>
+                        <outlet property="emailInput" destination="Dda-Jc-6xe" id="exw-ye-5se"/>
+                        <outlet property="employeeSizeInput" destination="hXQ-5D-ywi" id="f50-uI-gwi"/>
+                        <outlet property="passwordInput" destination="9Zw-SQ-WZX" id="OCq-Fd-Z4Z"/>
+                        <outlet property="phoneNumberInput" destination="qnx-rc-hUs" id="nX9-C8-rjJ"/>
+                        <outlet property="sectorInput" destination="TVT-kH-iFR" id="psv-rM-Pvg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bz-gf-ReD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2907.6335877862593" y="393.66197183098592"/>
+        </scene>
+        <!--Advertise Add View Controller-->
+        <scene sceneID="M45-TV-WSI">
+            <objects>
+                <viewController storyboardIdentifier="AdvertiseAddViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0kS-mf-LIV" customClass="AdvertiseAddViewController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVG-KT-hQe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gTj-us-s3j"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5H-Is-Nes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3731" y="1875"/>
         </scene>
         <!--İlanlarım-->
         <scene sceneID="xIf-rY-np8">
