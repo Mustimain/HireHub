@@ -11,8 +11,11 @@ class UserHomeTabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let tabBarController = self.parent as? UITabBarController {
+            tabBarController.tabBar.barTintColor = UIColor.red
+            tabBarController.tabBar.tintColor = UIColor.white
+        }
     }
     
 

@@ -32,6 +32,7 @@ class UserLoginViewController: UIViewController {
             
             if (res == true){
                 if let userHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
+                    navigationController?.setNavigationBarHidden(true, animated: false)
                     navigationController?.pushViewController(userHomeTabbarController, animated: true)
                     
                 }

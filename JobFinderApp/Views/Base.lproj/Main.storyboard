@@ -277,7 +277,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="adressInput" destination="Ef5-f5-Ikf" id="Isi-R1-2l0"/>
+                        <outlet property="addressInput" destination="Ef5-f5-Ikf" id="vCn-jG-g0j"/>
                         <outlet property="avarageSalaryInput" destination="wk9-wh-9Qz" id="9tc-TE-eW5"/>
                         <outlet property="companyNameInput" destination="47D-TZ-87W" id="V83-f9-Pg3"/>
                         <outlet property="descriptionInput" destination="Hd0-Ms-kjh" id="pbE-2L-cX2"/>
@@ -536,14 +536,24 @@
                     <view key="view" contentMode="scaleToFill" id="17F-rr-K9C">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z72-bg-TZ7">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2nY-Y6-n3A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ana Sayfa" id="fy5-bs-Dtd"/>
+                    <connections>
+                        <outlet property="homeMapView" destination="z72-bg-TZ7" id="QO7-xA-Lo0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyp-Hv-7k7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3485" y="-1068"/>
+            <point key="canvasLocation" x="3484.7328244274809" y="-1068.3098591549297"/>
         </scene>
         <!--User Home Tabbar Controller-->
         <scene sceneID="a3l-dH-S58">

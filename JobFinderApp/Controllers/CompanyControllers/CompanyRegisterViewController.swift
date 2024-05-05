@@ -20,7 +20,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var rePasswordInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
-    @IBOutlet weak var adressInput: UITextField!
+    @IBOutlet weak var addressInput: UITextField!
     
     @IBOutlet weak var mapView: UIView!
     
@@ -37,7 +37,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         googleMapView.delegate = self
 
       getCurrentLocation()
-        options.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 1.0);
+        options.camera = GMSCameraPosition.camera(withLatitude: 41.015137, longitude: 28.979530, zoom: 8.0);
         
         googleMapView.camera = options.camera!
         googleMapView.frame = self.mapView.bounds
@@ -54,13 +54,14 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             registerCompany.description = descriptionInput.text ?? ""
             registerCompany.email = emailInput.text ?? ""
             registerCompany.employeeSize = employeeSizeInput.text ?? ""
-            registerCompany.locationLat = ""
-            registerCompany.locationLong = ""
+            registerCompany.locationLat = marker.position.latitude
+            registerCompany.locationLong = marker.position.longitude
             registerCompany.name = companyNameInput.text ?? ""
             registerCompany.password = passwordInput.text ?? ""
             registerCompany.phoneNumber = passwordInput.text ?? ""
             registerCompany.registerDate = Date.now
             registerCompany.sectorID = sectorInput.text ?? ""
+            registerCompany.address = addressInput.text ?? ""
             
             
             let res = try await AuthService().CompanyRegister(company: registerCompany)
@@ -114,7 +115,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
                     // Adres string'ini oluşturma
                     let addressString = "\(address), \(city), \(country)"
                     
-                    self.adressInput.text = addressString
+                    self.addressInput.text = addressString
                             
                 }
             }

@@ -33,6 +33,7 @@ class CompanyLoginViewController: UIViewController {
             if (res == true){
                 
                 if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
+                    navigationController?.setNavigationBarHidden(true, animated: false)
                     navigationController?.pushViewController(companyHomeTabbarController, animated: true)
                 }
             }

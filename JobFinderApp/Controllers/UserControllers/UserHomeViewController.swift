@@ -6,24 +6,44 @@
 //
 
 import UIKit
+import GoogleMaps
+import CoreLocation
 
-class UserHomeViewController: UIViewController {
+class UserHomeViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate  {
 
+    @IBOutlet weak var homeMapView: UIView!
+    
+    
+    let locationManager = CLLocationManager()
+    let options = GMSMapViewOptions()
+    let marker = GMSMarker()
+    let googleMapView = GMSMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        googleMapView.delegate = self
 
+      getCurrentLocation()
+        options.camera = GMSCameraPosition.camera(withLatitude: 41.015137, longitude: 28.979530, zoom: 8.0);
+        
+        googleMapView.camera = options.camera!
+        googleMapView.frame = self.homeMapView.bounds
+        googleMapView.isMyLocationEnabled = true;
+        self.homeMapView.addSubview(googleMapView)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getCurrentLocation(){
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
-    */
+  
 
 }

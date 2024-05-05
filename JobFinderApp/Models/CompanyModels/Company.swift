@@ -17,8 +17,8 @@ struct Company : Codable{
     var employeeSize : String?
     var avarageSalary : String?
     var address : String?
-    var locationLong : String?
-    var locationLat : String?
+    var locationLong : Double?
+    var locationLat : Double?
     var description : String?
     var email : String?
     var password : String?
