@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -316,14 +317,23 @@
                     <view key="view" contentMode="scaleToFill" id="wS1-uk-bog">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbV-TK-dHS">
+                                <rect key="frame" x="264" y="59" width="113" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="İlan Ekle" subtitle="" imagePadding="5">
+                                    <imageReference key="image" image="plus.square" catalog="system" symbolScale="medium" variableValue="0.0"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="M4H-34-o9q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="İlanlarım" id="woR-uA-ytQ"/>
+                    <tabBarItem key="tabBarItem" title="İlanlarım" image="clipboard" catalog="system" id="woR-uA-ytQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7H-Y6-AVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3731" y="1198"/>
+            <point key="canvasLocation" x="3730.5343511450378" y="1197.8873239436621"/>
         </scene>
         <!--Başvurular-->
         <scene sceneID="PGV-6t-DwL">
@@ -335,7 +345,7 @@
                         <viewLayoutGuide key="safeArea" id="dsw-id-NmP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Başvurular" id="qnm-zV-L8A"/>
+                    <tabBarItem key="tabBarItem" title="Başvurular" image="doc.text.viewfinder" catalog="system" id="qnm-zV-L8A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CF1-Nb-i54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,7 +361,7 @@
                         <viewLayoutGuide key="safeArea" id="Oqy-53-l0r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Raporlar" id="Ids-xa-Ltq"/>
+                    <tabBarItem key="tabBarItem" title="Raporlar" image="doc" catalog="system" id="Ids-xa-Ltq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpl-M7-spr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,7 +377,7 @@
                         <viewLayoutGuide key="safeArea" id="gSl-rT-I1E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hesabım" id="z4i-93-xS0"/>
+                    <tabBarItem key="tabBarItem" title="Hesabım" image="person.crop.circle" catalog="system" id="z4i-93-xS0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfD-6q-zkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -491,7 +501,7 @@
                         <viewLayoutGuide key="safeArea" id="Ptx-aR-OY3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favori İlanlar" id="xFN-OJ-2ZN"/>
+                    <tabBarItem key="tabBarItem" title="Favori İlanlar" image="star" catalog="system" id="xFN-OJ-2ZN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfi-g0-5UG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,7 +517,7 @@
                         <viewLayoutGuide key="safeArea" id="4cl-xA-lbR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Raporlar" id="wGW-kx-E53"/>
+                    <tabBarItem key="tabBarItem" title="Raporlar" image="doc" catalog="system" id="wGW-kx-E53"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78m-6M-gdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -523,7 +533,7 @@
                         <viewLayoutGuide key="safeArea" id="bjW-1R-yM4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hesabım" id="znG-W6-mzp"/>
+                    <tabBarItem key="tabBarItem" title="Hesabım" image="person.crop.circle" catalog="system" id="znG-W6-mzp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8g-nf-odO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -540,13 +550,13 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z72-bg-TZ7">
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.34509803919999998" green="0.50588235290000005" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.63921568630000003" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2nY-Y6-n3A"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ana Sayfa" id="fy5-bs-Dtd"/>
+                    <tabBarItem key="tabBarItem" title="Ana Sayfa" image="map" catalog="system" id="fy5-bs-Dtd"/>
                     <connections>
                         <outlet property="homeMapView" destination="z72-bg-TZ7" id="QO7-xA-Lo0"/>
                     </connections>
@@ -575,10 +585,10 @@
             </objects>
             <point key="canvasLocation" x="3731" y="-325"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="cYU-jb-4Yl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uie-t8-tCV" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uie-t8-tCV" customClass="BaseNavigationController" customModule="JobFinderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ocw-yG-T3F">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -616,6 +626,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clipboard" catalog="system" width="98" height="128"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
+        <image name="doc.text.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="plus.square" catalog="system" width="128" height="114"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

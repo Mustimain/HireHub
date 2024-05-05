@@ -21,8 +21,8 @@ class UserHomeViewController: UIViewController,CLLocationManagerDelegate, GMSMap
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         googleMapView.delegate = self
+
 
       getCurrentLocation()
         options.camera = GMSCameraPosition.camera(withLatitude: 41.015137, longitude: 28.979530, zoom: 8.0);

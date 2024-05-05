@@ -8,22 +8,16 @@
 import UIKit
 
 class CompanyHomeTabbarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.tabBar.backgroundColor = .white
+        self.tabBar.tintColor = UIColor(hex: "#588157")
+        self.tabBar.barTintColor = UIColor(hex: "#588157")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
+

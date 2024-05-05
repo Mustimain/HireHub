@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675892BE7C9870026A4C0 /* BaseNavigationController.swift */; };
 		CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E12BE6AC850090C7C7 /* GoogleMaps */; };
 		CF19D2E42BE6AC850090C7C7 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E32BE6AC850090C7C7 /* GoogleMapsBase */; };
 		CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E52BE6AC850090C7C7 /* GoogleMapsCore */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF1675892BE7C9870026A4C0 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				CF62B3F82BDEA4D70020E29E /* CompanyControllers */,
 				CF62B3F72BDEA4CF0020E29E /* UserControllers */,
 				CF62B3F52BDEA47A0020E29E /* DashboardViewController.swift */,
+				CF1675892BE7C9870026A4C0 /* BaseNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
 				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
 				CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */,
 				CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */,
