@@ -7,8 +7,9 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class CompanyRegisterViewController: UIViewController {
+class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var companyNameInput: UITextField!
     @IBOutlet weak var sectorInput: UITextField!
@@ -17,27 +18,32 @@ class CompanyRegisterViewController: UIViewController {
     @IBOutlet weak var descriptionInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var rePasswordInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
     @IBOutlet weak var adressInput: UITextField!
     
     @IBOutlet weak var mapView: UIView!
     
+    
+    let locationManager = CLLocationManager()
+    let options = GMSMapViewOptions()
+    let marker = GMSMarker()
+    let googleMapView = GMSMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let options = GMSMapViewOptions()
-        options.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0);
+        self.navigationItem.title = "Kayıt Ol"
+        googleMapView.delegate = self
 
-            // GMSMapView'i oluşturun ve istediğiniz konuma ekleyin
-        let googleMapView = GMSMapView(frame: self.mapView.bounds, camera: options.camera!)
-            self.mapView.addSubview(googleMapView)
+      getCurrentLocation()
+        options.camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 1.0);
+        
+        googleMapView.camera = options.camera!
+        googleMapView.frame = self.mapView.bounds
+        googleMapView.isMyLocationEnabled = true;
+        self.mapView.addSubview(googleMapView)
 
-            // Harita üzerinde bir işaretçi oluşturun
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-            marker.title = "Sydney"
-            marker.snippet = "Australia"
-            marker.map = googleMapView
     }
     
     @IBAction func RegisterButton(_ sender: Any) {
@@ -71,6 +77,60 @@ class CompanyRegisterViewController: UIViewController {
                 self.present(alert, animated: true,completion: nil)
                 
             }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue : CLLocationCoordinate2D = manager.location?.coordinate else { return}
+        googleMapView.selectedMarker?.position = locValue
+        googleMapView.camera = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 6.0);
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+            // Marker'ın konumunu tıklanan nokta olarak ayarla
+            marker.position = coordinate
+            
+            // İsteğe bağlı olarak başlık ve açıklama ekle
+            marker.title = "İşyeri Konumu"
+            marker.snippet = "Seçilen işyeri konumu"
+            
+            // Marker'ı haritaya ekle
+            marker.map = mapView
+        
+        let geocoder = CLGeocoder()
+        
+            // Koordinatları adrese çevirme
+        geocoder.reverseGeocodeLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { (placemarks, error) in
+            if let error = error {
+                print("Hata: \(error.localizedDescription)")
+            } else {
+                if let placemark = placemarks?.first {
+                    // Adres bilgisini alma
+                    let address = placemark.thoroughfare ?? "" // Cadde adı
+                    let city = placemark.locality ?? "" // Şehir
+                    let country = placemark.country ?? "" // Ülke
+                    
+                    // Adres string'ini oluşturma
+                    let addressString = "\(address), \(city), \(country)"
+                    
+                    self.adressInput.text = addressString
+                            
+                }
+            }
+            
+            }
+        }
+
+    
+    func getCurrentLocation(){
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
         }
     }
         
