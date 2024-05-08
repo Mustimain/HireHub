@@ -32,9 +32,13 @@ class CompanyLoginViewController: UIViewController {
             
             if (res == true){
                 
-                if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
-                    navigationController?.setNavigationBarHidden(true, animated: false)
-                    navigationController?.pushViewController(companyHomeTabbarController, animated: true)
+                GlobalVeriables.currentCompany = try await AuthService().GetCompanyByEmail(email: self.companyEmailInput.text!)
+                if ((GlobalVeriables.currentCompany?.name?.count ?? 0)! > 0){
+                    
+                    if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
+                        navigationController?.pushViewController(companyHomeTabbarController, animated: true)
+                }
+             
                 }
             }
             else{

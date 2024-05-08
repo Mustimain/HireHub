@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675892BE7C9870026A4C0 /* BaseNavigationController.swift */; };
+		CF16758D2BEB86320026A4C0 /* Advertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16758C2BEB86320026A4C0 /* Advertise.swift */; };
+		CF1675912BEB8AB70026A4C0 /* AdvertiseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675902BEB8AB70026A4C0 /* AdvertiseProtocol.swift */; };
+		CF1675932BEB8DA60026A4C0 /* AdvertiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675922BEB8DA60026A4C0 /* AdvertiseService.swift */; };
+		CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */; };
 		CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E12BE6AC850090C7C7 /* GoogleMaps */; };
 		CF19D2E42BE6AC850090C7C7 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E32BE6AC850090C7C7 /* GoogleMapsBase */; };
 		CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2E52BE6AC850090C7C7 /* GoogleMapsCore */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		CF1675892BE7C9870026A4C0 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		CF16758C2BEB86320026A4C0 /* Advertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertise.swift; sourceTree = "<group>"; };
+		CF1675902BEB8AB70026A4C0 /* AdvertiseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseProtocol.swift; sourceTree = "<group>"; };
+		CF1675922BEB8DA60026A4C0 /* AdvertiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseService.swift; sourceTree = "<group>"; };
+		CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVeriables.swift; sourceTree = "<group>"; };
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +109,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF16758B2BEB86210026A4C0 /* AdvertiseModels */ = {
+			isa = PBXGroup;
+			children = (
+				CF16758C2BEB86320026A4C0 /* Advertise.swift */,
+			);
+			path = AdvertiseModels;
+			sourceTree = "<group>";
+		};
+		CF16758E2BEB8A890026A4C0 /* AdvertiseService */ = {
+			isa = PBXGroup;
+			children = (
+				CF1675922BEB8DA60026A4C0 /* AdvertiseService.swift */,
+			);
+			path = AdvertiseService;
+			sourceTree = "<group>";
+		};
+		CF16758F2BEB8A9F0026A4C0 /* AdvertiseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF1675902BEB8AB70026A4C0 /* AdvertiseProtocol.swift */,
+			);
+			path = AdvertiseProtocols;
+			sourceTree = "<group>";
+		};
 		CF19D2F42BE6B1AC0090C7C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +186,8 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
+				CF16758B2BEB86210026A4C0 /* AdvertiseModels */,
 				CFAE83D92BE2C19C00999945 /* CompanyModels */,
 				CF62B40C2BDEBE0F0020E29E /* UserModels */,
 			);
@@ -174,6 +208,7 @@
 		CF62B3F42BDEA3990020E29E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF16758E2BEB8A890026A4C0 /* AdvertiseService */,
 				CFAE83DC2BE2C3AB00999945 /* AuthService */,
 			);
 			path = Services;
@@ -211,6 +246,7 @@
 		CF62B4092BDEB0760020E29E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				CF16758F2BEB8A9F0026A4C0 /* AdvertiseProtocols */,
 				CF62B40D2BDEBE1E0020E29E /* UserProtocols */,
 			);
 			path = Protocols;
@@ -338,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
+				CF16758D2BEB86320026A4C0 /* Advertise.swift in Sources */,
 				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
 				CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */,
 				CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */,
@@ -351,7 +388,10 @@
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
 				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
 				CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */,
+				CF1675912BEB8AB70026A4C0 /* AdvertiseProtocol.swift in Sources */,
 				CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */,
+				CF1675932BEB8DA60026A4C0 /* AdvertiseService.swift in Sources */,
+				CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,

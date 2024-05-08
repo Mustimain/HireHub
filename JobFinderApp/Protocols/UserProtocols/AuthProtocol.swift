@@ -13,5 +13,8 @@ protocol AuthProtocol {
     func UserLogin(email: String, password : String) async throws -> Bool
     func CompanyRegister(company: Company) async throws -> Bool
     func CompanyLogin(email: String, password : String) async throws -> Bool
+    func GetUserByEmail(email: String) async throws -> User
+    func GetCompanyByEmail(email: String) async throws -> Company
+
 
 }

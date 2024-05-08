@@ -49,22 +49,22 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
             
-            var registerCompany = Company()
-            registerCompany.avarageSalary = avarageSalaryInput.text ?? ""
-            registerCompany.description = descriptionInput.text ?? ""
-            registerCompany.email = emailInput.text ?? ""
-            registerCompany.employeeSize = employeeSizeInput.text ?? ""
-            registerCompany.locationLat = marker.position.latitude
-            registerCompany.locationLong = marker.position.longitude
-            registerCompany.name = companyNameInput.text ?? ""
-            registerCompany.password = passwordInput.text ?? ""
-            registerCompany.phoneNumber = passwordInput.text ?? ""
-            registerCompany.registerDate = Date.now
-            registerCompany.sectorID = sectorInput.text ?? ""
-            registerCompany.address = addressInput.text ?? ""
+            var newCompany = Company()
+            newCompany.avarageSalary = avarageSalaryInput.text ?? ""
+            newCompany.description = descriptionInput.text ?? ""
+            newCompany.email = emailInput.text ?? ""
+            newCompany.employeeSize = employeeSizeInput.text ?? ""
+            newCompany.locationLat = marker.position.latitude
+            newCompany.locationLong = marker.position.longitude
+            newCompany.name = companyNameInput.text ?? ""
+            newCompany.password = passwordInput.text ?? ""
+            newCompany.phoneNumber = passwordInput.text ?? ""
+            newCompany.registerDate = Date.now
+            newCompany.sectorID = sectorInput.text ?? ""
+            newCompany.address = addressInput.text ?? ""
             
             
-            let res = try await AuthService().CompanyRegister(company: registerCompany)
+            let res = try await AuthService().CompanyRegister(company: newCompany)
             
             if res == true{
                 

@@ -12,6 +12,8 @@ class CompanyHomeTabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.setHidesBackButton(true, animated: false)
+        
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = UIColor(hex: "#588157")
         self.tabBar.barTintColor = UIColor(hex: "#588157")

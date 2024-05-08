@@ -7,11 +7,10 @@
 
 import UIKit
 
-class UserRegisterViewController: UIViewController {
+class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
     
     @IBOutlet weak var firstNameInput: UITextField!
-    
     @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var jobInput: UITextField!
     @IBOutlet weak var experienceYearInput: UITextField!
@@ -20,29 +19,43 @@ class UserRegisterViewController: UIViewController {
     @IBOutlet weak var rePasswordInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
     
+    var jobPickerView = UIPickerView();
+    var experienceYearPickerView = UIPickerView();
+    var experienceYears : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        experienceYears = ["0 - 1", "1 - 3" ,"3 - 5","5 - 10","10+"]
+
+        jobInput.inputView = jobPickerView;
+        experienceYearInput.inputView = experienceYearPickerView;
         
-        // Do any additional setup after loading the view.
+        jobPickerView.delegate = self;
+        jobPickerView.dataSource = self;
+        experienceYearPickerView.delegate = self;
+        experienceYearPickerView.dataSource = self;
+        
+        jobPickerView.tag = 1
+        experienceYearPickerView.tag = 2
     }
 
     @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
             
             
-            var registerUser = User()
-            registerUser.firstName = firstNameInput.text ?? ""
-            registerUser.lastName = lastNameInput.text ?? ""
-            registerUser.email = emailInput.text ?? ""
-            registerUser.createDate = Date.now
-            registerUser.cvPath = ""
-            registerUser.emailVerification = true
-            registerUser.experienceYear = experienceYearInput.text ?? ""
-            registerUser.job = jobInput.text ?? ""
-            registerUser.password = passwordInput.text ?? ""
-            registerUser.phoneNumber = phoneNumberInput.text ?? ""
+            var newUser = User()
+            newUser.firstName = firstNameInput.text ?? ""
+            newUser.lastName = lastNameInput.text ?? ""
+            newUser.email = emailInput.text ?? ""
+            newUser.createDate = Date.now
+            newUser.cvPath = ""
+            newUser.emailVerification = true
+            newUser.experienceYear = experienceYearInput.text ?? ""
+            newUser.job = jobInput.text ?? ""
+            newUser.password = passwordInput.text ?? ""
+            newUser.phoneNumber = phoneNumberInput.text ?? ""
             
-            let res = try await AuthService().UserRegister(user: registerUser)
+            let res = try await AuthService().UserRegister(user: newUser)
             
             if res == true{
                 
@@ -57,15 +70,65 @@ class UserRegisterViewController: UIViewController {
                 
             }
         }
-            
-            /*
-             if let userTabbarNavigationVC = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
-             navigationController?.setNavigationBarHidden(true, animated: false)
-             navigationController?.pushViewController(userTabbarNavigationVC, animated: true)
-             }
-             
-             */
+        
+        }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 1{
+            return experienceYears.count
+        }
+        if pickerView.tag == 2{
+            return experienceYears.count
+
+        }
+        return experienceYears.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        switch pickerView.tag{
+        case 1:
+            experienceYears[row]
+        case 2:
+            experienceYears[row]
+        default:
+            return "Data not found"
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView.tag{
+        case 1:
+            jobInput.text = experienceYears[row]
+        case 2:
+            jobInput.text = experienceYears[row]
+        default:
+            break
         }
         
     }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        // Metin rengini değiştirmek için bir UILabel oluşturuyoruz
+        var label = view as? UILabel
+        if label == nil {
+            label = UILabel()
+            label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
+            label?.textAlignment = .center
+        }
+        
+        // Metin rengini istediğiniz şekilde ayarlayabilirsiniz
+        label?.text = experienceYears[row]
+        label?.textColor = UIColor.black // Metin rengini burada değiştirin
+        
+        return label!
+    }
+    
 
+}

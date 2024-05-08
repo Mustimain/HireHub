@@ -10,6 +10,7 @@ import Firebase
 
 
 class AuthService : AuthProtocol {
+  
     
     let db = Firestore.firestore()
     
@@ -43,7 +44,6 @@ class AuthService : AuthProtocol {
             }
         }
         
-        // 3. Return the fetched users
         return false;
     }
     
@@ -51,7 +51,7 @@ class AuthService : AuthProtocol {
         
         if (company.companyID?.count ?? 0 > 0){
             do {
-                try db.collection("Companies").document(company.companyID ?? "").setData(from: company)
+                try db.collection("Companies").document(company.companyID!).setData(from: company)
                 return true;
             } catch _ {
                 return false;
@@ -80,5 +80,43 @@ class AuthService : AuthProtocol {
         
         return false
     }
+    
+    func GetUserByEmail(email: String) async throws -> User {
+        
+        let query = db.collection("Users").whereField("email", isEqualTo: email)
+        let querySnapshot = try await query.getDocuments()
+        
+        for document in querySnapshot.documents {
+            do {
+                let user = try document.data(as: User.self)
+                if(user.email == email){
+                    return user;
+                }
+            } catch {
+            }
+        }
+        
+        return User();
+    }
+    
+    
+    func GetCompanyByEmail(email: String) async throws -> Company {
+        
+        let query = db.collection("Companies").whereField("email", isEqualTo: email)
+        let querySnapshot = try await query.getDocuments()
+        
+        for document in querySnapshot.documents {
+            do {
+                let company = try document.data(as: Company.self)
+                if(company.email == email){
+                    return company;
+                }
+            } catch {
+            }
+        }
+        
+        return Company();
+    }
+    
     
 }
