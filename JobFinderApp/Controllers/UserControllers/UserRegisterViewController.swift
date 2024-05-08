@@ -37,6 +37,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         
         jobPickerView.tag = 1
         experienceYearPickerView.tag = 2
+
     }
 
     @IBAction func RegisterButton(_ sender: Any) {
@@ -106,8 +107,12 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobInput.text = experienceYears[row]
+            jobInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+
         case 2:
-            jobInput.text = experienceYears[row]
+            experienceYearInput.text = experienceYears[row]
+            experienceYearInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+
         default:
             break
         }
