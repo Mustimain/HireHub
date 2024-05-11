@@ -11,8 +11,7 @@ import Firebase
 
 class DashboardViewController: UIViewController {
 
-    var list: [Sector] = []
-    var list1: [Job] = []
+    var jobDetailList: [JobDetail] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +39,7 @@ class DashboardViewController: UIViewController {
     @IBAction func AddSector(_ sender: Any) {
         Task { @MainActor in
             
-            self.list  = try await SectorService().GetAllSectors();
-            self.list1  = try await JobService().GetAllJobs();
+            self.jobDetailList  = try await JobService().GetAllJobDetails();
 
         }
     }

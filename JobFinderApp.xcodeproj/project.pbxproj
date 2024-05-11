@@ -55,6 +55,7 @@
 		CFEDDC6D2BEFF7560064CF0F /* JobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC6C2BEFF7560064CF0F /* JobProtocol.swift */; };
 		CFEDDC722BEFF8710064CF0F /* SectorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC712BEFF8710064CF0F /* SectorService.swift */; };
 		CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC732BEFF88A0064CF0F /* JobService.swift */; };
+		CFEDDC762BF002100064CF0F /* JobDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC752BF002100064CF0F /* JobDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		CFEDDC6C2BEFF7560064CF0F /* JobProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobProtocol.swift; sourceTree = "<group>"; };
 		CFEDDC712BEFF8710064CF0F /* SectorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorService.swift; sourceTree = "<group>"; };
 		CFEDDC732BEFF88A0064CF0F /* JobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobService.swift; sourceTree = "<group>"; };
+		CFEDDC752BF002100064CF0F /* JobDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,9 +200,9 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
 				CFEDDC612BEFF15D0064CF0F /* JobModels */,
 				CFEDDC5E2BEFEC780064CF0F /* SectorModels */,
-				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
 				CF16758B2BEB86210026A4C0 /* AdvertiseModels */,
 				CFAE83D92BE2C19C00999945 /* CompanyModels */,
 				CF62B40C2BDEBE0F0020E29E /* UserModels */,
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				CFEDDC622BEFF16A0064CF0F /* Jobs.swift */,
+				CFEDDC752BF002100064CF0F /* JobDetail.swift */,
 			);
 			path = JobModels;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEDDC762BF002100064CF0F /* JobDetail.swift in Sources */,
 				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
 				CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */,
 				CFEDDC6D2BEFF7560064CF0F /* JobProtocol.swift in Sources */,

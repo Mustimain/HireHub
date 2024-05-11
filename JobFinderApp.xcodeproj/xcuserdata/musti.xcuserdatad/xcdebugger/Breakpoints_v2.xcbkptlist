@@ -14,10 +14,10 @@
             filePath = "JobFinderApp/Controllers/CompanyControllers/CompanyRegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "CompanyRegisterViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,8 +46,8 @@
             filePath = "JobFinderApp/Controllers/DashboardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "AddSector(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,74 +56,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "01379CEE-D884-41CC-ACD2-B51662D241D1"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JobFinderApp/Controllers/DashboardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "AddSector(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "01379CEE-D884-41CC-ACD2-B51662D241D1 - a89e0b4a3add7420"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async throws -&gt; () in JobFinderApp.DashboardViewController.AddSector(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-               <Location
-                  uuid = "01379CEE-D884-41CC-ACD2-B51662D241D1 - d1c5e396a9809f3e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in JobFinderApp.DashboardViewController.AddSector(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-               <Location
-                  uuid = "01379CEE-D884-41CC-ACD2-B51662D241D1 - ad120eea0d7ce131"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in JobFinderApp.DashboardViewController.AddSector(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-               <Location
-                  uuid = "01379CEE-D884-41CC-ACD2-B51662D241D1 - 7820b94de168c330"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in JobFinderApp.DashboardViewController.AddSector(Any) -&gt; ()"
-                  moduleName = "JobFinderApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/musti/Desktop/Projects/Swift/JobFinderApp/JobFinderApp/Controllers/DashboardViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

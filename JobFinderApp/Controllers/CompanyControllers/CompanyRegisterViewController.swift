@@ -9,7 +9,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var companyNameInput: UITextField!
     @IBOutlet weak var sectorInput: UITextField!
@@ -30,6 +30,12 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     let marker = GMSMarker()
     let googleMapView = GMSMapView()
     
+    var sectorPicker = UIPickerView();
+
+    
+    var sectorList: [Sector] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +49,18 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         googleMapView.frame = self.mapView.bounds
         googleMapView.isMyLocationEnabled = true;
         self.mapView.addSubview(googleMapView)
-
+        
+        sectorPicker.delegate = self;
+        sectorPicker.dataSource = self;
+        
+        sectorInput.inputView = sectorPicker;
+        
+        sectorPicker.tag = 1
+        
+        Task { @MainActor in
+            
+            await GetAllSector()
+        }
     }
     
     @IBAction func RegisterButton(_ sender: Any) {
@@ -132,6 +149,71 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 1{
+            return sectorList.count
+        }
+    
+        return  1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        switch pickerView.tag{
+        case 1:
+            sectorList[row]
+        default:
+            return "Data not found"
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView.tag{
+        case 1:
+            sectorInput.text = sectorList[row].name
+            sectorInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+
+        default:
+            break
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = view as? UILabel
+        if label == nil {
+            label = UILabel()
+            label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
+            label?.textAlignment = .center
+            label?.textColor = UIColor.black // Metin rengini burada değiştirin
+
+        }
+        
+        switch pickerView.tag{
+        case 1:
+            label?.text = sectorList[row].name
+            label?.textColor = UIColor.black
+        default:
+            label?.text =  "Data not found"
+        }
+  
+        
+        return label!
+    }
+    
+    func GetAllSector() async{
+        Task { @MainActor in
+            
+            self.sectorList  = try await SectorService().GetAllSectors();
         }
     }
         
