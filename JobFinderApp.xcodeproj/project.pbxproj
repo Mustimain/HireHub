@@ -49,6 +49,12 @@
 		CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */; };
 		CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */; };
 		CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */; };
+		CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */; };
+		CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC622BEFF16A0064CF0F /* Jobs.swift */; };
+		CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */; };
+		CFEDDC6D2BEFF7560064CF0F /* JobProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC6C2BEFF7560064CF0F /* JobProtocol.swift */; };
+		CFEDDC722BEFF8710064CF0F /* SectorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC712BEFF8710064CF0F /* SectorService.swift */; };
+		CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC732BEFF88A0064CF0F /* JobService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +91,12 @@
 		CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJobApplicationViewController.swift; sourceTree = "<group>"; };
 		CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyReportsViewController.swift; sourceTree = "<group>"; };
 		CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileViewController.swift; sourceTree = "<group>"; };
+		CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
+		CFEDDC622BEFF16A0064CF0F /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorProtocol.swift; sourceTree = "<group>"; };
+		CFEDDC6C2BEFF7560064CF0F /* JobProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobProtocol.swift; sourceTree = "<group>"; };
+		CFEDDC712BEFF8710064CF0F /* SectorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorService.swift; sourceTree = "<group>"; };
+		CFEDDC732BEFF88A0064CF0F /* JobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +198,8 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CFEDDC612BEFF15D0064CF0F /* JobModels */,
+				CFEDDC5E2BEFEC780064CF0F /* SectorModels */,
 				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
 				CF16758B2BEB86210026A4C0 /* AdvertiseModels */,
 				CFAE83D92BE2C19C00999945 /* CompanyModels */,
@@ -208,6 +222,8 @@
 		CF62B3F42BDEA3990020E29E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CFEDDC652BEFF6A70064CF0F /* JobService */,
+				CFEDDC642BEFF69C0064CF0F /* SectorService */,
 				CF16758E2BEB8A890026A4C0 /* AdvertiseService */,
 				CFAE83DC2BE2C3AB00999945 /* AuthService */,
 			);
@@ -246,6 +262,8 @@
 		CF62B4092BDEB0760020E29E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				CFEDDC672BEFF6CA0064CF0F /* JobProtocols */,
+				CFEDDC662BEFF6BB0064CF0F /* SectorProtocols */,
 				CF16758F2BEB8A9F0026A4C0 /* AdvertiseProtocols */,
 				CF62B40D2BDEBE1E0020E29E /* UserProtocols */,
 			);
@@ -282,6 +300,54 @@
 				CFAE83DD2BE2C3BC00999945 /* AuthService.swift */,
 			);
 			path = AuthService;
+			sourceTree = "<group>";
+		};
+		CFEDDC5E2BEFEC780064CF0F /* SectorModels */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */,
+			);
+			path = SectorModels;
+			sourceTree = "<group>";
+		};
+		CFEDDC612BEFF15D0064CF0F /* JobModels */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC622BEFF16A0064CF0F /* Jobs.swift */,
+			);
+			path = JobModels;
+			sourceTree = "<group>";
+		};
+		CFEDDC642BEFF69C0064CF0F /* SectorService */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC712BEFF8710064CF0F /* SectorService.swift */,
+			);
+			path = SectorService;
+			sourceTree = "<group>";
+		};
+		CFEDDC652BEFF6A70064CF0F /* JobService */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC732BEFF88A0064CF0F /* JobService.swift */,
+			);
+			path = JobService;
+			sourceTree = "<group>";
+		};
+		CFEDDC662BEFF6BB0064CF0F /* SectorProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */,
+			);
+			path = SectorProtocols;
+			sourceTree = "<group>";
+		};
+		CFEDDC672BEFF6CA0064CF0F /* JobProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CFEDDC6C2BEFF7560064CF0F /* JobProtocol.swift */,
+			);
+			path = JobProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +440,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
+				CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */,
+				CFEDDC6D2BEFF7560064CF0F /* JobProtocol.swift in Sources */,
 				CF16758D2BEB86320026A4C0 /* Advertise.swift in Sources */,
 				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
 				CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */,
@@ -386,6 +454,8 @@
 				CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
+				CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */,
+				CFEDDC722BEFF8710064CF0F /* SectorService.swift in Sources */,
 				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
 				CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */,
 				CF1675912BEB8AB70026A4C0 /* AdvertiseProtocol.swift in Sources */,
@@ -393,9 +463,11 @@
 				CF1675932BEB8DA60026A4C0 /* AdvertiseService.swift in Sources */,
 				CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
+				CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,
 				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
+				CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */,
 				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
 				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
 				CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */,

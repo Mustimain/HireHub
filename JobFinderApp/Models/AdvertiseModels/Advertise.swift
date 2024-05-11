@@ -18,11 +18,4 @@ struct Advertise : Codable{
     var  createDate : Date?
     var  title : String?
 
-
-
-
-
-
-    
-    
 }
