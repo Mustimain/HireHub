@@ -17,5 +17,6 @@ struct Advertise : Codable{
     var  description : String?
     var  createDate : Date?
     var  title : String?
+    var isActive : Bool? = true
 
 }
