@@ -14,7 +14,7 @@ class AdvertiseService : AdvertiseProtocol{
     
     let db = Firestore.firestore()
     var advertises : [Advertise] = []
-    var advertiseDetails : [AdvertiseDeteail] = []
+    var advertiseDetails : [AdvertiseDetail] = []
 
     
     func GetAllAdvertiseByCompanyId(companyId: String) async throws -> [Advertise] {
@@ -54,17 +54,25 @@ class AdvertiseService : AdvertiseProtocol{
     
 
     
-    func GetAllAdvertiseDetail() async throws -> [AdvertiseDeteail] {
+    func GetAllAdvertiseDetail() async throws -> [AdvertiseDetail] {
         
-        var allAdvertise = try await self.GetAllAdvertises();
-    
+        let allAdvertise = try await self.GetAllAdvertises();
+        let allCompanies = try await AuthService().GetAllCompanies();
+        
         if allAdvertise.count > 0{
-            for advertise in allAdvertise {
-                var newAdvertiseDetail = AdvertiseDeteail();
-                newAdvertiseDetail.advertise = advertise
-                newAdvertiseDetail.company = GlobalVeriables.currentCompany
-                advertiseDetails.append(newAdvertiseDetail);
+            for company in allCompanies {
+                
+                for advertise in allAdvertise {
+                    if advertise.companyID == company.companyID{
+                        var newAdvertiseDetail = AdvertiseDetail();
+                        newAdvertiseDetail.advertise = advertise
+                        newAdvertiseDetail.company = company
+                        advertiseDetails.append(newAdvertiseDetail);
+                    }
+             
+                }
             }
+     
          
         }
         

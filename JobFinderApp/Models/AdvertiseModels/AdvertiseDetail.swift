@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 
-struct AdvertiseDeteail : Codable{
+struct AdvertiseDetail : Codable{
     
     var  company : Company?
     var  advertise : Advertise?

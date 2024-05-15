@@ -15,6 +15,8 @@ protocol AuthProtocol {
     func CompanyLogin(email: String, password : String) async throws -> Bool
     func GetUserByEmail(email: String) async throws -> User
     func GetCompanyByEmail(email: String) async throws -> Company
+    func GetAllCompanies() async throws -> [Company]
+
 
 
 }

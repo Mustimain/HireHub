@@ -10,9 +10,12 @@ import Firebase
 
 
 class AuthService : AuthProtocol {
+ 
+    
   
     
     let db = Firestore.firestore()
+    var companyList : [Company] = []
     
     func UserRegister(user: User) async throws -> Bool {
         if (user.userID?.count ?? 0 > 0){
@@ -118,5 +121,19 @@ class AuthService : AuthProtocol {
         return Company();
     }
     
-    
+    func GetAllCompanies() async throws -> [Company] {
+        
+        let query = db.collection("Companies")
+        let querySnapshot = try await query.getDocuments()
+        
+        for document in querySnapshot.documents {
+            do {
+                let company = try document.data(as: Company.self)
+                self.companyList.append(company);
+            } catch {
+            }
+        }
+        
+        return companyList;
+    }
 }
