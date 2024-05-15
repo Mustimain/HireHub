@@ -39,6 +39,8 @@
 		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
 		CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */; };
 		CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */; };
+		CF6E2C402BF5406F000179F3 /* CustomMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */; };
+		CF6E2C422BF54086000179F3 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E2C412BF54086000179F3 /* CustomMarker.swift */; };
 		CF7EA3D32BF161E8006BA340 /* AdvertiseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */; };
 		CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */; };
 		CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DA2BE2C1B000999945 /* Company.swift */; };
@@ -83,6 +85,8 @@
 		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF62B40F2BDEBF5E0020E29E /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
 		CF62B4132BDEC6720020E29E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarker.xib; sourceTree = "<group>"; };
+		CF6E2C412BF54086000179F3 /* CustomMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
 		CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseDetail.swift; sourceTree = "<group>"; };
 		CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAddViewController.swift; sourceTree = "<group>"; };
 		CFAE83DA2BE2C1B000999945 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			children = (
 				CF62B3E32BDEA0B60020E29E /* Main.storyboard */,
 				CF62B3E82BDEA0B80020E29E /* LaunchScreen.storyboard */,
+				CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */,
+				CF6E2C412BF54086000179F3 /* CustomMarker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6E2C402BF5406F000179F3 /* CustomMarker.xib in Resources */,
 				CF62B3E72BDEA0B80020E29E /* Assets.xcassets in Resources */,
 				CF62B4142BDEC6720020E29E /* GoogleService-Info.plist in Resources */,
 				CF62B3EA2BDEA0B80020E29E /* Base in Resources */,
@@ -479,6 +486,7 @@
 				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
 				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
 				CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */,
+				CF6E2C422BF54086000179F3 /* CustomMarker.swift in Sources */,
 				CF62B40B2BDEB0940020E29E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

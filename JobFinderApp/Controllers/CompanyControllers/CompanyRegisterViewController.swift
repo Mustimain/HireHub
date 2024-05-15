@@ -23,21 +23,25 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var addressInput: UITextField!
     
     @IBOutlet weak var mapView: UIView!
-    
-    
+
     let locationManager = CLLocationManager()
     let options = GMSMapViewOptions()
     let marker = GMSMarker()
     let googleMapView = GMSMapView()
     
     var sectorPicker = UIPickerView();
+    var employeeSizePicker = UIPickerView();
 
     
     var sectorList: [Sector] = []
+    var employeeSizeList : [String] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        employeeSizeList = ["1 - 10", "10 - 50" ,"50 - 100","100 - 500"," 500 - 1000", "1000+"]
+
         
         self.navigationItem.title = "Kayıt Ol"
         googleMapView.delegate = self
@@ -52,10 +56,13 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         
         sectorPicker.delegate = self;
         sectorPicker.dataSource = self;
+        employeeSizePicker.dataSource = self;
+        employeeSizePicker.delegate  = self;
         
         sectorInput.inputView = sectorPicker;
-        
+        employeeSizeInput.inputView = employeeSizePicker;
         sectorPicker.tag = 1
+        employeeSizePicker.tag = 2
         
         Task { @MainActor in
             
@@ -159,6 +166,8 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1{
             return sectorList.count
+        }else if (pickerView.tag == 2){
+            return employeeSizeList.count
         }
     
         return  1
@@ -169,6 +178,8 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         switch pickerView.tag{
         case 1:
             sectorList[row]
+        case 2:
+            employeeSizeList[row]
         default:
             return "Data not found"
         }
@@ -181,6 +192,9 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         case 1:
             sectorInput.text = sectorList[row].name
             sectorInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+        case 2:
+            employeeSizeInput.text = employeeSizeList[row]
+            employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
 
         default:
             break
@@ -201,6 +215,9 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         switch pickerView.tag{
         case 1:
             label?.text = sectorList[row].name
+            label?.textColor = UIColor.black
+        case 2:
+            label?.text = employeeSizeList[row]
             label?.textColor = UIColor.black
         default:
             label?.text =  "Data not found"

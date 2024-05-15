@@ -53,14 +53,18 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             googleMapView.animate(to: camera)
         }
     }
+ 
+    
 
     func addCompanyMarker(advertiseDetail: AdvertiseDetail) {
+        
         guard let latitude = advertiseDetail.company?.locationLat, let longitude = advertiseDetail.company?.locationLong else { return }
         
         let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let marker = GMSMarker(position: position)
         marker.title = advertiseDetail.company?.name
         marker.snippet = advertiseDetail.company?.address
+        marker.userData = advertiseDetail // AdvertiseDetail nesnesini marker.userData'ya ekle
         marker.map = googleMapView
     }
 
