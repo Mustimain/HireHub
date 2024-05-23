@@ -12,6 +12,8 @@ import Firebase
 class AdvertiseService : AdvertiseProtocol{
 
     
+
+    
     let db = Firestore.firestore()
     var advertises : [Advertise] = []
     var advertiseDetails : [AdvertiseDetail] = []
@@ -94,5 +96,20 @@ class AdvertiseService : AdvertiseProtocol{
     }
     
     
-    
+    func UpdateAdvertise(advertise:Advertise) async throws -> Bool {
+        guard let advertiseID = advertise.advertiseID, !advertiseID.isEmpty else {
+                return false
+            }
+        
+        do {
+                // Advertise modelinin tüm alanlarını içeren bir sözlük oluşturun
+                let advertiseData = try Firestore.Encoder().encode(advertise)
+                
+                // Firestore'da belgeyi güncelle
+                try await db.collection("Advertises").document(advertiseID).updateData(advertiseData)
+                return true
+            } catch {
+                return false
+            }
+    }
 }

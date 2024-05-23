@@ -13,5 +13,6 @@ protocol AdvertiseProtocol {
     func GetAllAdvertises() async throws -> [Advertise]
     func GetAllAdvertiseDetail() async throws -> [AdvertiseDetail]
     func GetAllAdvertiseByCompanyId(companyId : String) async throws -> [Advertise]
+    func UpdateAdvertise(advertise: Advertise) async throws -> Bool
 
 }
