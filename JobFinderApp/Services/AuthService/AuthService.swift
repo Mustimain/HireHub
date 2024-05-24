@@ -10,12 +10,10 @@ import Firebase
 
 
 class AuthService : AuthProtocol {
- 
-    
-  
-    
+      
     let db = Firestore.firestore()
     var companyList : [Company] = []
+    
     
     func UserRegister(user: User) async throws -> Bool {
         if (user.userID?.count ?? 0 > 0){
@@ -136,4 +134,38 @@ class AuthService : AuthProtocol {
         
         return companyList;
     }
+    
+    func UpdateCompany(company: Company) async throws -> Bool {
+        
+        guard let companyID = company.companyID, companyID.count > 0 else {
+               return false
+           }
+           
+           do {
+               // Kullanıcıyı veritabanında güncelle
+               try db.collection("Companies").document(companyID).setData(from: company)
+               return true
+           } catch {
+               // Hata durumunda false döner
+               return false
+           }
+    }
+    
+    func UpdateUser(user: User) async throws -> Bool {
+        
+        guard let userID = user.userID, userID.count > 0 else {
+               return false
+           }
+           
+           do {
+               // Kullanıcıyı veritabanında güncelle
+               try db.collection("Users").document(userID).setData(from: user)
+               return true
+           } catch {
+               // Hata durumunda false döner
+               return false
+           }
+    }
+    
+ 
 }

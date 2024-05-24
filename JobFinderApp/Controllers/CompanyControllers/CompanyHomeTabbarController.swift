@@ -19,6 +19,19 @@ class CompanyHomeTabbarController: UITabBarController {
         self.tabBar.barTintColor = UIColor(hex: "#588157")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+   
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+           super.viewWillDisappear(animated)
+           // Bu view controller'dan çıkıldığında navigation barı tekrar göster
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+       }
+    
     
 }
 
