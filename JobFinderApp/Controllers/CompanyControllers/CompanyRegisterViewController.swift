@@ -35,6 +35,8 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
     
     var sectorList: [Sector] = []
     var employeeSizeList : [String] = []
+    var selectedSector : Sector = Sector()
+    
 
     
     override func viewDidLoad() {
@@ -84,7 +86,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             newCompany.password = passwordInput.text ?? ""
             newCompany.phoneNumber = passwordInput.text ?? ""
             newCompany.registerDate = Date.now
-            newCompany.sectorID = sectorInput.text ?? ""
+            newCompany.sectorID = selectedSector.sectorId ?? ""
             newCompany.address = addressInput.text ?? ""
             
             
@@ -191,6 +193,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         switch pickerView.tag{
         case 1:
             sectorInput.text = sectorList[row].name
+            selectedSector = sectorList[row]
             sectorInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
         case 2:
             employeeSizeInput.text = employeeSizeList[row]

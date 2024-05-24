@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CompanyProfileViewController: UIViewController {
+class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource  {
 
     @IBOutlet weak var companyTitleLabel: UILabel!
     @IBOutlet weak var companyNameInput: UITextField!
@@ -20,19 +20,39 @@ class CompanyProfileViewController: UIViewController {
     @IBOutlet weak var addressInput: UITextField!
     
     var isEditable = false;
-    
+    var selectedSector : Sector = Sector()
+    var sectorPicker = UIPickerView();
+    var employeeSizePicker = UIPickerView();
+    var sectorList: [Sector] = []
+    var employeeSizeList : [String] = ["1 - 10", "10 - 50" ,"50 - 100","100 - 500"," 500 - 1000", "1000+"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sectorPicker.delegate = self;
+        sectorPicker.dataSource = self;
+        employeeSizePicker.dataSource = self;
+        employeeSizePicker.delegate  = self;
+        
+        companySectorInput.inputView = sectorPicker;
+        employeeSizeInput.inputView = employeeSizePicker;
+        sectorPicker.tag = 1
+        employeeSizePicker.tag = 2
         
         self.companyNameInput.isEnabled = isEditable;
         self.companySectorInput.isEnabled = isEditable;
         self.employeeSizeInput.isEnabled = isEditable;
-        self.avarageSalaryInput.isEnabled = isEditable
-        self.descriptionInput.isEnabled = isEditable
-        self.emailInput.isEnabled = isEditable
-        self.phoneNumberInput.isEnabled = isEditable
-        self.addressInput.isEnabled = isEditable
+        self.avarageSalaryInput.isEnabled = isEditable;
+        self.descriptionInput.isEnabled = isEditable;
+        self.emailInput.isEnabled = isEditable;
+        self.phoneNumberInput.isEnabled = isEditable;
+        self.addressInput.isEnabled = isEditable;
         
+        
+        Task { @MainActor in
+            
+            await GetAllSector()
+        }
     }
     
 
@@ -41,7 +61,7 @@ class CompanyProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         companyTitleLabel.text = GlobalVeriables.currentCompany?.name
         companyNameInput.text =  GlobalVeriables.currentCompany?.name
-        companySectorInput.text =  GlobalVeriables.currentCompany?.sectorID
+        companySectorInput.text =  GlobalVeriables.currentCompanySector?.name
         employeeSizeInput.text =  GlobalVeriables.currentCompany?.employeeSize
         avarageSalaryInput.text =  GlobalVeriables.currentCompany?.avarageSalary
         emailInput.text =  GlobalVeriables.currentCompany?.email
@@ -66,7 +86,7 @@ class CompanyProfileViewController: UIViewController {
             if isEditable == true{
                 var updateCompany = GlobalVeriables.currentCompany
                 updateCompany?.name = companyNameInput.text;
-                updateCompany?.sectorID = companySectorInput.text;
+                updateCompany?.sectorID = selectedSector.sectorId
                 updateCompany?.employeeSize = employeeSizeInput.text;
                 updateCompany?.avarageSalary = avarageSalaryInput.text;
                 updateCompany?.description = descriptionInput.text;
@@ -141,6 +161,82 @@ class CompanyProfileViewController: UIViewController {
       
             navigationController?.popToRootViewController(animated: false)
         
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 1{
+            return sectorList.count
+        }else if (pickerView.tag == 2){
+            return employeeSizeList.count
+        }
+    
+        return  1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        switch pickerView.tag{
+        case 1:
+            sectorList[row]
+        case 2:
+            employeeSizeList[row]
+        default:
+            return "Data not found"
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView.tag{
+        case 1:
+            companySectorInput.text = sectorList[row].name
+            selectedSector = sectorList[row]
+            companySectorInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+        case 2:
+            employeeSizeInput.text = employeeSizeList[row]
+            employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+
+        default:
+            break
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = view as? UILabel
+        if label == nil {
+            label = UILabel()
+            label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
+            label?.textAlignment = .center
+            label?.textColor = UIColor.black // Metin rengini burada değiştirin
+
+        }
+        
+        switch pickerView.tag{
+        case 1:
+            label?.text = sectorList[row].name
+            label?.textColor = UIColor.black
+        case 2:
+            label?.text = employeeSizeList[row]
+            label?.textColor = UIColor.black
+        default:
+            label?.text =  "Data not found"
+        }
+  
+        
+        return label!
+    }
+    
+    func GetAllSector() async{
+        Task { @MainActor in
+            
+            self.sectorList  = try await SectorService().GetAllSectors();
+        }
     }
     
 }

@@ -33,12 +33,14 @@ class CompanyLoginViewController: UIViewController {
             if (res == true){
                 
                 GlobalVeriables.currentCompany = try await AuthService().GetCompanyByEmail(email: self.companyEmailInput.text!)
+                GlobalVeriables.currentCompanySector = try await SectorService().GetSectorBySectorId(sectorId: GlobalVeriables.currentCompany?.sectorID ?? "")
+                
                 if ((GlobalVeriables.currentCompany?.name?.count ?? 0)! > 0){
                     
                     if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
                         navigationController?.pushViewController(companyHomeTabbarController, animated: true)
                 }
-             
+                    
                 }
             }
             else{

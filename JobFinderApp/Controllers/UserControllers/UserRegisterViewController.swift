@@ -58,7 +58,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
             newUser.cvPath = ""
             newUser.emailVerification = true
             newUser.experienceYear = experienceYearInput.text ?? ""
-            newUser.job = jobInput.text ?? ""
+            newUser.jobId = jobInput.text ?? ""
             newUser.password = passwordInput.text ?? ""
             newUser.phoneNumber = phoneNumberInput.text ?? ""
             
