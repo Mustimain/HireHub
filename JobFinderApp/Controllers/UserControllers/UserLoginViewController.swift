@@ -29,8 +29,11 @@ class UserLoginViewController: UIViewController {
         Task { @MainActor in
             
             let res = try await AuthService().UserLogin(email: userEmailInput.text ?? "", password: userPasswordInput.text ?? "");
+            GlobalVeriables.currentUser =  try await AuthService().GetUserByEmail(email: userEmailInput.text!)
+            GlobalVeriables.currentUserJob = try await JobService().GetJobByJobId(jobId: (GlobalVeriables.currentUser?.jobId)!)
             
             if (res == true){
+            
                 if let userHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
                     navigationController?.setNavigationBarHidden(true, animated: false)
                     navigationController?.pushViewController(userHomeTabbarController, animated: true)

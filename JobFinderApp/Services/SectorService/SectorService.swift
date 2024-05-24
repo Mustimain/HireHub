@@ -12,7 +12,7 @@ class SectorService : SectorProtocol{
     
     let db = Firestore.firestore()
     var sectors : [Sector] = []
-
+    
     func GetAllSectors() async throws -> [Sector] {
         
         let query = db.collection("Sectors")
@@ -31,19 +31,21 @@ class SectorService : SectorProtocol{
     
     func GetSectorBySectorId(sectorId: String) async throws -> Sector {
         
-        let query = db.collection("Sectors").whereField("sectorId", isEqualTo: sectorId)
-        let querySnapshot = try await query.getDocuments()
+        let documentRef = db.collection("Sectors").document(sectorId)
         
-        for document in querySnapshot.documents {
-            do {
-                let sector = try document.data(as: Sector.self)
-                return sector;
-            } catch {
-            }
+        let documentSnapshot = try await documentRef.getDocument()
+        
+        do {
+            let sector = try documentSnapshot.data(as: Sector.self)
+            return sector
+            
+        }
+        catch{
+            return Sector()
         }
         
-        return Sector();
     }
-    
-    
 }
+    
+    
+

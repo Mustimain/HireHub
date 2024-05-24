@@ -24,6 +24,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     var experienceYears : [String] = []
     
     var jobDetailList: [JobDetail] = []
+    var selectedJob : Job = Job()
 
     override func viewDidLoad()  {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
             newUser.cvPath = ""
             newUser.emailVerification = true
             newUser.experienceYear = experienceYearInput.text ?? ""
-            newUser.jobId = jobInput.text ?? ""
+            newUser.jobId = selectedJob.jobId ?? ""
             newUser.password = passwordInput.text ?? ""
             newUser.phoneNumber = phoneNumberInput.text ?? ""
             
@@ -113,6 +114,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobInput.text = jobDetailList[row].job?.name
+            selectedJob = jobDetailList[row].job!
             jobInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
         case 2:
             experienceYearInput.text = experienceYears[row]

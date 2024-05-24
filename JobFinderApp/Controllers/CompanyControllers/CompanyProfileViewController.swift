@@ -59,6 +59,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         companyTitleLabel.text = GlobalVeriables.currentCompany?.name
         companyNameInput.text =  GlobalVeriables.currentCompany?.name
         companySectorInput.text =  GlobalVeriables.currentCompanySector?.name

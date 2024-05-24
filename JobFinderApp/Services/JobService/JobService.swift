@@ -50,18 +50,18 @@ class JobService : JobProtocol{
     
     func GetJobByJobId(jobId: String) async throws -> Job {
         
-        let query = db.collection("Jobs").whereField("jobId", isEqualTo: jobId)
-        let querySnapshot = try await query.getDocuments()
+        let documentRef = db.collection("Jobs").document(jobId)
         
-        for document in querySnapshot.documents {
-            do {
-                let job = try document.data(as: Job.self)
-                return job;
-            } catch {
-            }
+        let documentSnapshot = try await documentRef.getDocument()
+        
+        do {
+            let job = try documentSnapshot.data(as: Job.self)
+            return job
+            
         }
-        
-        return Job();
+        catch{
+            return Job()
+        }
 
     }
     
