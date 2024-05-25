@@ -42,8 +42,8 @@
 		CF6373102BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF63730F2BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift */; };
 		CF6373132BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6373122BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift */; };
 		CF6E2C402BF5406F000179F3 /* CustomMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */; };
-		CF6E2C422BF54086000179F3 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6E2C412BF54086000179F3 /* CustomMarker.swift */; };
 		CF7EA3D32BF161E8006BA340 /* AdvertiseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */; };
+		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
 		CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */; };
 		CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DA2BE2C1B000999945 /* Company.swift */; };
 		CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DD2BE2C3BC00999945 /* AuthService.swift */; };
@@ -90,8 +90,8 @@
 		CF63730F2BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAdvertiseDetailViewController.swift; sourceTree = "<group>"; };
 		CF6373122BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCustomTableViewCell.swift; sourceTree = "<group>"; };
 		CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarker.xib; sourceTree = "<group>"; };
-		CF6E2C412BF54086000179F3 /* CustomMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
 		CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseDetail.swift; sourceTree = "<group>"; };
+		CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesViewController.swift; sourceTree = "<group>"; };
 		CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAddViewController.swift; sourceTree = "<group>"; };
 		CFAE83DA2BE2C1B000999945 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CFAE83DD2BE2C3BC00999945 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -206,7 +206,6 @@
 				CF62B3E32BDEA0B60020E29E /* Main.storyboard */,
 				CF62B3E82BDEA0B80020E29E /* LaunchScreen.storyboard */,
 				CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */,
-				CF6E2C412BF54086000179F3 /* CustomMarker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +255,7 @@
 				CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */,
 				CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */,
 				CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */,
+				CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */,
 			);
 			path = UserControllers;
 			sourceTree = "<group>";
@@ -495,6 +495,7 @@
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
 				CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
+				CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */,
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,
 				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
 				CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */,
@@ -502,7 +503,6 @@
 				CF6373102BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift in Sources */,
 				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
 				CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */,
-				CF6E2C422BF54086000179F3 /* CustomMarker.swift in Sources */,
 				CF62B40B2BDEB0940020E29E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
