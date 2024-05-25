@@ -10,15 +10,15 @@ import Firebase
 
 
 class DashboardViewController: UIViewController {
-
+    
     var jobDetailList: [JobDetail] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
-
+    
     @IBAction func UserLoginButton(_ sender: Any) {
         
         if let userLoginVC = storyboard?.instantiateViewController(withIdentifier: "UserLoginViewController") as? UserLoginViewController{
@@ -35,25 +35,14 @@ class DashboardViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func AddSector(_ sender: Any) {
-        Task { @MainActor in
-            
-            self.jobDetailList  = try await JobService().GetAllJobDetails();
 
-        }
-    }
-    
-    
     /*
-     
-   
-
+    
     @IBAction func AddSector(_ sender: Any) {
         
         let db = Firestore.firestore()
-
-
+        
+        
         // Örnek veri seti (sektörler ve meslekler)
         let sectorsAndJobs: [String: [String]] = [
             "Adalet ve Güvenlik": ["Avukat", "Hakim", "Polis Memuru", "Güvenlik Görevlisi", "Özel Dedektif"],
@@ -84,8 +73,8 @@ class DashboardViewController: UIViewController {
             "Turizm, Konaklama, Yiyecek-İçecek Hizmetleri": ["Otel Yöneticisi", "Turist Rehberi", "Aşçı", "Barista"],
             "Ulaştırma, Lojistik ve Haberleşme": ["Lojistik Uzmanı", "Kargo Kuryesi", "Telekomünikasyon Teknisyeni", "Uçak Pilotu"]
         ]
-
-
+        
+        
         for (sector, jobs) in sectorsAndJobs {
             let sectorRef = db.collection("Sectors").document()
             
@@ -101,7 +90,7 @@ class DashboardViewController: UIViewController {
                     for job in jobs {
                         db.collection("Jobs").addDocument(data: [
                             "name": job,
-                            "sectorId": sectorRef.documentID  // Sektör belge kimliği ile ilişkilendirme
+                            "sectorID": sectorRef.documentID  // Sektör belge kimliği ile ilişkilendirme
                         ]) { error in
                             if let error = error {
                                 print("Meslek eklenirken hata oluştu: \(error.localizedDescription)")
@@ -113,9 +102,7 @@ class DashboardViewController: UIViewController {
                 }
             }
         }
-     }
      */
-
- 
-    }
+    
+}
     

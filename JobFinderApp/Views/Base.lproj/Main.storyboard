@@ -46,7 +46,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="AddSector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meJ-lq-Yhw"/>
+                                    <action selector="AddSector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNG-jo-XIF"/>
                                 </connections>
                             </button>
                         </subviews>

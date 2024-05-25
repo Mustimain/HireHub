@@ -30,7 +30,7 @@ class UserLoginViewController: UIViewController {
             
             let res = try await AuthService().UserLogin(email: userEmailInput.text ?? "", password: userPasswordInput.text ?? "");
             GlobalVeriables.currentUser =  try await AuthService().GetUserByEmail(email: userEmailInput.text!)
-            GlobalVeriables.currentUserJob = try await JobService().GetJobByJobId(jobId: (GlobalVeriables.currentUser?.jobId)!)
+            GlobalVeriables.currentUserJob = try await JobService().GetJobByJobId(jobId: (GlobalVeriables.currentUser?.jobID)!)
             
             if (res == true){
             

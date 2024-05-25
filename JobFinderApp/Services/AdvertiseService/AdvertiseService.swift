@@ -68,7 +68,7 @@ class AdvertiseService : AdvertiseProtocol{
                     if advertise.companyID == company.companyID{
                         var newAdvertiseDetail = AdvertiseDetail();
                         newAdvertiseDetail.advertise = advertise
-                        newAdvertiseDetail.company = company
+                        newAdvertiseDetail.companyDetail?.company = company
                         advertiseDetails.append(newAdvertiseDetail);
                     }
              

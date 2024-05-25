@@ -25,7 +25,7 @@ class UserAdvertisesViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
-        companyNameInput.text = advertiseDetail?.company?.name
+        companyNameInput.text = advertiseDetail?.companyDetail?.company?.name
         advertiseTitleInput.text = advertiseDetail?.advertise?.title
         jobNameInput.text = advertiseDetail?.advertise?.jobId
         advertiseDescriptionInput.text = advertiseDetail?.advertise?.description

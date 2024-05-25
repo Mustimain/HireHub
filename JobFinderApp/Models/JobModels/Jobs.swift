@@ -10,8 +10,8 @@ import FirebaseFirestore
 
 struct Job : Codable{
     
-    @DocumentID var  jobId : String? = UUID().uuidString
+    @DocumentID var  jobID : String? = UUID().uuidString
     var  name : String?
-    var  sectorId : String?
+    var  sectorID : String?
  
 }

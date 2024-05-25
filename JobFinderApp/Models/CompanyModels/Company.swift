@@ -23,6 +23,8 @@ struct Company : Codable{
     var email : String?
     var password : String?
     var phoneNumber : String?
-    var registerDate : Date?
+    var registerDate : Date?  
+    var updateDate : Date?
+
 
 }

@@ -49,11 +49,11 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     }
     
     func addCompanyMarker(advertiseDetail: AdvertiseDetail) {
-        guard let latitude = advertiseDetail.company?.locationLat, let longitude = advertiseDetail.company?.locationLong else { return }
+        guard let latitude = advertiseDetail.companyDetail?.company?.locationLat, let longitude = advertiseDetail.companyDetail?.company?.locationLong else { return }
         
         let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let marker = GMSMarker(position: position)
-        marker.title = advertiseDetail.company?.name
+        marker.title = advertiseDetail.companyDetail?.company?.name
         marker.snippet = advertiseDetail.advertise?.title
         marker.userData = advertiseDetail
         marker.map = googleMapView

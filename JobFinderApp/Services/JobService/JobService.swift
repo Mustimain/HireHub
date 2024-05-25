@@ -10,14 +10,33 @@ import Firebase
 
 class JobService : JobProtocol{
     
+    
+    let db = Firestore.firestore()
+    var jobs : [Job] = []
+    
+    
+    func GetJobDetailByJobId(jobId: String) async throws -> JobDetail {
+        
+        var jobDetailList = try await self.GetAllJobDetails()
+        for jobDetail in jobDetailList{
+            if jobDetail.job?.jobID == jobId{
+                return jobDetail
+            }
+        }
+        
+        return JobDetail()
+    }
+    
+    
     func GetAllJobDetails() async throws -> [JobDetail] {
+        
         let jobList = try await self.GetAllJobs()
         let sectorList = try await SectorService().GetAllSectors()
         var jobDetailList : [JobDetail] = []
         
         for job in jobList {
             for sector in sectorList{
-                if(job.sectorId == sector.sectorId){
+                if(job.sectorID == sector.sectorID){
                     var newJobDetail = JobDetail()
                     newJobDetail.job = job;
                     newJobDetail.sector = sector;
@@ -29,9 +48,6 @@ class JobService : JobProtocol{
         return jobDetailList;
     }
     
-    
-    let db = Firestore.firestore()
-    var jobs : [Job] = []
     
     func GetAllJobs() async throws -> [Job] {
         let query = db.collection("Jobs")

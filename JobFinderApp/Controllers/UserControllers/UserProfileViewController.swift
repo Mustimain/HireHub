@@ -60,7 +60,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.userFirstNameInput.text = GlobalVeriables.currentUser?.firstName;
         self.userLastNameInput.text = GlobalVeriables.currentUser?.lastName;
         self.jobInput.text = GlobalVeriables.currentUserJob?.name
-        self.experienceYearInput.text = GlobalVeriables.currentUser?.experienceYear;
         self.emailInput.text = GlobalVeriables.currentUser?.email;
         self.phoneNumberInput.text = GlobalVeriables.currentUser?.phoneNumber;
         
@@ -88,8 +87,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 var updateUser = GlobalVeriables.currentUser
                 updateUser?.firstName = userFirstNameInput.text;
                 updateUser?.lastName = userLastNameInput.text;
-                updateUser?.jobId = selectedJob.jobId;
-                updateUser?.experienceYear = experienceYearInput.text;
+                updateUser?.jobID = selectedJob.jobID;
                 updateUser?.email = emailInput.text;
                 updateUser?.phoneNumber = phoneNumberInput.text;
                 

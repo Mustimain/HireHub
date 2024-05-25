@@ -10,11 +10,13 @@ import Firebase
 
 
 class AuthService : AuthProtocol {
+
       
     let db = Firestore.firestore()
     var companyList : [Company] = []
+    var companyDetailList : [CompanyDetail] = []
     
-    
+
     func UserRegister(user: User) async throws -> Bool {
         if (user.userID?.count ?? 0 > 0){
             do {
@@ -166,6 +168,44 @@ class AuthService : AuthProtocol {
                return false
            }
     }
+
+    func GetCompanyDetailByEmail(email: String) async throws -> CompanyDetail {
+        var newCompanyDetail = CompanyDetail()
+        var company = try await self.GetCompanyByEmail(email: email)
+        var sector = try await SectorService().GetSectorBySectorId(sectorId: company.sectorID!)
+        newCompanyDetail.company = company
+        newCompanyDetail.sector = sector
+        return newCompanyDetail;
+        
+    }
     
+    func GetAllCompanyDetails() async throws -> [CompanyDetail] {
+        var companyDetailList : [CompanyDetail] = []
+        var companyList = try await self.GetAllCompanies()
+        var sectorList = try await SectorService().GetAllSectors()
+        
+        for company in companyList{
+            for sector in sectorList{
+                if sector.sectorID == company.sectorID{
+                    var newCompanyDetail = CompanyDetail()
+                    newCompanyDetail.company = company
+                    newCompanyDetail.sector = sector
+                    companyDetailList.append(newCompanyDetail)
+                }
+            }
+        }
+        
+        return companyDetailList
+    }
+    
+    func GetUserDetailByEmail(email: String) async throws -> UserDetail {
+        var newUserDetail = UserDetail()
+        var user = try await self.GetUserByEmail(email: email)
+        var jobDetail = try await JobService().GetJobDetailByJobId(jobId: user.jobID!)
+        newUserDetail.user = user;
+        newUserDetail.jobDetail = jobDetail;
+        
+        return newUserDetail;
+    }
  
 }

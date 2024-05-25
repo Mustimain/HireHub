@@ -87,7 +87,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             if isEditable == true{
                 var updateCompany = GlobalVeriables.currentCompany
                 updateCompany?.name = companyNameInput.text;
-                updateCompany?.sectorID = selectedSector.sectorId
+                updateCompany?.sectorID = selectedSector.sectorID
                 updateCompany?.employeeSize = employeeSizeInput.text;
                 updateCompany?.avarageSalary = avarageSalaryInput.text;
                 updateCompany?.description = descriptionInput.text;

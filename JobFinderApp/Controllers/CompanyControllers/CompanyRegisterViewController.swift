@@ -86,7 +86,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             newCompany.password = passwordInput.text ?? ""
             newCompany.phoneNumber = passwordInput.text ?? ""
             newCompany.registerDate = Date.now
-            newCompany.sectorID = selectedSector.sectorId ?? ""
+            newCompany.sectorID = selectedSector.sectorID ?? ""
             newCompany.address = addressInput.text ?? ""
             
             

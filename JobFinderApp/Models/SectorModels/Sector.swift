@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 struct Sector : Codable{
     
-    @DocumentID var  sectorId : String? = UUID().uuidString
+    @DocumentID var  sectorID : String? = UUID().uuidString
     var  name : String?
  
 }
