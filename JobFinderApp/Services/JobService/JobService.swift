@@ -12,7 +12,6 @@ class JobService : JobProtocol{
     
     
     let db = Firestore.firestore()
-    var jobs : [Job] = []
     
     
     func GetJobDetailByJobId(jobId: String) async throws -> JobDetail {
@@ -50,13 +49,16 @@ class JobService : JobProtocol{
     
     
     func GetAllJobs() async throws -> [Job] {
+        
+        var jobs : [Job] = []
+
         let query = db.collection("Jobs")
         let querySnapshot = try await query.getDocuments()
         
         for document in querySnapshot.documents {
             do {
                 let job = try document.data(as: Job.self)
-                self.jobs.append(job);
+                jobs.append(job);
             } catch {
             }
         }

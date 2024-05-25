@@ -61,6 +61,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
             newUser.jobID = selectedJob.jobID ?? ""
             newUser.password = passwordInput.text ?? ""
             newUser.phoneNumber = phoneNumberInput.text ?? ""
+            newUser.updateDate = Date.now
             
             let res = try await AuthService().UserRegister(user: newUser)
             

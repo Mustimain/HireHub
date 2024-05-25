@@ -11,24 +11,19 @@ import Firebase
 
 class AdvertiseService : AdvertiseProtocol{
 
-    
-
-    
     let db = Firestore.firestore()
-    var advertises : [Advertise] = []
-    var advertiseDetails : [AdvertiseDetail] = []
 
     
     func GetAllAdvertiseByCompanyId(companyId: String) async throws -> [Advertise] {
-        advertises.removeAll(keepingCapacity: false)
         
+        var advertises : [Advertise] = []
         let query = db.collection("Advertises").whereField("companyID", isEqualTo: companyId)
         let querySnapshot = try await query.getDocuments()
         
         for document in querySnapshot.documents {
             do {
                 let advertise = try document.data(as: Advertise.self)
-                self.advertises.append(advertise);
+                advertises.append(advertise);
             } catch {
             }
         }
@@ -38,15 +33,14 @@ class AdvertiseService : AdvertiseProtocol{
     
     
     func GetAllAdvertises() async throws -> [Advertise] {
-        advertises.removeAll(keepingCapacity: false)
-        
+        var advertises : [Advertise] = []
         let query = db.collection("Advertises")
         let querySnapshot = try await query.getDocuments()
         
         for document in querySnapshot.documents {
             do {
                 let advertise = try document.data(as: Advertise.self)
-                self.advertises.append(advertise);
+                advertises.append(advertise);
             } catch {
             }
         }
@@ -57,21 +51,25 @@ class AdvertiseService : AdvertiseProtocol{
 
     
     func GetAllAdvertiseDetail() async throws -> [AdvertiseDetail] {
-        
+        var advertiseDetails : [AdvertiseDetail] = []
         let allAdvertise = try await self.GetAllAdvertises();
         let allCompanies = try await AuthService().GetAllCompanies();
+        let allJobDetails = try await JobService().GetAllJobDetails()
         
         if allAdvertise.count > 0{
-            for company in allCompanies {
-                
-                for advertise in allAdvertise {
-                    if advertise.companyID == company.companyID{
-                        var newAdvertiseDetail = AdvertiseDetail();
-                        newAdvertiseDetail.advertise = advertise
-                        newAdvertiseDetail.companyDetail?.company = company
-                        advertiseDetails.append(newAdvertiseDetail);
+            for jobDetail in allJobDetails {
+                for company in allCompanies {
+                    for advertise in allAdvertise {
+                        if advertise.companyID == company.companyID && advertise.jobId == jobDetail.job?.jobID{
+                            var newAdvertiseDetail = AdvertiseDetail();
+                            newAdvertiseDetail.advertise = advertise
+                            newAdvertiseDetail.companyDetail?.company = company
+                            newAdvertiseDetail.jobDetail = jobDetail;
+                            advertiseDetails.append(newAdvertiseDetail);
+                        }
+                 
                     }
-             
+
                 }
             }
      
@@ -82,17 +80,16 @@ class AdvertiseService : AdvertiseProtocol{
     }
     
     func AddAdvertise(advertise: Advertise) async throws -> Bool {
-        
-        if (advertise.advertiseID?.count ?? 0 > 0){
+        guard let advertiseID = advertise.advertiseID, !advertiseID.isEmpty else {
+                return false
+            }
             do {
                 try db.collection("Advertises").document(advertise.advertiseID!).setData(from: advertise)
                 return true;
             } catch _ {
                 return false;
             }
-        }
         
-        return false;
     }
     
     
@@ -112,4 +109,20 @@ class AdvertiseService : AdvertiseProtocol{
                 return false
             }
     }
+    
+    
+    func GetAllAdvertiseDetailByCompanyId(companyId: String) async throws -> [AdvertiseDetail] {
+        var advertiseDetailList = try await self.GetAllAdvertiseDetail()
+        var filteredAdvertiseDetailList : [AdvertiseDetail] = []
+        
+        for advertisDetail in advertiseDetailList{
+            if companyId == advertisDetail.advertise?.companyID{
+                filteredAdvertiseDetailList.append(advertisDetail)
+            }
+        }
+        
+        return filteredAdvertiseDetailList;
+        
+    }
+    
 }

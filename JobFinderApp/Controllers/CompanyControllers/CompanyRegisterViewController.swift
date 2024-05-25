@@ -88,6 +88,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             newCompany.registerDate = Date.now
             newCompany.sectorID = selectedSector.sectorID ?? ""
             newCompany.address = addressInput.text ?? ""
+            newCompany.updateDate = Date.now
             
             
             let res = try await AuthService().CompanyRegister(company: newCompany)

@@ -56,12 +56,12 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.userFullNameLabel.text = (GlobalVeriables.currentUser?.firstName ?? "") + " " + (GlobalVeriables.currentUser?.lastName ?? "")
-        self.userFirstNameInput.text = GlobalVeriables.currentUser?.firstName;
-        self.userLastNameInput.text = GlobalVeriables.currentUser?.lastName;
-        self.jobInput.text = GlobalVeriables.currentUserJob?.name
-        self.emailInput.text = GlobalVeriables.currentUser?.email;
-        self.phoneNumberInput.text = GlobalVeriables.currentUser?.phoneNumber;
+        self.userFullNameLabel.text = (GlobalVeriables.currentUser?.user?.firstName ?? "") + " " + (GlobalVeriables.currentUser?.user?.lastName ?? "")
+        self.userFirstNameInput.text = GlobalVeriables.currentUser?.user?.firstName;
+        self.userLastNameInput.text = GlobalVeriables.currentUser?.user?.lastName;
+        self.jobInput.text = GlobalVeriables.currentUser?.jobDetail?.job?.name
+        self.emailInput.text = GlobalVeriables.currentUser?.user?.email;
+        self.phoneNumberInput.text = GlobalVeriables.currentUser?.user?.phoneNumber;
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
@@ -84,7 +84,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         Task { @MainActor in
             
             if isEditable == true{
-                var updateUser = GlobalVeriables.currentUser
+                var updateUser = GlobalVeriables.currentUser?.user
                 updateUser?.firstName = userFirstNameInput.text;
                 updateUser?.lastName = userLastNameInput.text;
                 updateUser?.jobID = selectedJob.jobID;

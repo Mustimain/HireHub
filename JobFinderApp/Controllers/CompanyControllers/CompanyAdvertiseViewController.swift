@@ -13,7 +13,7 @@ class CompanyAdvertiseViewController: UIViewController ,UITableViewDelegate,UITa
 
     @IBOutlet weak var AdvertisesTableView: UITableView!
     
-    var AdvertisesList : [Advertise] = []
+    var advertiseDetailList : [AdvertiseDetail] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,17 +49,17 @@ class CompanyAdvertiseViewController: UIViewController ,UITableViewDelegate,UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AdvertisesList.count
+        return advertiseDetailList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: AdvertisesList[indexPath.row].createDate!)
+        let dateString = dateFormatter.string(from: advertiseDetailList[indexPath.row].advertise?.createDate ?? Date.now)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CompanyCustomTableViewCell;
-        cell.titleLabel.text = AdvertisesList[indexPath.row].title;
-        cell.jobLabel.text = AdvertisesList[indexPath.row].jobId;
+        cell.titleLabel.text = advertiseDetailList[indexPath.row].advertise?.title;
+        cell.jobLabel.text = advertiseDetailList[indexPath.row].jobDetail?.job?.name;
         cell.createDateLabel.text = dateString;
 
         cell.titleLabel?.textColor = .black
@@ -70,10 +70,10 @@ class CompanyAdvertiseViewController: UIViewController ,UITableViewDelegate,UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItem = AdvertisesList[indexPath.row]
+        let selectedItem = advertiseDetailList[indexPath.row]
         
         if let compamyAdvertiseDetailVC = storyboard?.instantiateViewController(withIdentifier: "compamyAdvertiseDetailViewController") as? CompanyAdvertiseDetailViewController{
-            compamyAdvertiseDetailVC.selectedAdvetise = selectedItem
+            compamyAdvertiseDetailVC.selectedAdvetiseDetail = selectedItem
             navigationController?.pushViewController(compamyAdvertiseDetailVC, animated: true)
         }
     }
@@ -82,8 +82,8 @@ class CompanyAdvertiseViewController: UIViewController ,UITableViewDelegate,UITa
     
     func GetAllAdvertiseByCompanyId() async{
         Task { @MainActor in
-            AdvertisesList.removeAll(keepingCapacity: false);
-            self.AdvertisesList = try await AdvertiseService().GetAllAdvertiseByCompanyId(companyId: GlobalVeriables.currentCompany?.companyID ?? "");
+            advertiseDetailList.removeAll(keepingCapacity: false);
+            self.advertiseDetailList = try await AdvertiseService().GetAllAdvertiseDetailByCompanyId(companyId: GlobalVeriables.currentCompany?.company?.companyID ?? "");
             AdvertisesTableView.reloadData()
         }
     }

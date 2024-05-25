@@ -13,7 +13,6 @@ class AuthService : AuthProtocol {
 
       
     let db = Firestore.firestore()
-    var companyList : [Company] = []
     var companyDetailList : [CompanyDetail] = []
     
 
@@ -123,13 +122,14 @@ class AuthService : AuthProtocol {
     
     func GetAllCompanies() async throws -> [Company] {
         
+        var companyList : [Company] = []
         let query = db.collection("Companies")
         let querySnapshot = try await query.getDocuments()
         
         for document in querySnapshot.documents {
             do {
                 let company = try document.data(as: Company.self)
-                self.companyList.append(company);
+                companyList.append(company);
             } catch {
             }
         }
@@ -171,8 +171,8 @@ class AuthService : AuthProtocol {
 
     func GetCompanyDetailByEmail(email: String) async throws -> CompanyDetail {
         var newCompanyDetail = CompanyDetail()
-        var company = try await self.GetCompanyByEmail(email: email)
-        var sector = try await SectorService().GetSectorBySectorId(sectorId: company.sectorID!)
+        let company = try await self.GetCompanyByEmail(email: email)
+        let sector = try await SectorService().GetSectorBySectorId(sectorId: company.sectorID!)
         newCompanyDetail.company = company
         newCompanyDetail.sector = sector
         return newCompanyDetail;
@@ -181,8 +181,8 @@ class AuthService : AuthProtocol {
     
     func GetAllCompanyDetails() async throws -> [CompanyDetail] {
         var companyDetailList : [CompanyDetail] = []
-        var companyList = try await self.GetAllCompanies()
-        var sectorList = try await SectorService().GetAllSectors()
+        let companyList = try await self.GetAllCompanies()
+        let sectorList = try await SectorService().GetAllSectors()
         
         for company in companyList{
             for sector in sectorList{
@@ -200,7 +200,7 @@ class AuthService : AuthProtocol {
     
     func GetUserDetailByEmail(email: String) async throws -> UserDetail {
         var newUserDetail = UserDetail()
-        var user = try await self.GetUserByEmail(email: email)
+        let user = try await self.GetUserByEmail(email: email)
         var jobDetail = try await JobService().GetJobDetailByJobId(jobId: user.jobID!)
         newUserDetail.user = user;
         newUserDetail.jobDetail = jobDetail;

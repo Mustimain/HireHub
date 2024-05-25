@@ -60,15 +60,15 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        companyTitleLabel.text = GlobalVeriables.currentCompany?.name
-        companyNameInput.text =  GlobalVeriables.currentCompany?.name
-        companySectorInput.text =  GlobalVeriables.currentCompanySector?.name
-        employeeSizeInput.text =  GlobalVeriables.currentCompany?.employeeSize
-        avarageSalaryInput.text =  GlobalVeriables.currentCompany?.avarageSalary
-        emailInput.text =  GlobalVeriables.currentCompany?.email
-        descriptionInput.text =  GlobalVeriables.currentCompany?.description
-        phoneNumberInput.text =  GlobalVeriables.currentCompany?.phoneNumber
-        addressInput.text =  GlobalVeriables.currentCompany?.address
+        companyTitleLabel.text = GlobalVeriables.currentCompany?.company?.name
+        companyNameInput.text =  GlobalVeriables.currentCompany?.company?.name
+        companySectorInput.text =  GlobalVeriables.currentCompany?.sector?.name
+        employeeSizeInput.text =  GlobalVeriables.currentCompany?.company?.employeeSize
+        avarageSalaryInput.text =  GlobalVeriables.currentCompany?.company?.avarageSalary
+        emailInput.text =  GlobalVeriables.currentCompany?.company?.email
+        descriptionInput.text =  GlobalVeriables.currentCompany?.company?.description
+        phoneNumberInput.text =  GlobalVeriables.currentCompany?.company?.phoneNumber
+        addressInput.text =  GlobalVeriables.currentCompany?.company?.address
         
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
@@ -85,7 +85,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         Task { @MainActor in
             
             if isEditable == true{
-                var updateCompany = GlobalVeriables.currentCompany
+                var updateCompany = GlobalVeriables.currentCompany?.company
                 updateCompany?.name = companyNameInput.text;
                 updateCompany?.sectorID = selectedSector.sectorID
                 updateCompany?.employeeSize = employeeSizeInput.text;
