@@ -28,35 +28,30 @@ class CompanyLoginViewController: UIViewController {
     @IBAction func LoginButton(_ sender: Any) {
         Task { @MainActor in
             
-            let res = try await AuthService().CompanyLogin(email: companyEmailInput.text ?? "", password: companyPasswordInput.text ?? "");
-            
-            if (res == true){
+            if companyEmailInput.text!.count > 0 && companyPasswordInput.text!.count > 0 {
                 
-                GlobalVeriables.currentCompany = try await AuthService().GetCompanyDetailByEmail(email: self.companyEmailInput.text!)
-                
-                if ((GlobalVeriables.currentCompany?.company?.name?.count ?? 0)! > 0){
+                let res = try await AuthService().CompanyLogin(email: companyEmailInput.text ?? "", password: companyPasswordInput.text ?? "");
+                if (res == true){
                     
-                    if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
-                        navigationController?.pushViewController(companyHomeTabbarController, animated: true)
+                    GlobalVeriables.currentCompany = try await AuthService().GetCompanyDetailByEmail(email: self.companyEmailInput.text!)
+                    if ((GlobalVeriables.currentCompany?.company?.name?.count ?? 0)! > 0){
+                        
+                        if let companyHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "CompanyHomeTabbarController") as? CompanyHomeTabbarController{
+                            navigationController?.pushViewController(companyHomeTabbarController, animated: true)
+                        }
+                        
+                    }
                 }
+                else{
+                    self.showCustomAlert(title: "Hata", message: "Email veya şifre yanlış tekrar deneyiniz.")
                     
                 }
+            }else{
+                self.showCustomAlert(title: "Hata", message: "Email ve password boş bırakılamaz.")
+
             }
-            else{
-                let alert = UIAlertController(title: "Hata", message: "email veya şifre yanlış", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Ok", style: .default) { action in
-                    
-                }
-                
-                alert.addAction(action)
-                self.present(alert, animated: true,completion: nil)
-                
-            }
-            
             
         }
-        
         
     }
     

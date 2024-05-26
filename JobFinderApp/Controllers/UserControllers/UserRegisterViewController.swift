@@ -22,7 +22,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     var jobPickerView = UIPickerView();
     var experienceYearPickerView = UIPickerView();
     var experienceYears : [String] = []
-    
     var jobDetailList: [JobDetail] = []
     var selectedJob : Job = Job()
 
@@ -50,36 +49,41 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
             
-            
-            var newUser = User()
-            newUser.firstName = firstNameInput.text ?? ""
-            newUser.lastName = lastNameInput.text ?? ""
-            newUser.email = emailInput.text ?? ""
-            newUser.createDate = Date.now
-            newUser.cvPath = ""
-            newUser.emailVerification = true
-            newUser.jobID = selectedJob.jobID ?? ""
-            newUser.password = passwordInput.text ?? ""
-            newUser.phoneNumber = phoneNumberInput.text ?? ""
-            newUser.updateDate = Date.now
-            
-            let res = try await AuthService().UserRegister(user: newUser)
-            
-            if res == true{
-                
-                let alert = UIAlertController(title: "Başarılı", message: "Kayıt Başarılı", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Ok", style: .default) { action in
+            if firstNameInput.text!.count > 0 && lastNameInput.text!.count > 0 && emailInput.text!.count > 0 && selectedJob.name?.count ?? 0 > 0 && passwordInput.text!.count > 0 && phoneNumberInput.text!.count > 0 {
+                if passwordInput.text == rePasswordInput.text{
+                    var newUser = User()
+                    newUser.firstName = firstNameInput.text ?? ""
+                    newUser.lastName = lastNameInput.text ?? ""
+                    newUser.email = emailInput.text ?? ""
+                    newUser.createDate = Date.now
+                    newUser.cvPath = ""
+                    newUser.emailVerification = true
+                    newUser.jobID = selectedJob.jobID ?? ""
+                    newUser.password = passwordInput.text ?? ""
+                    newUser.phoneNumber = phoneNumberInput.text ?? ""
+                    newUser.updateDate = Date.now
                     
+                    let res = try await AuthService().UserRegister(user: newUser)
+                    
+                    if res == true{
+                        self.showCustomAlert(title: "İşlem Başarılı", message: "Başarıyla kaydınız gerçekleşti. Giriş Yapabilirsiniz")
+                        navigationController?.popViewController(animated: false)
+                    }else{
+                        self.showCustomAlert(title: "Hata", message: "Kayıt gerçekleşmedi. Tekrar Deneyiniz")
+                    }
+                    
+                }else{
+                    self.showCustomAlert(title: "Hata", message: "Şifre ve Şifre Tekrarı Aynı olmalıdır. Tekrar Deneyiniz.")
                 }
                 
-                alert.addAction(action)
-                self.present(alert, animated: true,completion: nil)
-                
+            }else{
+                self.showCustomAlert(title: "Hata", message: "Alanlar Boş Bırakılamaz. Tüm alanları eksiksiz doldurduğunuzu kontrol edip tekrar deneyiniz")
             }
-        }
+            
         
         }
+        
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

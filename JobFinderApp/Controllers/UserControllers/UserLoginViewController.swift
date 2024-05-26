@@ -28,28 +28,27 @@ class UserLoginViewController: UIViewController {
     @IBAction func LoginButton(_ sender: Any) {
         Task { @MainActor in
             
-            let res = try await AuthService().UserLogin(email: userEmailInput.text ?? "", password: userPasswordInput.text ?? "");
-            
-            if (res == true){
-                GlobalVeriables.currentUser =  try await AuthService().GetUserDetailByEmail(email: userEmailInput.text!)
+            if userEmailInput.text!.count > 0 && userPasswordInput.text!.count > 0 {
+                let res = try await AuthService().UserLogin(email: userEmailInput.text ?? "", password: userPasswordInput.text ?? "");
+                
+                if (res == true){
+                    GlobalVeriables.currentUser =  try await AuthService().GetUserDetailByEmail(email: userEmailInput.text!)
 
-                if let userHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
-                    navigationController?.setNavigationBarHidden(true, animated: false)
-                    navigationController?.pushViewController(userHomeTabbarController, animated: true)
-                    
-                }
-            }
-            else{
-                    let alert = UIAlertController(title: "Hata", message: "email veya şifre yanlış", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "Ok", style: .default) { action in
+                    if let userHomeTabbarController = storyboard?.instantiateViewController(withIdentifier: "UserHomeTabbarController") as? UserHomeTabbarController{
+                        navigationController?.setNavigationBarHidden(true, animated: false)
+                        navigationController?.pushViewController(userHomeTabbarController, animated: true)
                         
                     }
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true,completion: nil)
-                    
                 }
+                else{
+                    self.showCustomAlert(title: "Hata", message: "Şifre veya Email yanlış tekrar deneyiniz.")
+                        
+                    }
+            }else{
+                self.showCustomAlert(title: "Hata", message: "Alanlar Boş Bırakılamaz.")
+
+            }
+       
             
          
             }
@@ -64,3 +63,17 @@ class UserLoginViewController: UIViewController {
     
 }
 
+extension UIViewController {
+    
+    func showCustomAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Tamam", style: .default) { action in
+            // Additional action if needed
+        }
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
