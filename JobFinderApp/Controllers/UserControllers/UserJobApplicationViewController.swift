@@ -11,6 +11,7 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
 
     @IBOutlet weak var jobApplicationTableView: UITableView!
     var jobApplicationDetailList : [JobApplicationDetail] = []
+    var selectedJobApplication : JobApplicationDetail = JobApplicationDetail()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
         super.viewWillAppear(animated)
         Task { @MainActor in
             
+            jobApplicationTableView.reloadData();
             await GetAllJobApplicationDetails();
             navigationController?.setNavigationBarHidden(true, animated: animated)
 
@@ -58,14 +60,14 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*
-        let selectedItem = advertiseDetailList[indexPath.row]
         
-        if let compamyAdvertiseDetailVC = storyboard?.instantiateViewController(withIdentifier: "compamyAdvertiseDetailViewController") as? CompanyAdvertiseDetailViewController{
-            compamyAdvertiseDetailVC.selectedAdvetiseDetail = selectedItem
-            navigationController?.pushViewController(compamyAdvertiseDetailVC, animated: true)
+        let selectedJobApplication = jobApplicationDetailList[indexPath.row]
+        
+        if let jobApplicationDetailVC = storyboard?.instantiateViewController(withIdentifier: "ApplicationDetailViewController") as? ApplicationDetailViewController{
+            jobApplicationDetailVC.selectedJobApplicationDetail = selectedJobApplication
+            navigationController?.pushViewController(jobApplicationDetailVC, animated: true)
         }
-         */
+         
     }
     
     func GetAllJobApplicationDetails() async{
