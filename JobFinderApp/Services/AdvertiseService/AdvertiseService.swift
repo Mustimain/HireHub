@@ -53,17 +53,17 @@ class AdvertiseService : AdvertiseProtocol{
     func GetAllAdvertiseDetail() async throws -> [AdvertiseDetail] {
         var advertiseDetails : [AdvertiseDetail] = []
         let allAdvertise = try await self.GetAllAdvertises();
-        let allCompanies = try await AuthService().GetAllCompanies();
+        let allCompanyDetails = try await AuthService().GetAllCompanyDetails();
         let allJobDetails = try await JobService().GetAllJobDetails()
         
         if allAdvertise.count > 0{
             for jobDetail in allJobDetails {
-                for company in allCompanies {
+                for company in allCompanyDetails {
                     for advertise in allAdvertise {
-                        if advertise.companyID == company.companyID && advertise.jobId == jobDetail.job?.jobID{
+                        if advertise.companyID == company.company?.companyID && advertise.jobId == jobDetail.job?.jobID{
                             var newAdvertiseDetail = AdvertiseDetail();
                             newAdvertiseDetail.advertise = advertise
-                            newAdvertiseDetail.companyDetail?.company = company
+                            newAdvertiseDetail.companyDetail = company
                             newAdvertiseDetail.jobDetail = jobDetail;
                             advertiseDetails.append(newAdvertiseDetail);
                         }
@@ -112,7 +112,7 @@ class AdvertiseService : AdvertiseProtocol{
     
     
     func GetAllAdvertiseDetailByCompanyId(companyId: String) async throws -> [AdvertiseDetail] {
-        var advertiseDetailList = try await self.GetAllAdvertiseDetail()
+        let advertiseDetailList = try await self.GetAllAdvertiseDetail()
         var filteredAdvertiseDetailList : [AdvertiseDetail] = []
         
         for advertisDetail in advertiseDetailList{
@@ -123,6 +123,19 @@ class AdvertiseService : AdvertiseProtocol{
         
         return filteredAdvertiseDetailList;
         
+    }
+    
+    func GetAdvertiseDetailById(advertiseId: String) async throws -> AdvertiseDetail {
+        let advertiseDetailList = try await self.GetAllAdvertiseDetail()
+        var _ : [AdvertiseDetail] = []
+        
+        for advertisDetail in advertiseDetailList{
+            if advertiseId == advertisDetail.advertise?.advertiseID{
+                return advertisDetail
+            }
+        }
+        
+        return AdvertiseDetail();
     }
     
 }

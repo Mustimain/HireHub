@@ -38,6 +38,56 @@ class UserAdvertisesViewController: UIViewController {
     }
     
     @IBAction func sendAdvertiseApplicationButton(_ sender: Any) {
-        
+        Task { @MainActor in
+            
+            
+            var checkApplicationIsExist = try await JobApplicationService().CheckApplicationIsExist(userId: (GlobalVeriables.currentUser?.user?.userID)!, advertiseId: (advertiseDetail?.advertise?.advertiseID)!)
+            
+            if checkApplicationIsExist == true{
+                var newJobApplication = JobApplication()
+                newJobApplication.advertiseID = advertiseDetail?.advertise?.advertiseID
+                newJobApplication.applicationDate = Date.now
+                newJobApplication.userID = GlobalVeriables.currentUser?.user?.userID
+                
+                var result = try await JobApplicationService().AddJobApplication(jobApplication: newJobApplication)
+                
+                if (result == true){
+
+                    let alert = UIAlertController(title: "İşlem Başarılı", message: "Başvuru başarıyla alınmıştır", preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "Ok", style: .default) { action in
+                        
+                    }
+                    
+                    alert.addAction(action)
+                self.present(alert, animated: true,completion: nil)
+                
+                    
+                }
+                else{
+                        let alert = UIAlertController(title: "Hata", message: "Başvuru yapılırken hata oluştur lütfen daha sonra tekrar deneyin", preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "Ok", style: .default) { action in
+                            
+                        }
+                        
+                        alert.addAction(action)
+                    self.present(alert, animated: true,completion: nil)
+                    
+                    }
+            }else{
+                
+                let alert = UIAlertController(title: "Hata", message: "Başvuru daha önce yapılmıştır", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Ok", style: .default) { action in
+                    
+                }
+                
+                alert.addAction(action)
+            self.present(alert, animated: true,completion: nil)
+            }
+            
+         
+        }
     }
 }

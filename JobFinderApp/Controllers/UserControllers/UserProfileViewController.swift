@@ -14,7 +14,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var userFirstNameInput: UITextField!
     @IBOutlet weak var userLastNameInput: UITextField!
     @IBOutlet weak var jobInput: UITextField!
-    @IBOutlet weak var experienceYearInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
     
@@ -23,7 +22,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var jobPicker = UIPickerView();
     var experienceYearPicker = UIPickerView();
     var jobList: [Job] = []
-    var experienceYears : [String] = ["0 - 1", "1 - 3" ,"3 - 5","5 - 10","10+"]
 
     
     override func viewDidLoad() {
@@ -34,16 +32,13 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         experienceYearPicker.delegate  = self;
         
         jobInput.inputView = jobPicker;
-        experienceYearInput.inputView = experienceYearPicker;
         jobPicker.tag = 1
-        experienceYearPicker.tag = 2
         
         
         self.userFullNameLabel.isEnabled = isEditable;
         self.userFirstNameInput.isEnabled = isEditable;
         self.userLastNameInput.isEnabled = isEditable;
         self.jobInput.isEnabled = isEditable;
-        self.experienceYearInput.isEnabled = isEditable;
         self.emailInput.isEnabled = isEditable;
         self.phoneNumberInput.isEnabled = isEditable;
         
@@ -74,6 +69,9 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     @IBAction func logoutButton(_ sender: Any) {
+        
+        navigationController?.popToRootViewController(animated: false)
+
     }
     
     @IBAction func changeEditButton(_ sender: Any) {
@@ -135,7 +133,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.userFirstNameInput.isEnabled = isEditable;
             self.userLastNameInput.isEnabled = isEditable;
             self.jobInput.isEnabled = isEditable;
-            self.experienceYearInput.isEnabled = isEditable
             self.emailInput.isEnabled = isEditable
             self.phoneNumberInput.isEnabled = isEditable
       
@@ -147,7 +144,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.userFirstNameInput.isEnabled = isEditable;
             self.userLastNameInput.isEnabled = isEditable;
             self.jobInput.isEnabled = isEditable;
-            self.experienceYearInput.isEnabled = isEditable
             self.emailInput.isEnabled = isEditable
             self.phoneNumberInput.isEnabled = isEditable
         }
@@ -161,10 +157,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if pickerView.tag == 1{
             return jobList.count
         }
-        if pickerView.tag == 2{
-            return experienceYears.count
-
-        }
         return  1
     }
     
@@ -173,8 +165,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobList[row]
-        case 2:
-            experienceYears[row]
+
         default:
             return "Data not found"
         }
@@ -188,10 +179,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             jobInput.text = jobList[row].name
             selectedJob = jobList[row]; 
             jobInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
-        case 2:
-            experienceYearInput.text = experienceYears[row]
-            experienceYearInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
-
         default:
             break
         }
@@ -211,9 +198,6 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             label?.text = jobList[row].name
-            label?.textColor = UIColor.black
-        case 2:
-            label?.text = experienceYears[row]
             label?.textColor = UIColor.black
         default:
             label?.text =  "Data not found"

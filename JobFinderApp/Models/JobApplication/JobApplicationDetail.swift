@@ -8,9 +8,8 @@
 import Foundation
 
 struct JobApplicationDetail {
-    var jobApplication : JobApplication
-    var userDetail : UserDetail
-    var companyDetail : CompanyDetail
-    
+    var jobApplication : JobApplication?
+    var userDetail : UserDetail?
+    var advertiseDetail : AdvertiseDetail?
 
 }

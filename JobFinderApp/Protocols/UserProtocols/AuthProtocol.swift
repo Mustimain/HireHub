@@ -12,8 +12,10 @@ protocol AuthProtocol {
     func UserRegister(user: User) async throws -> Bool
     func UserLogin(email: String, password : String) async throws -> Bool
     func UpdateUser(user: User) async throws -> Bool
+    func GetUserById(userId: String) async throws -> User
     func GetUserByEmail(email: String) async throws -> User
     func GetUserDetailByEmail(email: String) async throws -> UserDetail
+    func GetUserDetailById(userId: String) async throws -> UserDetail
 
     
     

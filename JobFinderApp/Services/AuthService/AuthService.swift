@@ -10,7 +10,6 @@ import Firebase
 
 
 class AuthService : AuthProtocol {
-
       
     let db = Firestore.firestore()
     var companyDetailList : [CompanyDetail] = []
@@ -201,11 +200,39 @@ class AuthService : AuthProtocol {
     func GetUserDetailByEmail(email: String) async throws -> UserDetail {
         var newUserDetail = UserDetail()
         let user = try await self.GetUserByEmail(email: email)
-        var jobDetail = try await JobService().GetJobDetailByJobId(jobId: user.jobID!)
+        let jobDetail = try await JobService().GetJobDetailByJobId(jobId: user.jobID!)
         newUserDetail.user = user;
         newUserDetail.jobDetail = jobDetail;
         
         return newUserDetail;
     }
+    
+    func GetUserById(userId: String) async throws -> User {
+        let db = Firestore.firestore()
+        let document = try await db.collection("Users").document(userId).getDocument()
+        
+        if document.exists {
+            do {
+                let user = try document.data(as: User.self)
+                return user
+            } catch {
+                return User()
+            }
+        } else {
+            return User()
+        }
+    }
+    
+    func GetUserDetailById(userId: String) async throws -> UserDetail {
+        var newUserDetail = UserDetail()
+        let user = try await self.GetUserById(userId: userId)
+        let jobDetail = try await JobService().GetJobDetailByJobId(jobId: user.jobID!)
+        newUserDetail.user = user;
+        newUserDetail.jobDetail = jobDetail;
+        
+        return newUserDetail;
+    }
+    
+ 
  
 }

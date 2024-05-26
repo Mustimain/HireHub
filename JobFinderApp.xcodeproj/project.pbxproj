@@ -33,7 +33,6 @@
 		CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */; };
 		CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */; };
 		CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */; };
-		CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */; };
 		CF62B4062BDEAE8B0020E29E /* UserReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */; };
 		CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */; };
 		CF62B40B2BDEB0940020E29E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B40A2BDEB0940020E29E /* User.swift */; };
@@ -50,6 +49,8 @@
 		CF92D1772C02367E00148E71 /* JobApplicationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1762C02367E00148E71 /* JobApplicationDetail.swift */; };
 		CF92D17C2C023A7900148E71 /* JobApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D17B2C023A7900148E71 /* JobApplicationProtocol.swift */; };
 		CF92D17F2C023AA900148E71 /* JobApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D17E2C023AA900148E71 /* JobApplicationService.swift */; };
+		CF92D1812C03787C00148E71 /* UserAdvertisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1802C03787C00148E71 /* UserAdvertisesTableViewCell.swift */; };
+		CF92D1832C0378FB00148E71 /* UserJobApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1822C0378FB00148E71 /* UserJobApplicationViewController.swift */; };
 		CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */; };
 		CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DA2BE2C1B000999945 /* Company.swift */; };
 		CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83DD2BE2C3BC00999945 /* AuthService.swift */; };
@@ -87,7 +88,6 @@
 		CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
 		CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeTabbarController.swift; sourceTree = "<group>"; };
 		CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
-		CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavoritesViewController.swift; sourceTree = "<group>"; };
 		CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReportsViewController.swift; sourceTree = "<group>"; };
 		CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		CF62B40A2BDEB0940020E29E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -104,6 +104,8 @@
 		CF92D1762C02367E00148E71 /* JobApplicationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationDetail.swift; sourceTree = "<group>"; };
 		CF92D17B2C023A7900148E71 /* JobApplicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationProtocol.swift; sourceTree = "<group>"; };
 		CF92D17E2C023AA900148E71 /* JobApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplicationService.swift; sourceTree = "<group>"; };
+		CF92D1802C03787C00148E71 /* UserAdvertisesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesTableViewCell.swift; sourceTree = "<group>"; };
+		CF92D1822C0378FB00148E71 /* UserJobApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJobApplicationViewController.swift; sourceTree = "<group>"; };
 		CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseAddViewController.swift; sourceTree = "<group>"; };
 		CFAE83DA2BE2C1B000999945 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		CFAE83DD2BE2C3BC00999945 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -266,10 +268,10 @@
 				CF62B3FB2BDEA5030020E29E /* UserRegisterViewController.swift */,
 				CF62B3FF2BDEAACE0020E29E /* UserHomeTabbarController.swift */,
 				CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */,
-				CF62B4032BDEAE650020E29E /* UserFavoritesViewController.swift */,
 				CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */,
 				CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */,
 				CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */,
+				CF92D1822C0378FB00148E71 /* UserJobApplicationViewController.swift */,
 			);
 			path = UserControllers;
 			sourceTree = "<group>";
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				CF6373122BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift */,
+				CF92D1802C03787C00148E71 /* UserAdvertisesTableViewCell.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
+				CF92D1832C0378FB00148E71 /* UserJobApplicationViewController.swift in Sources */,
 				CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */,
 				CFEDDC722BEFF8710064CF0F /* SectorService.swift in Sources */,
 				CF62B3FA2BDEA4F50020E29E /* UserLoginViewController.swift in Sources */,
@@ -537,6 +541,7 @@
 				CF92D17C2C023A7900148E71 /* JobApplicationProtocol.swift in Sources */,
 				CF1675912BEB8AB70026A4C0 /* AdvertiseProtocol.swift in Sources */,
 				CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */,
+				CF92D1812C03787C00148E71 /* UserAdvertisesTableViewCell.swift in Sources */,
 				CF1675932BEB8DA60026A4C0 /* AdvertiseService.swift in Sources */,
 				CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
@@ -547,7 +552,6 @@
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,
 				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
 				CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */,
-				CF62B4042BDEAE650020E29E /* UserFavoritesViewController.swift in Sources */,
 				CF6373102BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift in Sources */,
 				CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */,
 				CF9D92DB2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift in Sources */,
