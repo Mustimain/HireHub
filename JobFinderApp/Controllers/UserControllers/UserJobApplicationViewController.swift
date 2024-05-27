@@ -17,15 +17,19 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
         super.viewDidLoad()
         jobApplicationTableView.delegate = self;
         jobApplicationTableView.dataSource = self;
-        // Do any additional setup after loading the view.
+        Task { @MainActor in
+            
+            await GetAllJobApplicationDetails();
+            jobApplicationTableView.reloadData();
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Task { @MainActor in
             
-            jobApplicationTableView.reloadData();
-            await GetAllJobApplicationDetails();
+            
+
             navigationController?.setNavigationBarHidden(true, animated: animated)
 
         }
