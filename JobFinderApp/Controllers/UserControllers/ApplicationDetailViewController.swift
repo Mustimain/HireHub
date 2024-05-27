@@ -31,6 +31,7 @@ class ApplicationDetailViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         if selectedJobApplicationDetail != nil{
+            
             companyNameInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.name
             sectorNameInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.sector?.name
             employeeSizeInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.employeeSize

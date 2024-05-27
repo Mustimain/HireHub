@@ -27,7 +27,7 @@ class UserAdvertisesViewController: UIViewController {
 
         companyNameInput.text = advertiseDetail?.companyDetail?.company?.name
         advertiseTitleInput.text = advertiseDetail?.advertise?.title
-        jobNameInput.text = advertiseDetail?.advertise?.jobId
+        jobNameInput.text = advertiseDetail?.jobDetail?.job?.name
         advertiseDescriptionInput.text = advertiseDetail?.advertise?.description
         
     }
