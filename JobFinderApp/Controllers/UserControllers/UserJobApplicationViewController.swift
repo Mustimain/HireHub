@@ -45,6 +45,7 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        
         let dateString = dateFormatter.string(from: jobApplicationDetailList[indexPath.row].jobApplication?.applicationDate ?? Date.now)
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "jobApplicationCell", for: indexPath) as! UserAdvertisesTableViewCell;

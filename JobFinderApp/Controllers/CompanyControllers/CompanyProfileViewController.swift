@@ -14,8 +14,8 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     @IBOutlet weak var companySectorInput: UITextField!
     @IBOutlet weak var employeeSizeInput: UITextField!
     @IBOutlet weak var avarageSalaryInput: UITextField!
+    @IBOutlet weak var descriptionInput: UITextView!
     @IBOutlet weak var emailInput: UITextField!
-    @IBOutlet weak var descriptionInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
     @IBOutlet weak var addressInput: UITextField!
     
@@ -43,7 +43,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         self.companySectorInput.isEnabled = isEditable;
         self.employeeSizeInput.isEnabled = isEditable;
         self.avarageSalaryInput.isEnabled = isEditable;
-        self.descriptionInput.isEnabled = isEditable;
+        self.descriptionInput.isEditable = isEditable;
         self.emailInput.isEnabled = isEditable;
         self.phoneNumberInput.isEnabled = isEditable;
         self.addressInput.isEnabled = isEditable;
@@ -137,7 +137,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             self.companySectorInput.isEnabled = isEditable;
             self.employeeSizeInput.isEnabled = isEditable;
             self.avarageSalaryInput.isEnabled = isEditable
-            self.descriptionInput.isEnabled = isEditable
+            self.descriptionInput.isEditable = isEditable
             self.emailInput.isEnabled = isEditable
             self.phoneNumberInput.isEnabled = isEditable
             self.addressInput.isEnabled = isEditable
@@ -150,7 +150,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             self.companySectorInput.isEnabled = isEditable;
             self.employeeSizeInput.isEnabled = isEditable;
             self.avarageSalaryInput.isEnabled = isEditable
-            self.descriptionInput.isEnabled = isEditable
+            self.descriptionInput.isEditable = isEditable
             self.emailInput.isEnabled = isEditable
             self.phoneNumberInput.isEnabled = isEditable
             self.addressInput.isEnabled = isEditable
