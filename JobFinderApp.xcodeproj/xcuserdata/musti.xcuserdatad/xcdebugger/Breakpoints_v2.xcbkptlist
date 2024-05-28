@@ -414,8 +414,8 @@
             filePath = "JobFinderApp/Controllers/UserControllers/UserProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "GetAllJobs()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,8 +446,8 @@
             filePath = "JobFinderApp/Controllers/UserControllers/UserProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "updateButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -488,7 +488,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "66ED8947-EF4B-4F0E-A743-487762D1A3BB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JobFinderApp/Services/AuthService/AuthService.swift"

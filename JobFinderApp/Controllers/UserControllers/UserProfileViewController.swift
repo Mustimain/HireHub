@@ -9,7 +9,7 @@ import UIKit
 
 class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIDocumentPickerDelegate {
     
-
+    
     @IBOutlet weak var userFullNameLabel: UILabel!
     @IBOutlet weak var userFirstNameInput: UITextField!
     @IBOutlet weak var userLastNameInput: UITextField!
@@ -19,13 +19,13 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var resumeNameInput: UITextField!
     
     var isEditable = false;
-    var selectedJob : Job = Job()
+    var selectedJob : Job?
     var jobPicker = UIPickerView();
     var experienceYearPicker = UIPickerView();
     var jobList: [Job] = []
     var resumePdfURL : URL?
     var newResumePdfURL : URL?
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.emailInput.isEnabled = isEditable;
         self.phoneNumberInput.isEnabled = isEditable;
         self.jobInput.text = GlobalVeriables.currentUser?.jobDetail?.job?.name
-
+        
         Task { @MainActor in
             
             await GetAllJobs()
@@ -69,81 +69,74 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
             self.navigationController?.setNavigationBarHidden(true, animated: animated)
         }
-   
-
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
-
+        
     }
     
     @IBAction func logoutButton(_ sender: Any) {
         
         navigationController?.popToRootViewController(animated: false)
-
+        
     }
     
     @IBAction func changeEditButton(_ sender: Any) {
         changeEditable();
-
+        
     }
+    
     @IBAction func updateButton(_ sender: Any) {
         Task { @MainActor in
             
             if isEditable == true{
+                
                 var updateUser = GlobalVeriables.currentUser?.user
                 updateUser?.firstName = userFirstNameInput.text;
                 updateUser?.lastName = userLastNameInput.text;
-                updateUser?.jobID = selectedJob.jobID;
+                updateUser?.jobID = selectedJob?.jobID ?? GlobalVeriables.currentUser?.jobDetail?.job?.jobID!
                 updateUser?.email = emailInput.text;
                 updateUser?.phoneNumber = phoneNumberInput.text;
                 
-                
-                var result = try await AuthService().UpdateUser(user: updateUser!)
-                
-                if newResumePdfURL == nil{
-                  
-                    var res = try await AuthService().UpdateUserResume(fileURL: resumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
-                    if res == false{
-                        self.showCustomAlert(title: "Hata", message: "Özgeçmiş Güncellenemedi.")
+                if userFirstNameInput.text!.count > 0 && userLastNameInput.text!.count > 0 && emailInput.text!.count > 0 && phoneNumberInput.text?.count ?? 0 > 0  && selectedJob != nil {
+                    var result = try await AuthService().UpdateUser(user: updateUser!)
+                    
+                    if newResumePdfURL == nil{
+                        
+                        var res = try await AuthService().UpdateUserResume(fileURL: resumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
+                        if res == false{
+                            self.showCustomAlert(title: "Hata", message: "Özgeçmiş Güncellenemedi.")
+                        }
+                        
+                    }else{
+                        var ress = try await AuthService().SaveUserResume(fileURL: newResumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
+                        if ress == false{
+                            self.showCustomAlert(title: "Hata", message: "Özgeçmiş Yüklenemedi.")
+                        }
                     }
-
+                    
+                    if result == true{
+                        
+                        self.showCustomAlert(title: "Güncelleme Başarılı", message: "Profil bilgileri başarıyla güncellendi.")
+                        
+                    } else{
+                        self.showCustomAlert(title: "Hata", message: "Profil bilgileri güncellenemedi. Lütfen tekrar deneyiniz.")
+                        
+                    }
+                    
                 }else{
-                    var ress = try await AuthService().SaveUserResume(fileURL: newResumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
-                    if ress == false{
-                        self.showCustomAlert(title: "Hata", message: "Özgeçmiş Yüklenemedi.")
-                    }
-                }
-                
-                if result == true{
-                    
-                    let alert = UIAlertController(title: "Başarılı", message: "Kayıt Başarılı", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "Ok", style: .default) { action in
-                        self.navigationController?.popViewController(animated: false);
-                    }
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true,completion: nil)
+                    self.showCustomAlert(title: "Hata", message: "Alanlar ve Özgeçmiş boş olamaz lütfen tekrar deneyiniz")
                     
                 }
-                
-            } else{
-                let alert = UIAlertController(title: "Hata", message: "Lütfen Düzenlemeyi Etkinleştirin", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Ok", style: .default) { action in
-                }
-                
-                alert.addAction(action)
-                self.present(alert, animated: true,completion: nil)
+            }else{
+                self.showCustomAlert(title: "Hata", message: "Lütfen Profil düzenlemeyi etkinleştirip tekrar deneyiniz.")
             }
-            
         }
     }
-    
-    
     
     func GetAllJobs() async{
         Task { @MainActor in
@@ -151,10 +144,10 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             var url = try await AuthService().GetResumeURL(fileName: GlobalVeriables.currentUser?.user?.userID ?? "")
             if url.absoluteString.count > 0 && url != nil{
                 resumePdfURL = url
-
+                
             }
             
-
+            
         }
     }
     
@@ -166,12 +159,12 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.jobInput.isEnabled = isEditable;
             self.emailInput.isEnabled = isEditable
             self.phoneNumberInput.isEnabled = isEditable
-      
-
+            
+            
             
         }else{
             isEditable = false
-
+            
             self.userFirstNameInput.isEnabled = isEditable;
             self.userLastNameInput.isEnabled = isEditable;
             self.jobInput.isEnabled = isEditable;
@@ -196,7 +189,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobList[row]
-
+            
         default:
             return "Data not found"
         }
@@ -208,7 +201,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobInput.text = jobList[row].name
-            selectedJob = jobList[row]; 
+            selectedJob = jobList[row];
             jobInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
         default:
             break
@@ -223,7 +216,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
             label?.textAlignment = .center
             label?.textColor = UIColor.black // Metin rengini burada değiştirin
-
+            
         }
         
         switch pickerView.tag{
@@ -233,28 +226,28 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         default:
             label?.text =  "Data not found"
         }
-  
+        
         
         return label!
     }
     @IBAction func uploadResumeButton(_ sender: Any) {
         if isEditable == true{
             let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
-                    documentPicker.delegate = self
-                    documentPicker.modalPresentationStyle = .formSheet
-                    self.present(documentPicker, animated: true, completion: nil)
+            documentPicker.delegate = self
+            documentPicker.modalPresentationStyle = .formSheet
+            self.present(documentPicker, animated: true, completion: nil)
         }else{
             self.showCustomAlert(title: "Hata", message: "Lütfen düzenlemeyi etkinlşetirin.")
         }
-      
+        
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-           guard let selectedFileURL = urls.first else {
-               return
-           }
+        guard let selectedFileURL = urls.first else {
+            return
+        }
         newResumePdfURL = selectedFileURL;
         resumeNameInput.text = newResumePdfURL?.lastPathComponent ?? "tekrar deneyiniz"
         
-       }
+    }
 }

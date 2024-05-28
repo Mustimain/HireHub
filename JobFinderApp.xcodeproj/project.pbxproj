@@ -44,6 +44,7 @@
 		CF7EA3D32BF161E8006BA340 /* AdvertiseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */; };
 		CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */; };
 		CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */; };
+		CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */; };
 		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
 		CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16E2C02362500148E71 /* UserDetail.swift */; };
 		CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1702C02363100148E71 /* CompanyDetail.swift */; };
@@ -100,6 +101,7 @@
 		CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarker.xib; sourceTree = "<group>"; };
 		CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseDetail.swift; sourceTree = "<group>"; };
 		CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
+		CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseCompanyDetailViewController.swift; sourceTree = "<group>"; };
 		CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesViewController.swift; sourceTree = "<group>"; };
 		CF92D16E2C02362500148E71 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		CF92D1702C02363100148E71 /* CompanyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetail.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */,
 				CF92D1822C0378FB00148E71 /* UserJobApplicationViewController.swift */,
 				CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */,
+				CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */,
 			);
 			path = UserControllers;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */,
 				CF62B4002BDEAACE0020E29E /* UserHomeTabbarController.swift in Sources */,
 				CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */,
+				CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
 				CF92D17F2C023AA900148E71 /* JobApplicationService.swift in Sources */,
 				CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */,

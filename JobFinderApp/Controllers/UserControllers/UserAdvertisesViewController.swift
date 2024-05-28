@@ -90,4 +90,12 @@ class UserAdvertisesViewController: UIViewController {
          
         }
     }
+    
+    @IBAction func companyDetailButton(_ sender: Any) {
+        // Popup view controller'ınızı oluşturun
+           let advertiseCompanyDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AdvertiseCompanyDetailViewController") as! AdvertiseCompanyDetailViewController
+        advertiseCompanyDetailViewController.selectedAdvertiseDetail = advertiseDetail
+           // Popup view controller'ını gösterin
+           present(advertiseCompanyDetailViewController, animated: true, completion: nil)
+    }
 }
