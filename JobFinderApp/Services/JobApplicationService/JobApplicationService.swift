@@ -9,8 +9,7 @@ import Foundation
 import Firebase
 
 class JobApplicationService : JobApplicationProtocol{
-
-  
+   
     
     let db = Firestore.firestore()
 
@@ -114,6 +113,16 @@ class JobApplicationService : JobApplicationProtocol{
         
         return filteredList;
     }
+    
+    func GetAllJobApplicationDetailsByCompanyId(companyId: String) async throws -> [JobApplicationDetail] {
+        var jobApplicationDetailList  = try await self.GetAllJobApplicationDetails()
+        var filteredList = jobApplicationDetailList.filter({$0.advertiseDetail?.companyDetail?.company?.companyID == companyId});
+        
+        return filteredList;
+    }
+    
+
+  
     
     
 }

@@ -46,6 +46,7 @@
 		CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */; };
 		CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */; };
 		CF8EC0D52C06630C00A2905B /* CompanyApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */; };
+		CF8EC0D72C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */; };
 		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
 		CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16E2C02362500148E71 /* UserDetail.swift */; };
 		CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1702C02363100148E71 /* CompanyDetail.swift */; };
@@ -104,6 +105,7 @@
 		CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseCompanyDetailViewController.swift; sourceTree = "<group>"; };
 		CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyApplicationDetailViewController.swift; sourceTree = "<group>"; };
+		CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJobApplicationTableViewCell.swift; sourceTree = "<group>"; };
 		CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesViewController.swift; sourceTree = "<group>"; };
 		CF92D16E2C02362500148E71 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		CF92D1702C02363100148E71 /* CompanyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetail.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				CF6373122BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift */,
 				CF92D1802C03787C00148E71 /* UserAdvertisesTableViewCell.swift */,
+				CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */,
 			);
 			path = Customs;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */,
 				CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */,
 				CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */,
+				CF8EC0D72C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift in Sources */,
 				CFAE83EA2BE2C86A00999945 /* CompanyAdvertiseViewController.swift in Sources */,
 				CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */,
 				CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */,

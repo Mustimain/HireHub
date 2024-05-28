@@ -15,5 +15,6 @@ protocol JobApplicationProtocol{
     func GetJobApplicationDetailById(jobApplicationID : String) async throws -> JobApplicationDetail
     func CheckApplicationIsExist(userId : String,advertiseId : String) async throws -> Bool
     func GetAllJobApplicationDetailsByUserId(userId : String) async throws -> [JobApplicationDetail]
+    func GetAllJobApplicationDetailsByCompanyId(companyId : String) async throws -> [JobApplicationDetail]
 
 }
