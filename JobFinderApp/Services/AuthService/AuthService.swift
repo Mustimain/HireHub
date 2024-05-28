@@ -7,9 +7,12 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 
 class AuthService : AuthProtocol {
+
+    
       
     let db = Firestore.firestore()
     var companyDetailList : [CompanyDetail] = []
@@ -234,5 +237,33 @@ class AuthService : AuthProtocol {
     }
     
  
- 
+    func SaveUserResume(fileURL: URL, fileName: String) async throws -> Bool {
+        do {
+            
+            let storageRef = Storage.storage().reference()
+            let pdfRef = storageRef.child("Resumes/\(fileName)")
+            
+            pdfRef.putFile(from: fileURL)
+            return true
+        }catch{
+            return false;
+        }
+    }
+    
+
+    
+    func UpdateUserResume(fileURL: URL, fileName: String) async throws -> Bool {
+        do {
+            let storageRef = Storage.storage().reference()
+            let pdfRef = storageRef.child("Resumes/\(fileName)")
+            try await pdfRef.delete()
+            
+            pdfRef.putFile(from: fileURL)
+
+            return true
+           } catch {
+               return false
+           }
+    }
+    
 }

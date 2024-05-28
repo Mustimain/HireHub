@@ -6,31 +6,30 @@
 //
 
 import UIKit
+import FirebaseStorage
 
-class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIDocumentPickerDelegate{
 
     
     @IBOutlet weak var firstNameInput: UITextField!
     @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var jobInput: UITextField!
-    @IBOutlet weak var experienceYearInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var rePasswordInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
+    @IBOutlet weak var userResumeNameInput: UITextField!
     
     var jobPickerView = UIPickerView();
     var experienceYearPickerView = UIPickerView();
-    var experienceYears : [String] = []
     var jobDetailList: [JobDetail] = []
     var selectedJob : Job = Job()
+    var resumeURL : URL?
 
     override func viewDidLoad()  {
         super.viewDidLoad()
-        experienceYears = ["0 - 1", "1 - 3" ,"3 - 5","5 - 10","10+"]
 
         jobInput.inputView = jobPickerView;
-        experienceYearInput.inputView = experienceYearPickerView;
         
         jobPickerView.delegate = self;
         jobPickerView.dataSource = self;
@@ -49,14 +48,15 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
             
-            if firstNameInput.text!.count > 0 && lastNameInput.text!.count > 0 && emailInput.text!.count > 0 && selectedJob.name?.count ?? 0 > 0 && passwordInput.text!.count > 0 && phoneNumberInput.text!.count > 0 {
+            if firstNameInput.text!.count > 0 && lastNameInput.text!.count > 0 && emailInput.text!.count > 0 && selectedJob.name?.count ?? 0 > 0 && passwordInput.text!.count > 0 && phoneNumberInput.text!.count > 0 && resumeURL != nil{
+                
                 if passwordInput.text == rePasswordInput.text{
                     var newUser = User()
                     newUser.firstName = firstNameInput.text ?? ""
                     newUser.lastName = lastNameInput.text ?? ""
                     newUser.email = emailInput.text ?? ""
                     newUser.createDate = Date.now
-                    newUser.cvPath = ""
+                    newUser.cvPath = newUser.userID
                     newUser.emailVerification = true
                     newUser.jobID = selectedJob.jobID ?? ""
                     newUser.password = passwordInput.text ?? ""
@@ -64,8 +64,9 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
                     newUser.updateDate = Date.now
                     
                     let res = try await AuthService().UserRegister(user: newUser)
+                    let cvRes = try await AuthService().SaveUserResume(fileURL: resumeURL!, fileName: newUser.userID ?? "deneme")
                     
-                    if res == true{
+                    if res == true && cvRes == true{
                         self.showCustomAlert(title: "İşlem Başarılı", message: "Başarıyla kaydınız gerçekleşti. Giriş Yapabilirsiniz")
                         navigationController?.popViewController(animated: false)
                     }else{
@@ -85,6 +86,23 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         
     }
     
+    @IBAction func uploadCvButton(_ sender: Any) {
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
+                documentPicker.delegate = self
+                documentPicker.modalPresentationStyle = .formSheet
+                self.present(documentPicker, animated: true, completion: nil)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+           guard let selectedFileURL = urls.first else {
+               return
+           }
+        resumeURL = selectedFileURL;
+        userResumeNameInput.text = resumeURL?.lastPathComponent ?? "tekrar deneyiniz"
+        
+       }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -92,10 +110,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1{
             return jobDetailList.count
-        }
-        if pickerView.tag == 2{
-            return experienceYears.count
-
         }
         return  1
     }
@@ -105,8 +119,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         switch pickerView.tag{
         case 1:
             jobDetailList[row]
-        case 2:
-            experienceYears[row]
         default:
             return "Data not found"
         }
@@ -120,10 +132,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
             jobInput.text = jobDetailList[row].job?.name
             selectedJob = jobDetailList[row].job!
             jobInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
-        case 2:
-            experienceYearInput.text = experienceYears[row]
-            experienceYearInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
-
         default:
             break
         }
@@ -144,9 +152,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         case 1:
             label?.text = jobDetailList[row].job?.name
             label?.textColor = UIColor.black
-        case 2:
-            label?.text = experienceYears[row]
-            label?.textColor = UIColor.black
         default:
             label?.text =  "Data not found"
         }
@@ -162,4 +167,5 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         }
     }
 
+ 
 }

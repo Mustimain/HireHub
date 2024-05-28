@@ -43,6 +43,7 @@
 		CF6E2C402BF5406F000179F3 /* CustomMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6E2C3F2BF5406F000179F3 /* CustomMarker.xib */; };
 		CF7EA3D32BF161E8006BA340 /* AdvertiseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */; };
 		CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */; };
+		CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */; };
 		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
 		CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16E2C02362500148E71 /* UserDetail.swift */; };
 		CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1702C02363100148E71 /* CompanyDetail.swift */; };
@@ -137,6 +138,7 @@
 				CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */,
 				CF19D2F62BE6B1AC0090C7C7 /* FirebaseFirestore in Frameworks */,
 				CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */,
+				CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */,
 				CF19D2EF2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift in Frameworks */,
 				CF19D2EB2BE6ADF60090C7C7 /* FirebaseAnalytics in Frameworks */,
 				CF19D2F82BE6B1C00090C7C7 /* FirebaseAuth in Frameworks */,
@@ -452,6 +454,7 @@
 				CF19D2F22BE6ADF60090C7C7 /* FirebaseAppCheck */,
 				CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */,
 				CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */,
+				CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */,
 			);
 			productName = JobFinderApp;
 			productReference = CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */;
@@ -919,6 +922,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

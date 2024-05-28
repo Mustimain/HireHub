@@ -16,8 +16,10 @@ protocol AuthProtocol {
     func GetUserByEmail(email: String) async throws -> User
     func GetUserDetailByEmail(email: String) async throws -> UserDetail
     func GetUserDetailById(userId: String) async throws -> UserDetail
+    func SaveUserResume(fileURL: URL,fileName : String) async throws -> Bool
+    func UpdateUserResume(fileURL: URL,fileName : String) async throws -> Bool
 
-    
+
     
     func CompanyRegister(company: Company) async throws -> Bool
     func CompanyLogin(email: String, password : String) async throws -> Bool

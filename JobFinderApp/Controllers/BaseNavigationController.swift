@@ -11,7 +11,7 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView?.backgroundColor = .red
+        self.navigationItem.titleView?.tintColor = .red
         // Do any additional setup after loading the view.
     }
     
