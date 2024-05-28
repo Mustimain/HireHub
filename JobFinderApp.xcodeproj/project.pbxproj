@@ -45,6 +45,7 @@
 		CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */; };
 		CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */; };
 		CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */; };
+		CF8EC0D52C06630C00A2905B /* CompanyApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */; };
 		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
 		CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16E2C02362500148E71 /* UserDetail.swift */; };
 		CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1702C02363100148E71 /* CompanyDetail.swift */; };
@@ -102,6 +103,7 @@
 		CF7EA3D22BF161E8006BA340 /* AdvertiseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseDetail.swift; sourceTree = "<group>"; };
 		CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseCompanyDetailViewController.swift; sourceTree = "<group>"; };
+		CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesViewController.swift; sourceTree = "<group>"; };
 		CF92D16E2C02362500148E71 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		CF92D1702C02363100148E71 /* CompanyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetail.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */,
 				CF9D92DA2BE67AFB00E50CA1 /* AdvertiseAddViewController.swift */,
 				CF63730F2BFF79FB0072CC08 /* CompanyAdvertiseDetailViewController.swift */,
+				CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */,
 			);
 			path = CompanyControllers;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				CF92D1772C02367E00148E71 /* JobApplicationDetail.swift in Sources */,
 				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
 				CF6373132BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift in Sources */,
+				CF8EC0D52C06630C00A2905B /* CompanyApplicationDetailViewController.swift in Sources */,
 				CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */,
 				CFEDDC6D2BEFF7560064CF0F /* JobProtocol.swift in Sources */,
 				CF16758D2BEB86320026A4C0 /* Advertise.swift in Sources */,

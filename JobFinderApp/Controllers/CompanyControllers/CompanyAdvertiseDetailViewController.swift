@@ -8,13 +8,14 @@
 import UIKit
 
 class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     var selectedAdvetiseDetail: AdvertiseDetail?
     var isEditable = false;
-
+    
     @IBOutlet weak var advertiseTitleInput: UITextField!
     @IBOutlet weak var advertiseJobInput: UITextField!
     @IBOutlet weak var advertiseDescriptionInput: UITextView!
+    @IBOutlet weak var myButton: UIButton!
     
     var jobPickerView = UIPickerView();
     var joblist: [Job] = []
@@ -22,7 +23,7 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         jobPickerView.delegate = self;
         jobPickerView.dataSource = self;
         advertiseJobInput.inputView = jobPickerView;
@@ -37,13 +38,19 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
         advertiseDescriptionInput.text = selectedAdvetiseDetail?.advertise?.description
         selectedJob = selectedAdvetiseDetail?.jobDetail?.job ?? Job()
         
+        if selectedAdvetiseDetail?.advertise?.isActive == true{
+            myButton.setTitle("İlanı Kaldır", for:  .normal)
+        }else{
+            myButton.setTitle("İlana Yayınla", for:  .normal)
+        }
+        
         Task { @MainActor in
             
             await GetAllJobs()
         }
     }
     
-
+    
     @IBAction func editButton(_ sender: Any) {
         
         changeEditable();
@@ -57,31 +64,22 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
                 selectedAdvetiseDetail?.advertise?.jobId =  selectedJob.jobID
                 selectedAdvetiseDetail?.advertise?.description = advertiseDescriptionInput.text
                 
-                let res = try await AdvertiseService().UpdateAdvertise(advertise: (selectedAdvetiseDetail?.advertise!)!)
-                
-                if res == true{
+                if advertiseTitleInput.text!.count > 0 && advertiseDescriptionInput.text.count > 0 && selectedJob.name!.count > 0{
+                    let res = try await AdvertiseService().UpdateAdvertise(advertise: (selectedAdvetiseDetail?.advertise!)!)
                     
-                    let alert = UIAlertController(title: "Başarılı", message: "Kayıt Başarılı", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "Ok", style: .default) { action in
-                        self.navigationController?.popViewController(animated: false);
+                    if res == true{
+                        
+                        self.showCustomAlert(title: "İşlem Başarılı", message: "Bilgiler başarıyla güncellendi.")
+                    }else{
+                        self.showCustomAlert(title: "Hata", message: "Güncelleme işlemi başarısı.Lütfen daha sonra tekrar deneyiniz.")
                     }
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true,completion: nil)
-                    
+                }else{
+                    self.showCustomAlert(title: "Hata", message: "Alanlar Boş bırakılamaz lütfen alanları doldurup tekrar deneyiniz.")
                 }
+            }else{
+                self.showCustomAlert(title: "Hata", message: "Güncelleme yapmak için düzenlemeyi etkinleştiriniz.")
             }
-            else{
-                let alert = UIAlertController(title: "Hata", message: "Lütfen Düzenlemeyi Etkinleştirin", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Ok", style: .default) { action in
-                }
-                
-                alert.addAction(action)
-                self.present(alert, animated: true,completion: nil)
-            }
-         
+            
             
         }
     }
@@ -117,7 +115,7 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
         switch pickerView.tag{
         case 1:
             joblist[row]
-
+            
         default:
             return "Data not found"
         }
@@ -144,18 +142,18 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
             label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
             label?.textAlignment = .center
             label?.textColor = UIColor.black // Metin rengini burada değiştirin
-
+            
         }
         
         switch pickerView.tag{
         case 1:
             label?.text = joblist[row].name
             label?.textColor = UIColor.black
-
+            
         default:
             label?.text =  "Data not found"
         }
-  
+        
         
         return label!
     }
@@ -167,6 +165,33 @@ class CompanyAdvertiseDetailViewController: UIViewController, UIPickerViewDelega
             self.joblist  = try await JobService().GetAllJobs();
         }
     }
-
-
+    @IBAction func disableJobApplicationButton(_ sender: Any) {
+        Task { @MainActor in
+            
+            if selectedAdvetiseDetail?.advertise?.isActive == true{
+                var newAdvertiseDetail = selectedAdvetiseDetail
+                newAdvertiseDetail?.advertise?.isActive = false
+                var res = try await AdvertiseService().UpdateAdvertise(advertise: (newAdvertiseDetail?.advertise)!)
+                if res == true{
+                    self.showCustomAlert(title: "İşlem Başarılı", message: "İlan Başarıyla Yayından kaldırıldı.")
+                }else{
+                    self.showCustomAlert(title: "Hata", message: "İşlem Gerçekleşmedi. Daha sonra tekrar deneyiniz.")
+                }
+                
+            }else{
+                var newAdvertiseDetail = selectedAdvetiseDetail
+                newAdvertiseDetail?.advertise?.isActive = true
+                var res = try await AdvertiseService().UpdateAdvertise(advertise: (newAdvertiseDetail?.advertise)!)
+                
+                if res == true{
+                    self.showCustomAlert(title: "İşlem Başarılı", message: "İlan Başarıyla Tekrar Yayınlandı.")
+                }else{
+                    self.showCustomAlert(title: "Hata", message: "İşlem Gerçekleşmedi. Daha sonra tekrar deneyiniz.")
+                }
+            }
+            
+        }
+    }
+    
+    
 }

@@ -13,7 +13,7 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var jobInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextView!
     var jobPickerView = UIPickerView();
-
+    
     var joblist: [Job] = []
     var selectedJob : Job = Job()
     
@@ -32,36 +32,37 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            
-            navigationController?.setNavigationBarHidden(false, animated: animated)
-
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
         
     }
     
     @IBAction func AddAdvertiseButton(_ sender: Any) {
         Task { @MainActor in
             
-            var newAdvertise = Advertise()
-            newAdvertise.createDate = Date.now
-            newAdvertise.title = titleInput.text ?? ""
-            newAdvertise.description = descriptionInput.text ?? ""
-            newAdvertise.jobId = selectedJob.jobID
-            newAdvertise.companyID = GlobalVeriables.currentCompany?.company?.companyID ?? ""
-            
-            let res = try await AdvertiseService().AddAdvertise(advertise: newAdvertise)
-            
-            if res == true{
+            if titleInput.text!.count > 0 && descriptionInput.text.count > 0 && selectedJob.name!.count > 0{
+                var newAdvertise = Advertise()
+                newAdvertise.createDate = Date.now
+                newAdvertise.title = titleInput.text ?? ""
+                newAdvertise.description = descriptionInput.text ?? ""
+                newAdvertise.jobId = selectedJob.jobID
+                newAdvertise.companyID = GlobalVeriables.currentCompany?.company?.companyID ?? ""
                 
-                let alert = UIAlertController(title: "Başarılı", message: "Kayıt Başarılı", preferredStyle: .alert)
+                let res = try await AdvertiseService().AddAdvertise(advertise: newAdvertise)
                 
-                let action = UIAlertAction(title: "Ok", style: .default) { action in
+                if res == true{
+                    self.showCustomAlert(title: "İşlem Başarılı", message: "İlan Başarıyla Oluşturulmuştur")
                     
+                }else{
+                    self.showCustomAlert(title: "Hata", message: "İlan Oluşturulamadı lütfen daha sonra tekrar deneyiniz.")
                 }
-                
-                alert.addAction(action)
-                self.present(alert, animated: true,completion: nil)
+            }
+            else{
+                self.showCustomAlert(title: "Hata", message: "Alanlar boş bırakılamaz lütfen doldurup tekrar deneyiniz.")
                 
             }
+            
         }
     }
     
@@ -81,7 +82,7 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
         switch pickerView.tag{
         case 1:
             joblist[row]
-
+            
         default:
             return "Data not found"
         }
@@ -108,18 +109,18 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
             label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
             label?.textAlignment = .center
             label?.textColor = UIColor.black // Metin rengini burada değiştirin
-
+            
         }
         
         switch pickerView.tag{
         case 1:
             label?.text = joblist[row].name
             label?.textColor = UIColor.black
-
+            
         default:
             label?.text =  "Data not found"
         }
-  
+        
         
         return label!
     }
@@ -130,6 +131,6 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
             self.joblist  = try await JobService().GetAllJobs();
         }
     }
-
-
+    
+    
 }
