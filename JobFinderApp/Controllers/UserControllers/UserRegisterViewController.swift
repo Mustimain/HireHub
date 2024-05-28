@@ -56,7 +56,6 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
                     newUser.lastName = lastNameInput.text ?? ""
                     newUser.email = emailInput.text ?? ""
                     newUser.createDate = Date.now
-                    newUser.cvPath = newUser.userID
                     newUser.emailVerification = true
                     newUser.jobID = selectedJob.jobID ?? ""
                     newUser.password = passwordInput.text ?? ""
@@ -87,6 +86,7 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
     }
     
     @IBAction func uploadCvButton(_ sender: Any) {
+        
         let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
                 documentPicker.delegate = self
                 documentPicker.modalPresentationStyle = .formSheet

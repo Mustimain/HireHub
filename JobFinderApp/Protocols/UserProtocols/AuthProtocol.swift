@@ -18,6 +18,7 @@ protocol AuthProtocol {
     func GetUserDetailById(userId: String) async throws -> UserDetail
     func SaveUserResume(fileURL: URL,fileName : String) async throws -> Bool
     func UpdateUserResume(fileURL: URL,fileName : String) async throws -> Bool
+    func GetResumeURL(fileName: String) async throws -> URL
 
 
     

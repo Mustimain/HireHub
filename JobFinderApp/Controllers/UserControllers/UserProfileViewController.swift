@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIDocumentPickerDelegate {
     
 
     @IBOutlet weak var userFullNameLabel: UILabel!
@@ -16,12 +16,15 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var jobInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var phoneNumberInput: UITextField!
+    @IBOutlet weak var resumeNameInput: UITextField!
     
     var isEditable = false;
     var selectedJob : Job = Job()
     var jobPicker = UIPickerView();
     var experienceYearPicker = UIPickerView();
     var jobList: [Job] = []
+    var resumePdfURL : URL?
+    var newResumePdfURL : URL?
 
     
     override func viewDidLoad() {
@@ -41,7 +44,8 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.jobInput.isEnabled = isEditable;
         self.emailInput.isEnabled = isEditable;
         self.phoneNumberInput.isEnabled = isEditable;
-        
+        self.jobInput.text = GlobalVeriables.currentUser?.jobDetail?.job?.name
+
         Task { @MainActor in
             
             await GetAllJobs()
@@ -50,15 +54,22 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.userFullNameLabel.text = (GlobalVeriables.currentUser?.user?.firstName ?? "") + " " + (GlobalVeriables.currentUser?.user?.lastName ?? "")
-        self.userFirstNameInput.text = GlobalVeriables.currentUser?.user?.firstName;
-        self.userLastNameInput.text = GlobalVeriables.currentUser?.user?.lastName;
-        self.jobInput.text = GlobalVeriables.currentUser?.jobDetail?.job?.name
-        self.emailInput.text = GlobalVeriables.currentUser?.user?.email;
-        self.phoneNumberInput.text = GlobalVeriables.currentUser?.user?.phoneNumber;
-        
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        Task { @MainActor in
+            
+            resumePdfURL = try await AuthService().GetResumeURL(fileName: (GlobalVeriables.currentUser?.user?.userID)!)
+            
+            self.userFullNameLabel.text = (GlobalVeriables.currentUser?.user?.firstName ?? "") + " " + (GlobalVeriables.currentUser?.user?.lastName ?? "")
+            self.userFirstNameInput.text = GlobalVeriables.currentUser?.user?.firstName;
+            self.userLastNameInput.text = GlobalVeriables.currentUser?.user?.lastName;
+            self.jobInput.text = GlobalVeriables.currentUser?.jobDetail?.job?.name
+            self.emailInput.text = GlobalVeriables.currentUser?.user?.email;
+            self.phoneNumberInput.text = GlobalVeriables.currentUser?.user?.phoneNumber;
+            
+            self.resumeNameInput.text = resumePdfURL?.lastPathComponent ?? "Özgeçmiş Bulunamadı";
+            
+            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        }
+   
 
     }
     
@@ -92,6 +103,19 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 
                 var result = try await AuthService().UpdateUser(user: updateUser!)
                 
+                if newResumePdfURL == nil{
+                  
+                    var res = try await AuthService().UpdateUserResume(fileURL: resumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
+                    if res == false{
+                        self.showCustomAlert(title: "Hata", message: "Özgeçmiş Güncellenemedi.")
+                    }
+
+                }else{
+                    var ress = try await AuthService().SaveUserResume(fileURL: newResumePdfURL!, fileName: (GlobalVeriables.currentUser?.user?.userID)!)
+                    if ress == false{
+                        self.showCustomAlert(title: "Hata", message: "Özgeçmiş Yüklenemedi.")
+                    }
+                }
                 
                 if result == true{
                     
@@ -124,6 +148,13 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func GetAllJobs() async{
         Task { @MainActor in
             jobList = try await JobService().GetAllJobs()
+            var url = try await AuthService().GetResumeURL(fileName: GlobalVeriables.currentUser?.user?.userID ?? "")
+            if url.absoluteString.count > 0 && url != nil{
+                resumePdfURL = url
+
+            }
+            
+
         }
     }
     
@@ -206,5 +237,24 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         return label!
     }
+    @IBAction func uploadResumeButton(_ sender: Any) {
+        if isEditable == true{
+            let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.adobe.pdf"], in: .import)
+                    documentPicker.delegate = self
+                    documentPicker.modalPresentationStyle = .formSheet
+                    self.present(documentPicker, animated: true, completion: nil)
+        }else{
+            self.showCustomAlert(title: "Hata", message: "Lütfen düzenlemeyi etkinlşetirin.")
+        }
+      
+    }
     
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+           guard let selectedFileURL = urls.first else {
+               return
+           }
+        newResumePdfURL = selectedFileURL;
+        resumeNameInput.text = newResumePdfURL?.lastPathComponent ?? "tekrar deneyiniz"
+        
+       }
 }

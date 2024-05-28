@@ -11,8 +11,7 @@ import FirebaseStorage
 
 
 class AuthService : AuthProtocol {
-
-    
+   
       
     let db = Firestore.firestore()
     var companyDetailList : [CompanyDetail] = []
@@ -265,5 +264,25 @@ class AuthService : AuthProtocol {
                return false
            }
     }
+    
+    func GetResumeURL(fileName: String) async throws -> URL {
+        var newURL : URL = URL(fileURLWithPath: "")
+        do {
+                let storageRef = Storage.storage().reference()
+                let pdfRef = storageRef.child("Resumes/\(fileName)")
+                
+                // Dosya URL'sini al
+                let url = try await pdfRef.downloadURL()
+                newURL = url
+                return url
+            } catch {
+                
+            }
+        
+        return newURL
+    }
+    
+
+    
     
 }

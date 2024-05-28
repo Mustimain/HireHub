@@ -17,7 +17,6 @@ struct User : Codable{
     var  email : String?
     var  password : String?
     var  phoneNumber : String?
-    var  cvPath : String?
     var  emailVerification : Bool?
     var  createDate : Date?
     var  updateDate : Date?
