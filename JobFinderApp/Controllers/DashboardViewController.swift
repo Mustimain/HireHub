@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 
-
 class DashboardViewController: UIViewController {
     
     var jobDetailList: [JobDetail] = []
@@ -34,6 +33,8 @@ class DashboardViewController: UIViewController {
             navigationController?.pushViewController(companyLoginVC, animated: true)
         }
     }
+    
+    
     
 
     /*

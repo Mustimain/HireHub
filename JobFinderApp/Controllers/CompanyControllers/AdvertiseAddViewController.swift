@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleGenerativeAI
+
 
 class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -89,7 +91,7 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
         return ""
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)  {
         
         switch pickerView.tag{
         case 1:
@@ -132,5 +134,38 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
+    func GetDraftJobDetail(job : String) async{
+        var companyDetail = GlobalVeriables.currentCompany
+        Task{
+            let prompt = "Şirket Adı:\(companyDetail?.company?.name!) Şirket Mail:\(companyDetail?.company?.email!) Şirket Adresi:\(companyDetail?.company?.address!) Şirket Ortalama Maaş:\(companyDetail?.company?.avarageSalary!) Şirket Çalışan Sayısı\(companyDetail?.company?.employeeSize!) Şirket Telefon Numarası\(companyDetail?.company?.phoneNumber!) Şirket Tanıtım Açıklaması\(companyDetail?.company?.description)! ve Şirketin Hizmet veridği Sektör:\(companyDetail?.sector?.name) bu şirket verilerine göre \(job) mesleğe göre iş ilan detay taslağı olusturur ve bu verilere göre doldurur musun sadece taslak ver lütfen"
+            
+            let model = GenerativeModel(name: "gemini-1.5-flash-latest", apiKey: "AIzaSyCA20uqUiqiPRdyqNZDT7-0L_8_H_633FU")
+            
+            do{
+                let response = try await model.generateContent(prompt)
+                guard let text = response.text else{
+                    print("Hata Veri Gelmedi")
+                    return
+                }
+                
+                descriptionInput.text = text
+            }catch{
+                print(error.localizedDescription)
+
+            }
+            
+        }
+    }
+    
+    @IBAction func CreateDraftAdvertiseButton(_ sender: Any) {
+        if selectedJob.name?.count ?? 0 > 0 && titleInput.text?.count ?? 0 > 0 {
+            Task{
+                await self.GetDraftJobDetail(job: selectedJob.name ?? "")
+            }
+        }else{
+            self.showCustomAlert(title: "Bilgilendirme", message: "Taslak Oluşturmak için lütfen bir meslek ve İlan başlığı girip tekrar deneyiniz.")
+        }
+      
+    }
     
 }

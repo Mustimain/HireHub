@@ -546,28 +546,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="İlan Başlığı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zoq-5e-1Lg">
-                                <rect key="frame" x="123.33333333333333" y="124" width="253.66666666666669" height="34"/>
+                                <rect key="frame" x="119.66666666666666" y="124" width="257.33333333333337" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meslek" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-YB-mRv">
-                                <rect key="frame" x="123.33333333333333" y="166" width="253.66666666666669" height="34"/>
+                                <rect key="frame" x="119.66666666666666" y="166" width="257.33333333333337" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="sxl-ka-QWv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zY-sG-bx3">
-                                <rect key="frame" x="16" y="658" width="361" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="İlan Oluştur">
-                                    <color key="baseBackgroundColor" red="0.40392160420000001" green="0.46666666870000001" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="AddAdvertiseButton:" destination="0kS-mf-LIV" eventType="touchUpInside" id="1Z1-kn-OFH"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PHW-n8-kdZ">
                                 <rect key="frame" x="25" y="269" width="352" height="360"/>
                                 <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="0.19826158939999999" colorSpace="custom" customColorSpace="sRGB"/>
@@ -604,8 +594,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="İlan Detayları" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC0-WK-PeK">
-                                <rect key="frame" x="145" y="229" width="113" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İlan Detayları" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sC0-WK-PeK">
+                                <rect key="frame" x="150" y="223" width="113" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="2KN-eZ-ymG"/>
                                 </constraints>
@@ -613,35 +603,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnu-5F-R4O">
+                                <rect key="frame" x="16" y="658" width="361" height="35"/>
+                                <color key="tintColor" red="0.40392160420000001" green="0.46666666870000001" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="İlan Taslak Oluştur"/>
+                                <connections>
+                                    <action selector="CreateDraftAdvertiseButton:" destination="0kS-mf-LIV" eventType="touchUpInside" id="SC4-xh-683"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zY-sG-bx3">
+                                <rect key="frame" x="16" y="701" width="361" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="İlan Oluştur">
+                                    <color key="baseBackgroundColor" red="0.40392160420000001" green="0.46666666870000001" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="AddAdvertiseButton:" destination="0kS-mf-LIV" eventType="touchUpInside" id="1Z1-kn-OFH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gTj-us-s3j"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sC0-WK-PeK" firstAttribute="top" secondItem="Wsb-YB-mRv" secondAttribute="bottom" constant="29" id="49n-Yc-XGM"/>
+                            <constraint firstItem="sC0-WK-PeK" firstAttribute="top" secondItem="Wsb-YB-mRv" secondAttribute="bottom" constant="23" id="49n-Yc-XGM"/>
                             <constraint firstItem="RFB-At-2ly" firstAttribute="leading" secondItem="6qz-e5-EUd" secondAttribute="leading" id="4Ie-Bh-v20"/>
                             <constraint firstItem="Vw6-k8-pKh" firstAttribute="leading" secondItem="5zY-sG-bx3" secondAttribute="leading" id="4oC-rH-grz"/>
+                            <constraint firstItem="5zY-sG-bx3" firstAttribute="top" secondItem="wnu-5F-R4O" secondAttribute="bottom" constant="8" id="8cL-c8-Van"/>
+                            <constraint firstItem="wnu-5F-R4O" firstAttribute="leading" secondItem="5zY-sG-bx3" secondAttribute="leading" id="9lW-th-rOk"/>
                             <constraint firstItem="RFB-At-2ly" firstAttribute="top" secondItem="gTj-us-s3j" secondAttribute="top" constant="10" id="GZI-Ty-8rM"/>
                             <constraint firstItem="Wsb-YB-mRv" firstAttribute="top" secondItem="zoq-5e-1Lg" secondAttribute="bottom" constant="8" id="HLp-w5-4wK"/>
                             <constraint firstItem="zoq-5e-1Lg" firstAttribute="leading" secondItem="Wsb-YB-mRv" secondAttribute="leading" id="HwT-Sc-clH"/>
                             <constraint firstItem="zoq-5e-1Lg" firstAttribute="trailing" secondItem="Wsb-YB-mRv" secondAttribute="trailing" id="Hyy-Zc-akd"/>
                             <constraint firstItem="6qz-e5-EUd" firstAttribute="centerY" secondItem="zoq-5e-1Lg" secondAttribute="centerY" id="I7t-RH-hOV"/>
-                            <constraint firstItem="5zY-sG-bx3" firstAttribute="top" secondItem="PHW-n8-kdZ" secondAttribute="bottom" constant="29" id="OEO-vN-Joq"/>
+                            <constraint firstItem="wnu-5F-R4O" firstAttribute="trailing" secondItem="5zY-sG-bx3" secondAttribute="trailing" id="Itc-Uo-drP"/>
+                            <constraint firstItem="5zY-sG-bx3" firstAttribute="top" secondItem="PHW-n8-kdZ" secondAttribute="bottom" constant="72" id="OEO-vN-Joq"/>
                             <constraint firstItem="zoq-5e-1Lg" firstAttribute="top" secondItem="RFB-At-2ly" secondAttribute="bottom" constant="18.666666666666515" id="OqG-Vz-tM0"/>
                             <constraint firstItem="6qz-e5-EUd" firstAttribute="top" secondItem="RFB-At-2ly" secondAttribute="bottom" constant="24.666666666666515" id="PPl-ao-Acy"/>
-                            <constraint firstItem="gTj-us-s3j" firstAttribute="bottom" secondItem="5zY-sG-bx3" secondAttribute="bottom" constant="125" id="R7b-TZ-Yyb"/>
+                            <constraint firstItem="gTj-us-s3j" firstAttribute="bottom" secondItem="5zY-sG-bx3" secondAttribute="bottom" constant="82" id="R7b-TZ-Yyb"/>
                             <constraint firstItem="Wsb-YB-mRv" firstAttribute="trailing" secondItem="PHW-n8-kdZ" secondAttribute="trailing" id="Sib-De-uVf"/>
-                            <constraint firstItem="sC0-WK-PeK" firstAttribute="centerX" secondItem="PHW-n8-kdZ" secondAttribute="centerX" id="T2y-9P-Ami"/>
+                            <constraint firstItem="sC0-WK-PeK" firstAttribute="centerX" secondItem="PHW-n8-kdZ" secondAttribute="centerX" constant="5.5" id="T2y-9P-Ami"/>
                             <constraint firstItem="RFB-At-2ly" firstAttribute="leading" secondItem="dVG-KT-hQe" secondAttribute="leadingMargin" id="VSl-bw-crs"/>
                             <constraint firstItem="RFB-At-2ly" firstAttribute="trailing" secondItem="dVG-KT-hQe" secondAttribute="trailingMargin" id="Xd0-3M-WLY"/>
                             <constraint firstItem="RFB-At-2ly" firstAttribute="trailing" secondItem="zoq-5e-1Lg" secondAttribute="trailing" id="bxf-ee-njG"/>
                             <constraint firstItem="PHW-n8-kdZ" firstAttribute="trailing" secondItem="5zY-sG-bx3" secondAttribute="trailing" id="dNN-I4-AeE"/>
                             <constraint firstItem="Vw6-k8-pKh" firstAttribute="top" secondItem="6qz-e5-EUd" secondAttribute="bottom" constant="21.333333333333485" id="g2s-CM-7kt"/>
                             <constraint firstItem="PHW-n8-kdZ" firstAttribute="leading" secondItem="gTj-us-s3j" secondAttribute="leading" constant="25" id="gqc-hX-Umc"/>
-                            <constraint firstItem="zoq-5e-1Lg" firstAttribute="leading" secondItem="6qz-e5-EUd" secondAttribute="trailing" constant="26" id="igg-vK-d5C"/>
+                            <constraint firstItem="zoq-5e-1Lg" firstAttribute="leading" secondItem="6qz-e5-EUd" secondAttribute="trailing" constant="22.333333333333329" id="igg-vK-d5C"/>
                             <constraint firstItem="6qz-e5-EUd" firstAttribute="leading" secondItem="Vw6-k8-pKh" secondAttribute="leading" id="pht-ps-Oh8"/>
                             <constraint firstItem="Vw6-k8-pKh" firstAttribute="centerY" secondItem="Wsb-YB-mRv" secondAttribute="centerY" id="qhO-fl-FPJ"/>
-                            <constraint firstItem="PHW-n8-kdZ" firstAttribute="top" secondItem="sC0-WK-PeK" secondAttribute="bottom" constant="17" id="thn-P5-UrP"/>
-                            <constraint firstItem="sC0-WK-PeK" firstAttribute="leading" secondItem="gTj-us-s3j" secondAttribute="leading" constant="145" id="vzg-p1-uQb"/>
+                            <constraint firstItem="PHW-n8-kdZ" firstAttribute="top" secondItem="sC0-WK-PeK" secondAttribute="bottom" constant="23" id="thn-P5-UrP"/>
+                            <constraint firstItem="sC0-WK-PeK" firstAttribute="leading" secondItem="gTj-us-s3j" secondAttribute="leading" constant="150" id="vzg-p1-uQb"/>
                         </constraints>
                     </view>
                     <connections>

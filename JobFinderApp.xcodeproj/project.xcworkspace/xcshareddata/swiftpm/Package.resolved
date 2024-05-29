@@ -1,5 +1,5 @@
 {
-  "originHash" : "4f7181f4b6fbd5fc9556388dbc1c2ff956fe2a60aaa3a682b3c60dbca4f88ead",
+  "originHash" : "fd1388cd92d6dfd3cc546a238ddcc3d2cb9e9652e4bf6acfb3754bac59e54223",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "97940381e57703c07f31a8058d8f39ec53b7c272",
         "version" : "10.25.0"
+      }
+    },
+    {
+      "identity" : "generative-ai-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google-gemini/generative-ai-swift.git",
+      "state" : {
+        "revision" : "5d750b80651da9721c37c5eb1fc0b6750d1884d3",
+        "version" : "0.5.3"
       }
     },
     {
@@ -107,6 +116,24 @@
       "state" : {
         "revision" : "b7e1104502eca3a213b46303391ca4d3bc8ddec1",
         "version" : "2.30910.0"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FuturraGroup/OpenAI.git",
+      "state" : {
+        "revision" : "0f50bc2531639e1093d93d5a02dc2a99e0697ef5",
+        "version" : "1.9.3"
+      }
+    },
+    {
+      "identity" : "openaiswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adamrushy/OpenAISwift.git",
+      "state" : {
+        "revision" : "ca66fb720d6ebb657601db5a0852b830ae310a4c",
+        "version" : "1.4.1"
       }
     },
     {
