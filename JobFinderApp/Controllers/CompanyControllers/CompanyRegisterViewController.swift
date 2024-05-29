@@ -90,23 +90,28 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             newCompany.address = addressInput.text ?? ""
             newCompany.updateDate = Date.now
             
-            
-            if avarageSalaryInput.text!.count > 0 && descriptionInput.text!.count > 0 && emailInput.text!.count > 0 && employeeSizeInput.text!.count > 0 && companyNameInput.text!.count > 0 && passwordInput.text!.count > 0 && selectedSector.name!.count > 0 && addressInput.text!.count > 0{
-                
-                if passwordInput.text == rePasswordInput.text{
-                    let res = try await AuthService().CompanyRegister(company: newCompany)
+            var checkCompanyEmail = try await AuthService().CheckCompanyEmailIsExist(email: emailInput.text!)
+            if checkCompanyEmail == false{
+                if avarageSalaryInput.text!.count > 0 && descriptionInput.text!.count > 0 && emailInput.text!.count > 0 && employeeSizeInput.text!.count > 0 && companyNameInput.text!.count > 0 && passwordInput.text!.count > 0 && selectedSector.name!.count > 0 && addressInput.text!.count > 0{
                     
-                    if res == true{
-                        self.showCustomAlert(title: "İşlem Başarılı", message: "Kayıt Başarıyla gerçekleşti. Giriş Yapabilirsiniz.")
+                    if passwordInput.text == rePasswordInput.text{
+                        let res = try await AuthService().CompanyRegister(company: newCompany)
+                        
+                        if res == true{
+                            self.showCustomAlert(title: "İşlem Başarılı", message: "Kayıt Başarıyla gerçekleşti. Giriş Yapabilirsiniz.")
+                        }else{
+                            self.showCustomAlert(title: "Hata", message: "Kayıt gerçekleşmedi. Lütfen Sonra tekrar deneyinzi.")
+                        }
                     }else{
-                        self.showCustomAlert(title: "Hata", message: "Kayıt gerçekleşmedi. Lütfen Sonra tekrar deneyinzi.")
+                        self.showCustomAlert(title: "Hata", message: "Şifre ve Şifre Tekrarı aynı olmalıdır. Kontrol edip tekrar deneyiniz")
+
                     }
                 }else{
-                    self.showCustomAlert(title: "Hata", message: "Şifre ve Şifre Tekrarı aynı olmalıdır. Kontrol edip tekrar deneyiniz")
+                    self.showCustomAlert(title: "Hata", message: "İlgili alanlar boş bırakılamaz. Lütfen boş alanları doldurup tekrar deneyiniz.")
 
                 }
             }else{
-                self.showCustomAlert(title: "Hata", message: "İlgili alanlar boş bırakılamaz. Lütfen boş alanları doldurup tekrar deneyiniz.")
+                self.showCustomAlert(title: "Hata", message: "Email adresi kullanımda. Lütfen farklı bir email adresi deneyiniz.")
 
             }
             

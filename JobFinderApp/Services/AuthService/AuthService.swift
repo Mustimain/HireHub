@@ -11,6 +11,7 @@ import FirebaseStorage
 
 
 class AuthService : AuthProtocol {
+
    
       
     let db = Firestore.firestore()
@@ -283,6 +284,25 @@ class AuthService : AuthProtocol {
     }
     
 
+    func CheckUserEmailIsExist(email: String) async throws -> Bool {
+        var user = try await self.GetUserByEmail(email: email)
+        if user.firstName?.count ?? 0 > 0 {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func CheckCompanyEmailIsExist(email: String) async throws -> Bool {
+        var company = try await self.GetCompanyByEmail(email: email)
+        if company.name?.count ?? 0 > 0 {
+            return true
+
+        }else{
+            return false
+
+        }
+    }
     
     
 }

@@ -47,38 +47,45 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
 
     @IBAction func RegisterButton(_ sender: Any) {
         Task { @MainActor in
+            var newUser = User()
+            newUser.firstName = firstNameInput.text ?? ""
+            newUser.lastName = lastNameInput.text ?? ""
+            newUser.email = emailInput.text ?? ""
+            newUser.createDate = Date.now
+            newUser.emailVerification = true
+            newUser.jobID = selectedJob.jobID ?? ""
+            newUser.password = passwordInput.text ?? ""
+            newUser.phoneNumber = phoneNumberInput.text ?? ""
+            newUser.updateDate = Date.now
             
-            if firstNameInput.text!.count > 0 && lastNameInput.text!.count > 0 && emailInput.text!.count > 0 && selectedJob.name?.count ?? 0 > 0 && passwordInput.text!.count > 0 && phoneNumberInput.text!.count > 0 && resumeURL != nil{
-                
-                if passwordInput.text == rePasswordInput.text{
-                    var newUser = User()
-                    newUser.firstName = firstNameInput.text ?? ""
-                    newUser.lastName = lastNameInput.text ?? ""
-                    newUser.email = emailInput.text ?? ""
-                    newUser.createDate = Date.now
-                    newUser.emailVerification = true
-                    newUser.jobID = selectedJob.jobID ?? ""
-                    newUser.password = passwordInput.text ?? ""
-                    newUser.phoneNumber = phoneNumberInput.text ?? ""
-                    newUser.updateDate = Date.now
+            
+            var checkUserEmail = try await AuthService().CheckUserEmailIsExist(email: emailInput.text!)
+            if checkUserEmail == false{
+                if firstNameInput.text!.count > 0 && lastNameInput.text!.count > 0 && emailInput.text!.count > 0 && selectedJob.name?.count ?? 0 > 0 && passwordInput.text!.count > 0 && phoneNumberInput.text!.count > 0 && resumeURL != nil{
                     
-                    let res = try await AuthService().UserRegister(user: newUser)
-                    let cvRes = try await AuthService().SaveUserResume(fileURL: resumeURL!, fileName: newUser.userID ?? "deneme")
-                    
-                    if res == true && cvRes == true{
-                        self.showCustomAlert(title: "İşlem Başarılı", message: "Başarıyla kaydınız gerçekleşti. Giriş Yapabilirsiniz")
-                        navigationController?.popViewController(animated: false)
+                    if passwordInput.text == rePasswordInput.text{
+                        
+                        let res = try await AuthService().UserRegister(user: newUser)
+                        let cvRes = try await AuthService().SaveUserResume(fileURL: resumeURL!, fileName: newUser.userID ?? "deneme")
+                        
+                        if res == true && cvRes == true{
+                            self.showCustomAlert(title: "İşlem Başarılı", message: "Başarıyla kaydınız gerçekleşti. Giriş Yapabilirsiniz")
+                            navigationController?.popViewController(animated: false)
+                        }else{
+                            self.showCustomAlert(title: "Hata", message: "Kayıt gerçekleşmedi. Tekrar Deneyiniz")
+                        }
+                        
                     }else{
-                        self.showCustomAlert(title: "Hata", message: "Kayıt gerçekleşmedi. Tekrar Deneyiniz")
+                        self.showCustomAlert(title: "Hata", message: "Şifre ve Şifre Tekrarı Aynı olmalıdır. Tekrar Deneyiniz.")
                     }
                     
                 }else{
-                    self.showCustomAlert(title: "Hata", message: "Şifre ve Şifre Tekrarı Aynı olmalıdır. Tekrar Deneyiniz.")
+                    self.showCustomAlert(title: "Hata", message: "Alanlar Boş Bırakılamaz. Tüm alanları eksiksiz doldurduğunuzu kontrol edip tekrar deneyiniz")
                 }
-                
             }else{
-                self.showCustomAlert(title: "Hata", message: "Alanlar Boş Bırakılamaz. Tüm alanları eksiksiz doldurduğunuzu kontrol edip tekrar deneyiniz")
+                self.showCustomAlert(title: "Hata", message: "Email adresi kullanımda. Lütfen farklı bir email adresi deneyiniz.")
             }
+         
             
         
         }
