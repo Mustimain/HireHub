@@ -20,6 +20,7 @@ class CompanyApplicationDetailViewController: UIViewController, UIDocumentPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,11 +38,13 @@ class CompanyApplicationDetailViewController: UIViewController, UIDocumentPicker
             jobDescriptionInput.text = selectedApplicationDetail?.advertiseDetail?.advertise?.description
             
             Task { @MainActor in
+                await self.changeJobApplicationStatus(status: .applicationViewed)
                 let resume = try await AuthService().GetResumeURL(fileName: selectedApplicationDetail?.userDetail?.user?.userID ?? "")
                 if resume.absoluteString.count > 0 {
                     resumeURL = resume
                     userResumeInput.text = resume.absoluteString
                 }
+                
             }
         }
     }
@@ -82,6 +85,11 @@ class CompanyApplicationDetailViewController: UIViewController, UIDocumentPicker
                 do {
                     let data = try Data(contentsOf: resumeURL)
                     try data.write(to: destinationURL)
+                    
+                    Task {
+                        await self.changeJobApplicationStatus(status: .cvDownloaded)
+
+                    }
                     self.showCustomAlert(title: "Başarılı", message: "PDF başarıyla kaydedildi:")
                 } catch {
                     self.showCustomAlert(title: "Hata", message: "Aynı PDF mevcut lütfen ismini tekrar giriniz. ")
@@ -95,6 +103,17 @@ class CompanyApplicationDetailViewController: UIViewController, UIDocumentPicker
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func changeJobApplicationStatus(status : ApplicationStatusEnum) async{
+        Task {
+            if selectedApplicationDetail?.jobApplication != nil{
+                var updateApplicationDetail = selectedApplicationDetail
+                updateApplicationDetail?.jobApplication?.applicationStatus = status
+                var res = try await JobApplicationService().ChangeJobApplicationStatus(jobApplication: (updateApplicationDetail?.jobApplication)!)
+
+            }
+        }
     }
 
 

@@ -33,8 +33,14 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     var selectedSector : Sector = Sector()
     var sectorPicker = UIPickerView();
     var employeeSizePicker = UIPickerView();
+    var averageSalaryPicker = UIPickerView();
     var sectorList: [Sector] = []
-    var employeeSizeList : [String] = ["1 - 10", "10 - 50" ,"50 - 100","100 - 500"," 500 - 1000", "1000+"]
+    
+    var selectedSalaryLevel : AverageSalaryEnum?
+    var selectedEmployeeSize : EmployeeSizeEnum?
+    let salaryLevels = AverageSalaryEnum.allCases
+    let employeeSizes = EmployeeSizeEnum.allCases
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +59,17 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         sectorPicker.dataSource = self;
         employeeSizePicker.dataSource = self;
         employeeSizePicker.delegate  = self;
+        averageSalaryPicker.dataSource = self;
+        averageSalaryPicker.delegate  = self;
         
         companySectorInput.inputView = sectorPicker;
         employeeSizeInput.inputView = employeeSizePicker;
+        avarageSalaryInput.inputView = averageSalaryPicker;
+
         sectorPicker.tag = 1
         employeeSizePicker.tag = 2
+        averageSalaryPicker.tag = 3
+
         
         self.companyNameInput.isEnabled = isEditable;
         self.companySectorInput.isEnabled = isEditable;
@@ -83,8 +95,8 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         companyTitleLabel.text = GlobalVeriables.currentCompany?.company?.name
         companyNameInput.text =  GlobalVeriables.currentCompany?.company?.name
         companySectorInput.text =  GlobalVeriables.currentCompany?.sector?.name
-        employeeSizeInput.text =  GlobalVeriables.currentCompany?.company?.employeeSize
-        avarageSalaryInput.text =  GlobalVeriables.currentCompany?.company?.avarageSalary
+        employeeSizeInput.text =  GlobalVeriables.currentCompany?.company?.employeeSize?.description
+        avarageSalaryInput.text =  GlobalVeriables.currentCompany?.company?.avarageSalary?.description
         emailInput.text =  GlobalVeriables.currentCompany?.company?.email
         descriptionInput.text =  GlobalVeriables.currentCompany?.company?.description
         phoneNumberInput.text =  GlobalVeriables.currentCompany?.company?.phoneNumber
@@ -109,8 +121,8 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
                 var updateCompany = GlobalVeriables.currentCompany?.company
                 updateCompany?.name = companyNameInput.text;
                 updateCompany?.sectorID = selectedSector.sectorID
-                updateCompany?.employeeSize = employeeSizeInput.text;
-                updateCompany?.avarageSalary = avarageSalaryInput.text;
+                updateCompany?.employeeSize = selectedEmployeeSize
+                updateCompany?.avarageSalary = selectedSalaryLevel
                 updateCompany?.description = descriptionInput.text;
                 updateCompany?.email = emailInput.text;
                 updateCompany?.phoneNumber = phoneNumberInput.text;
@@ -245,9 +257,12 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         if pickerView.tag == 1{
             return sectorList.count
         }else if (pickerView.tag == 2){
-            return employeeSizeList.count
+            return employeeSizes.count
         }
-        
+        else if (pickerView.tag == 3){
+            return salaryLevels.count
+        }
+    
         return  1
     }
     
@@ -257,7 +272,9 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         case 1:
             sectorList[row]
         case 2:
-            employeeSizeList[row]
+            employeeSizes[row].description
+        case 3:
+            salaryLevels[row].description
         default:
             return "Data not found"
         }
@@ -272,9 +289,15 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             selectedSector = sectorList[row]
             companySectorInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
         case 2:
-            employeeSizeInput.text = employeeSizeList[row]
+            employeeSizeInput.text = employeeSizes[row].description
+            self.selectedEmployeeSize = employeeSizes[row]
             employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
-            
+        case 3:
+            avarageSalaryInput.text = salaryLevels[row].description
+            self.selectedSalaryLevel = salaryLevels[row]
+
+            employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+
         default:
             break
         }
@@ -288,7 +311,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
             label?.textAlignment = .center
             label?.textColor = UIColor.black // Metin rengini burada değiştirin
-            
+
         }
         
         switch pickerView.tag{
@@ -296,12 +319,15 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             label?.text = sectorList[row].name
             label?.textColor = UIColor.black
         case 2:
-            label?.text = employeeSizeList[row]
+            label?.text = employeeSizes[row].description
+            label?.textColor = UIColor.black
+        case 3:
+            label?.text = salaryLevels[row].description
             label?.textColor = UIColor.black
         default:
             label?.text =  "Data not found"
         }
-        
+  
         
         return label!
     }

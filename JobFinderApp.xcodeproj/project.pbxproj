@@ -50,7 +50,9 @@
 		CF8EC0DA2C0763B500A2905B /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D92C0763B500A2905B /* OpenAIKit */; };
 		CF8EC0DF2C07672C00A2905B /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0DE2C07672C00A2905B /* OpenAISwift */; };
 		CF8EC0E22C076FD100A2905B /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0E12C076FD100A2905B /* GoogleGenerativeAI */; };
-		CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */; };
+		CF8EC0E52C07BF5C00A2905B /* AverageSalaryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0E42C07BF5C00A2905B /* AverageSalaryEnum.swift */; };
+		CF8EC0E72C07C06E00A2905B /* EmployeeSizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0E62C07C06E00A2905B /* EmployeeSizeEnum.swift */; };
+		CF92D16C2C0226A400148E71 /* UserApplyApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16B2C0226A400148E71 /* UserApplyApplicationViewController.swift */; };
 		CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D16E2C02362500148E71 /* UserDetail.swift */; };
 		CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1702C02363100148E71 /* CompanyDetail.swift */; };
 		CF92D1742C02366D00148E71 /* JobApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92D1732C02366D00148E71 /* JobApplication.swift */; };
@@ -69,6 +71,7 @@
 		CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */; };
 		CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */; };
 		CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */; };
+		CFAFE2702C07CB98009BBDE8 /* ApplicationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE26F2C07CB98009BBDE8 /* ApplicationStatusEnum.swift */; };
 		CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */; };
 		CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC622BEFF16A0064CF0F /* Jobs.swift */; };
 		CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */; };
@@ -109,7 +112,9 @@
 		CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseCompanyDetailViewController.swift; sourceTree = "<group>"; };
 		CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyApplicationDetailViewController.swift; sourceTree = "<group>"; };
 		CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJobApplicationTableViewCell.swift; sourceTree = "<group>"; };
-		CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAdvertisesViewController.swift; sourceTree = "<group>"; };
+		CF8EC0E42C07BF5C00A2905B /* AverageSalaryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageSalaryEnum.swift; sourceTree = "<group>"; };
+		CF8EC0E62C07C06E00A2905B /* EmployeeSizeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeSizeEnum.swift; sourceTree = "<group>"; };
+		CF92D16B2C0226A400148E71 /* UserApplyApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApplyApplicationViewController.swift; sourceTree = "<group>"; };
 		CF92D16E2C02362500148E71 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		CF92D1702C02363100148E71 /* CompanyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetail.swift; sourceTree = "<group>"; };
 		CF92D1732C02366D00148E71 /* JobApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApplication.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 		CFAE83EB2BE2C89B00999945 /* CompanyJobApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJobApplicationViewController.swift; sourceTree = "<group>"; };
 		CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyReportsViewController.swift; sourceTree = "<group>"; };
 		CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileViewController.swift; sourceTree = "<group>"; };
+		CFAFE26F2C07CB98009BBDE8 /* ApplicationStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatusEnum.swift; sourceTree = "<group>"; };
 		CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		CFEDDC622BEFF16A0064CF0F /* Jobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
 		CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorProtocol.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CF8EC0E32C07BF3800A2905B /* Enums */,
 				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
 				CF92D1722C02365A00148E71 /* JobApplication */,
 				CFEDDC612BEFF15D0064CF0F /* JobModels */,
@@ -286,7 +293,7 @@
 				CF62B4012BDEAE510020E29E /* UserHomeViewController.swift */,
 				CF62B4052BDEAE8B0020E29E /* UserReportsViewController.swift */,
 				CF62B4072BDEAE9B0020E29E /* UserProfileViewController.swift */,
-				CF92D16B2C0226A400148E71 /* UserAdvertisesViewController.swift */,
+				CF92D16B2C0226A400148E71 /* UserApplyApplicationViewController.swift */,
 				CF92D1822C0378FB00148E71 /* UserJobApplicationViewController.swift */,
 				CF8EC0CE2C03C5F300A2905B /* ApplicationDetailViewController.swift */,
 				CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */,
@@ -348,6 +355,16 @@
 				CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */,
 			);
 			path = Customs;
+			sourceTree = "<group>";
+		};
+		CF8EC0E32C07BF3800A2905B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CF8EC0E42C07BF5C00A2905B /* AverageSalaryEnum.swift */,
+				CF8EC0E62C07C06E00A2905B /* EmployeeSizeEnum.swift */,
+				CFAFE26F2C07CB98009BBDE8 /* ApplicationStatusEnum.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		CF92D1722C02365A00148E71 /* JobApplication */ = {
@@ -541,6 +558,7 @@
 				CFEDDC762BF002100064CF0F /* JobDetail.swift in Sources */,
 				CF92D1772C02367E00148E71 /* JobApplicationDetail.swift in Sources */,
 				CF16758A2BE7C9870026A4C0 /* BaseNavigationController.swift in Sources */,
+				CFAFE2702C07CB98009BBDE8 /* ApplicationStatusEnum.swift in Sources */,
 				CF6373132BFF8D9F0072CC08 /* CompanyCustomTableViewCell.swift in Sources */,
 				CF8EC0D52C06630C00A2905B /* CompanyApplicationDetailViewController.swift in Sources */,
 				CFEDDC742BEFF88A0064CF0F /* JobService.swift in Sources */,
@@ -554,6 +572,7 @@
 				CF62B4082BDEAE9B0020E29E /* UserProfileViewController.swift in Sources */,
 				CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */,
 				CF62B3F62BDEA47A0020E29E /* DashboardViewController.swift in Sources */,
+				CF8EC0E52C07BF5C00A2905B /* AverageSalaryEnum.swift in Sources */,
 				CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */,
 				CF8EC0D72C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift in Sources */,
 				CFAE83EA2BE2C86A00999945 /* CompanyAdvertiseViewController.swift in Sources */,
@@ -561,6 +580,7 @@
 				CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
+				CF8EC0E72C07C06E00A2905B /* EmployeeSizeEnum.swift in Sources */,
 				CF92D1832C0378FB00148E71 /* UserJobApplicationViewController.swift in Sources */,
 				CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */,
 				CFEDDC722BEFF8710064CF0F /* SectorService.swift in Sources */,
@@ -579,7 +599,7 @@
 				CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
 				CF92D17F2C023AA900148E71 /* JobApplicationService.swift in Sources */,
-				CF92D16C2C0226A400148E71 /* UserAdvertisesViewController.swift in Sources */,
+				CF92D16C2C0226A400148E71 /* UserApplyApplicationViewController.swift in Sources */,
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,
 				CFAE83DE2BE2C3BC00999945 /* AuthService.swift in Sources */,
 				CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */,

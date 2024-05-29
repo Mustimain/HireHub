@@ -26,8 +26,8 @@ class AdvertiseCompanyDetailViewController: UIViewController {
         if selectedAdvertiseDetail != nil{
             companyNameInput.text = selectedAdvertiseDetail?.companyDetail?.company?.name
             sectorInput.text = selectedAdvertiseDetail?.companyDetail?.sector?.name
-            employeeSizeInput.text = selectedAdvertiseDetail?.companyDetail?.company?.employeeSize
-            avarageSalaryInput.text = selectedAdvertiseDetail?.companyDetail?.company?.avarageSalary
+            employeeSizeInput.text = selectedAdvertiseDetail?.companyDetail?.company?.employeeSize?.description
+            avarageSalaryInput.text = selectedAdvertiseDetail?.companyDetail?.company?.avarageSalary?.description
             emailInput.text = selectedAdvertiseDetail?.companyDetail?.company?.email
             descriptionInput.text = selectedAdvertiseDetail?.companyDetail?.company?.description
             phoneNumberInput.text = selectedAdvertiseDetail?.companyDetail?.company?.phoneNumber

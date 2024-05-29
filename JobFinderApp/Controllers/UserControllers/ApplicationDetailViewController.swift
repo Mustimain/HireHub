@@ -34,8 +34,8 @@ class ApplicationDetailViewController: UIViewController {
             
             companyNameInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.name
             sectorNameInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.sector?.name
-            employeeSizeInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.employeeSize
-            avarageSalaryInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.avarageSalary
+            employeeSizeInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.employeeSize?.description
+            avarageSalaryInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.avarageSalary?.description
             emailInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.email
             phoneNumberInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.phoneNumber
             addressInput.text = selectedJobApplicationDetail?.advertiseDetail?.companyDetail?.company?.address

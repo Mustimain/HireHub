@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  JobFinderApp
-//
-//  Created by Mustafa Ceylan on 28.04.2024.
-//
-
 import Foundation
 import FirebaseFirestore
 

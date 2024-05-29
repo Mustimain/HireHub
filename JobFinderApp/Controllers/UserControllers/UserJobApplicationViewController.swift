@@ -56,11 +56,12 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
         cell.companyNameLabel.text = jobApplicationDetailList[indexPath.row].advertiseDetail?.companyDetail?.company?.name;
         cell.jobLabel.text = jobApplicationDetailList[indexPath.row].advertiseDetail?.jobDetail?.job?.name;
         cell.applicationDate.text = dateString;
+        cell.applicationStatus.text = jobApplicationDetailList[indexPath.row].jobApplication?.applicationStatus?.description
 
         cell.companyNameLabel?.textColor = .black
         cell.jobLabel?.textColor = .black
         cell.applicationDate?.textColor = .black
-
+        cell.applicationStatus.textColor = .black
         return cell;
     }
     

@@ -1,10 +1,3 @@
-//
-//  Advertise.swift
-//  JobFinderApp
-//
-//  Created by Mustafa Ceylan on 8.05.2024.
-//
-
 import Foundation
 import FirebaseFirestore
 
@@ -17,6 +10,7 @@ struct Advertise : Codable{
     var  description : String?
     var  createDate : Date?
     var  title : String?
+    var updateDate : Date?
     var  isActive : Bool? = true
 
 }

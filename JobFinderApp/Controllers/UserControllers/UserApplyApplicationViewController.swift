@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserAdvertisesViewController: UIViewController {
+class UserApplyApplicationViewController: UIViewController {
 
     @IBOutlet weak var companyNameInput: UITextField!
     @IBOutlet weak var advertiseTitleInput: UITextField!
@@ -48,6 +48,7 @@ class UserAdvertisesViewController: UIViewController {
                 newJobApplication.advertiseID = advertiseDetail?.advertise?.advertiseID
                 newJobApplication.applicationDate = Date.now
                 newJobApplication.userID = GlobalVeriables.currentUser?.user?.userID
+                newJobApplication.applicationStatus = .applicationReceived
                 
                 var result = try await JobApplicationService().AddJobApplication(jobApplication: newJobApplication)
                 

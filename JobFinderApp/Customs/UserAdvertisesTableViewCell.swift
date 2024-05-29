@@ -12,6 +12,7 @@ class UserAdvertisesTableViewCell: UITableViewCell {
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var applicationDate: UILabel!
+    @IBOutlet weak var applicationStatus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

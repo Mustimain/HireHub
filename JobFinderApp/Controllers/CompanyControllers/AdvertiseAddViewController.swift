@@ -159,6 +159,7 @@ class AdvertiseAddViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBAction func CreateDraftAdvertiseButton(_ sender: Any) {
         if selectedJob.name?.count ?? 0 > 0 && titleInput.text?.count ?? 0 > 0 {
+            descriptionInput.text = "Taslak Oluşturuluyor ..."
             Task{
                 await self.GetDraftJobDetail(job: selectedJob.name ?? "")
             }

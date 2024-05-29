@@ -9,24 +9,38 @@ import Foundation
 import Firebase
 
 class JobApplicationService : JobApplicationProtocol{
-   
+    
+    
     
     let db = Firestore.firestore()
-
+    
     
     func AddJobApplication(jobApplication: JobApplication) async throws -> Bool {
         guard let jobApplicationID = jobApplication.jobApplicationID, !jobApplicationID.isEmpty else {
-                return false
-            }
-            do {
-                try db.collection("JobApplications").document(jobApplication.jobApplicationID!).setData(from: jobApplication)
-                return true;
-            } catch _ {
-                return false;
-            }
+            return false
+        }
+        do {
+            try db.collection("JobApplications").document(jobApplication.jobApplicationID!).setData(from: jobApplication)
+            return true;
+        } catch _ {
+            return false;
+        }
     }
     
-
+    func ChangeJobApplicationStatus(jobApplication: JobApplication) async throws -> Bool {
+        guard let jobApplicationID = jobApplication.jobApplicationID, !jobApplicationID.isEmpty else {
+            return false
+        }
+        do {
+            try db.collection("JobApplications").document(jobApplicationID).setData(from: jobApplication, merge: true)
+            return true
+        } catch {
+            return false
+        }
+        
+        
+    }
+    
     
     func GetAllJobApplications() async throws -> [JobApplication] {
         var jobApplicationList : [JobApplication] = []
@@ -57,7 +71,7 @@ class JobApplicationService : JobApplicationProtocol{
             newJobApplicationDetail.jobApplication = jobApplication;
             newJobApplicationDetail.userDetail = userDetail;
             newJobApplicationDetail.advertiseDetail = advertiseDetail;
-        
+            
             jobApplicationDetailList.append(newJobApplicationDetail)
         }
         
@@ -70,7 +84,7 @@ class JobApplicationService : JobApplicationProtocol{
     func GetJobApplicationById(jobApplicationID: String) async throws -> JobApplication {
         let db = Firestore.firestore()
         let document = try await db.collection("JobApplications").document(jobApplicationID).getDocument()
-
+        
         if document.exists {
             do {
                 let jobApplication = try document.data(as: JobApplication.self)
@@ -121,8 +135,8 @@ class JobApplicationService : JobApplicationProtocol{
         return filteredList;
     }
     
-
-  
+    
+    
     
     
 }

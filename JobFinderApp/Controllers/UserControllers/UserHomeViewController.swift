@@ -128,7 +128,7 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     
     @objc func infoWindowButtonTapped(_ sender: UIButton) {
         if let selectedMarker = selectedMarker, let advertiseDetail = selectedMarker.userData as? AdvertiseDetail {
-            if let userAdvertisesVC = storyboard?.instantiateViewController(withIdentifier: "UserAdvertisesViewController") as? UserAdvertisesViewController {
+            if let userAdvertisesVC = storyboard?.instantiateViewController(withIdentifier: "UserApplyApplicationViewController") as? UserApplyApplicationViewController {
                 userAdvertisesVC.advertiseDetail = advertiseDetail
                 navigationController?.setNavigationBarHidden(true, animated: false)
                 navigationController?.pushViewController(userAdvertisesVC, animated: true)
