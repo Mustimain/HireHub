@@ -15,13 +15,17 @@ class CompanyLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Giriş Yap"
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(GoRegisterViewTap))
         registerLabel.isUserInteractionEnabled = true
         registerLabel.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationItem.title = ""
     }
     
     

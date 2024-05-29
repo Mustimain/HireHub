@@ -45,6 +45,8 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         googleMapView.delegate = self
         getCurrentLocation()
         options.camera = GMSCameraPosition.camera(withLatitude: 41.015137, longitude: 28.979530, zoom: 8.0);
@@ -91,7 +93,9 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         companyTitleLabel.text = GlobalVeriables.currentCompany?.company?.name
         companyNameInput.text =  GlobalVeriables.currentCompany?.company?.name
         companySectorInput.text =  GlobalVeriables.currentCompany?.sector?.name

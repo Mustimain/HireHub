@@ -48,9 +48,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         super.viewDidLoad()
         
 
-        
-        self.navigationItem.title = "Kayıt Ol"
-        googleMapView.delegate = self
+                googleMapView.delegate = self
 
       getCurrentLocation()
         options.camera = GMSCameraPosition.camera(withLatitude: 41.015137, longitude: 28.979530, zoom: 8.0);
@@ -78,6 +76,11 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             
             await GetAllSector()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationItem.title = ""
     }
     
     @IBAction func RegisterButton(_ sender: Any) {

@@ -10,9 +10,9 @@ enum ApplicationStatusEnum: String, Codable, CaseIterable {
         case .applicationReceived:
             return "Başvurunuz alındı."
         case .applicationViewed:
-            return "Başvurunuz işveren tarafından görüntülendi."
+            return "Başvurunuz görüntülendi."
         case .cvDownloaded:
-            return "Özgeçmişiniz işveren tarafından indirildi."
+            return "Özgeçmişiniz indirildi."
         }
     }
 }
