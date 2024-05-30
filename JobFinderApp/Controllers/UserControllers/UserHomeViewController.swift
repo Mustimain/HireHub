@@ -18,8 +18,15 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         setupMap()
         getCurrentLocation()
         Task { @MainActor in
+            advertiseDetails.removeAll(keepingCapacity:false)
             await fetchCompaniesFromDatabase()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMap()
+
     }
     
     func setupMap() {
@@ -48,10 +55,10 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
         }
     }
     
-    func addCompanyMarker(advertiseDetail: AdvertiseDetail) {
+    func addCompanyMarker(advertiseDetail: AdvertiseDetail, withOffset offset: (latitude: Double, longitude: Double)) {
         guard let latitude = advertiseDetail.companyDetail?.company?.locationLat, let longitude = advertiseDetail.companyDetail?.company?.locationLong else { return }
         
-        let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let position = CLLocationCoordinate2D(latitude: latitude + offset.latitude, longitude: longitude + offset.longitude)
         let marker = GMSMarker(position: position)
         marker.title = advertiseDetail.companyDetail?.company?.name
         marker.snippet = advertiseDetail.advertise?.title
@@ -62,6 +69,7 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     func fetchCompaniesFromDatabase() async {
         do {
             advertiseDetails = try await AdvertiseService().GetAllAdvertiseDetail()
+            advertiseDetails = advertiseDetails.filter({ $0.jobDetail?.sector?.sectorID == GlobalVeriables.currentUser?.jobDetail?.sector?.sectorID})
             await MainActor.run {
                 googleMapView.clear()
                 displayCompaniesOnMap()
@@ -72,8 +80,22 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
     }
     
     func displayCompaniesOnMap() {
+        var coordinateCount = [LocationCoordinate2DWrapper: Int]()
+        
         for advertiseDetail in advertiseDetails {
-            addCompanyMarker(advertiseDetail: advertiseDetail)
+            guard let latitude = advertiseDetail.companyDetail?.company?.locationLat, let longitude = advertiseDetail.companyDetail?.company?.locationLong else { continue }
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let wrappedCoordinate = LocationCoordinate2DWrapper(coordinate: coordinate)
+            
+            if let count = coordinateCount[wrappedCoordinate] {
+                coordinateCount[wrappedCoordinate] = count + 1
+            } else {
+                coordinateCount[wrappedCoordinate] = 1
+            }
+            
+            let offsetMultiplier = Double(coordinateCount[wrappedCoordinate]!)
+            let offset = (latitude: (offsetMultiplier * 0.0011), longitude: (offsetMultiplier * 0.0011))
+            addCompanyMarker(advertiseDetail: advertiseDetail, withOffset: offset)
         }
     }
     
@@ -141,5 +163,17 @@ class UserHomeViewController: UIViewController, CLLocationManagerDelegate, GMSMa
             customInfoWindow.removeFromSuperview()
             self.customInfoWindow = nil
         }
+    }
+}// CLLocationCoordinate2D için Hashable sarmalayıcı yapı
+struct LocationCoordinate2DWrapper: Hashable {
+    let coordinate: CLLocationCoordinate2D
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(coordinate.latitude)
+        hasher.combine(coordinate.longitude)
+    }
+    
+    static func == (lhs: LocationCoordinate2DWrapper, rhs: LocationCoordinate2DWrapper) -> Bool {
+        return lhs.coordinate.latitude == rhs.coordinate.latitude && lhs.coordinate.longitude == rhs.coordinate.longitude
     }
 }

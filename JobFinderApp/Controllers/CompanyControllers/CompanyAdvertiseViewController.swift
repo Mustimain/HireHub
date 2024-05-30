@@ -26,7 +26,8 @@ class CompanyAdvertiseViewController: UIViewController ,UITableViewDelegate,UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Task { @MainActor in
-            
+            advertiseDetailList.removeAll(keepingCapacity:false)
+            AdvertisesTableView.reloadData()
             await GetAllAdvertiseByCompanyId();
             navigationController?.setNavigationBarHidden(true, animated: animated)
 

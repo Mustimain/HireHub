@@ -18,9 +18,9 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
         jobApplicationTableView.delegate = self;
         jobApplicationTableView.dataSource = self;
         Task { @MainActor in
-            
-            await GetAllJobApplicationDetails();
+            jobApplicationDetailList.removeAll(keepingCapacity:false)
             jobApplicationTableView.reloadData();
+            await GetAllJobApplicationDetails();
         }
     }
     

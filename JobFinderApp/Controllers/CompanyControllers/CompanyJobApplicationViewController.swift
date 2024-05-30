@@ -23,6 +23,8 @@ class CompanyJobApplicationViewController: UIViewController,UITableViewDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Task { @MainActor in
+            jobApplicationDetailList.removeAll(keepingCapacity:false)
+            tableView.reloadData()
             await GetAllJobApplicationByCompanyId();
 
         }
@@ -59,18 +61,20 @@ class CompanyJobApplicationViewController: UIViewController,UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let selectedItem = jobApplicationDetailList[indexPath.row]
-        
-        if let applicationDetailVC = storyboard?.instantiateViewController(withIdentifier: "CompanyApplicationDetailViewController") as? CompanyApplicationDetailViewController{
-            applicationDetailVC.selectedApplicationDetail = selectedItem
-            navigationController?.pushViewController(applicationDetailVC, animated: true)
+        if indexPath.count > 0{
+            let selectedItem = jobApplicationDetailList[indexPath.row]
+            
+            if let applicationDetailVC = storyboard?.instantiateViewController(withIdentifier: "CompanyApplicationDetailViewController") as? CompanyApplicationDetailViewController{
+                applicationDetailVC.selectedApplicationDetail = selectedItem
+                navigationController?.pushViewController(applicationDetailVC, animated: true)
+            }
         }
+      
         
     }
     
     
-    func GetAllJobApplicationByCompanyId(){
+    func GetAllJobApplicationByCompanyId() async{
         Task { @MainActor in
             jobApplicationDetailList.removeAll(keepingCapacity: false);
             self.jobApplicationDetailList = try await JobApplicationService().GetAllJobApplicationDetailsByCompanyId(companyId: GlobalVeriables.currentCompany?.company?.companyID ?? "")

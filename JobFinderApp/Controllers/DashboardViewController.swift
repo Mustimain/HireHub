@@ -35,6 +35,11 @@ class DashboardViewController: UIViewController {
     }
     
     
+    @IBAction func sendDataButton(_ sender: Any) {
+        
+        
+    }
+    
     
 
     /*
