@@ -23,6 +23,12 @@
 		CF19D2F32BE6ADF60090C7C7 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F22BE6ADF60090C7C7 /* FirebaseAppCheck */; };
 		CF19D2F62BE6B1AC0090C7C7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */; };
 		CF19D2F82BE6B1C00090C7C7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */; };
+		CF23E4002C091C67000003BF /* PopularSector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E3FF2C091C67000003BF /* PopularSector.swift */; };
+		CF23E4042C091CA4000003BF /* AverageSalaryBySector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E4032C091CA4000003BF /* AverageSalaryBySector.swift */; };
+		CF23E4082C091CCE000003BF /* ActiveCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E4072C091CCE000003BF /* ActiveCompany.swift */; };
+		CF23E40A2C091CE8000003BF /* PopularJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E4092C091CE8000003BF /* PopularJob.swift */; };
+		CF23E4122C091DEE000003BF /* AnalysisProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E4112C091DEE000003BF /* AnalysisProtocol.swift */; };
+		CF23E4142C091E0C000003BF /* AnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23E4132C091E0C000003BF /* AnalysisService.swift */; };
 		CF62B3DE2BDEA0B60020E29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */; };
 		CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */; };
 		CF62B3E52BDEA0B60020E29E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CF62B3E42BDEA0B60020E29E /* Base */; };
@@ -87,6 +93,12 @@
 		CF1675902BEB8AB70026A4C0 /* AdvertiseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseProtocol.swift; sourceTree = "<group>"; };
 		CF1675922BEB8DA60026A4C0 /* AdvertiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseService.swift; sourceTree = "<group>"; };
 		CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVeriables.swift; sourceTree = "<group>"; };
+		CF23E3FF2C091C67000003BF /* PopularSector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSector.swift; sourceTree = "<group>"; };
+		CF23E4032C091CA4000003BF /* AverageSalaryBySector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageSalaryBySector.swift; sourceTree = "<group>"; };
+		CF23E4072C091CCE000003BF /* ActiveCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCompany.swift; sourceTree = "<group>"; };
+		CF23E4092C091CE8000003BF /* PopularJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularJob.swift; sourceTree = "<group>"; };
+		CF23E4112C091DEE000003BF /* AnalysisProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisProtocol.swift; sourceTree = "<group>"; };
+		CF23E4132C091E0C000003BF /* AnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisService.swift; sourceTree = "<group>"; };
 		CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF62B3DD2BDEA0B60020E29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF62B3DF2BDEA0B60020E29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +213,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF23E3FE2C091C39000003BF /* AnalysisModels */ = {
+			isa = PBXGroup;
+			children = (
+				CF23E3FF2C091C67000003BF /* PopularSector.swift */,
+				CF23E4032C091CA4000003BF /* AverageSalaryBySector.swift */,
+				CF23E4072C091CCE000003BF /* ActiveCompany.swift */,
+				CF23E4092C091CE8000003BF /* PopularJob.swift */,
+			);
+			path = AnalysisModels;
+			sourceTree = "<group>";
+		};
+		CF23E40F2C091DCE000003BF /* AnalysisProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CF23E4112C091DEE000003BF /* AnalysisProtocol.swift */,
+			);
+			path = AnalysisProtocols;
+			sourceTree = "<group>";
+		};
+		CF23E4102C091DDB000003BF /* AnalysisService */ = {
+			isa = PBXGroup;
+			children = (
+				CF23E4132C091E0C000003BF /* AnalysisService.swift */,
+			);
+			path = AnalysisService;
+			sourceTree = "<group>";
+		};
 		CF62B3D12BDEA0B60020E29E = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +288,9 @@
 		CF62B3F22BDEA3850020E29E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CF8EC0E32C07BF3800A2905B /* Enums */,
 				CF1675942BEB93EE0026A4C0 /* GlobalVeriables.swift */,
+				CF23E3FE2C091C39000003BF /* AnalysisModels */,
+				CF8EC0E32C07BF3800A2905B /* Enums */,
 				CF92D1722C02365A00148E71 /* JobApplication */,
 				CFEDDC612BEFF15D0064CF0F /* JobModels */,
 				CFEDDC5E2BEFEC780064CF0F /* SectorModels */,
@@ -275,6 +315,7 @@
 		CF62B3F42BDEA3990020E29E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF23E4102C091DDB000003BF /* AnalysisService */,
 				CF92D17D2C023A8E00148E71 /* JobApplicationService */,
 				CFEDDC652BEFF6A70064CF0F /* JobService */,
 				CFEDDC642BEFF69C0064CF0F /* SectorService */,
@@ -321,6 +362,7 @@
 		CF62B4092BDEB0760020E29E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				CF23E40F2C091DCE000003BF /* AnalysisProtocols */,
 				CF92D17A2C023A6200148E71 /* JobApplicationProtocols */,
 				CFEDDC672BEFF6CA0064CF0F /* JobProtocols */,
 				CFEDDC662BEFF6BB0064CF0F /* SectorProtocols */,
@@ -566,6 +608,7 @@
 				CF16758D2BEB86320026A4C0 /* Advertise.swift in Sources */,
 				CF62B4022BDEAE510020E29E /* UserHomeViewController.swift in Sources */,
 				CF92D16F2C02362500148E71 /* UserDetail.swift in Sources */,
+				CF23E4142C091E0C000003BF /* AnalysisService.swift in Sources */,
 				CF92D1712C02363100148E71 /* CompanyDetail.swift in Sources */,
 				CFAE83E62BE2C7AA00999945 /* CompanyRegisterViewController.swift in Sources */,
 				CF62B4102BDEBF5E0020E29E /* AuthProtocol.swift in Sources */,
@@ -575,11 +618,13 @@
 				CF8EC0E52C07BF5C00A2905B /* AverageSalaryEnum.swift in Sources */,
 				CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */,
 				CF8EC0D72C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift in Sources */,
+				CF23E4002C091C67000003BF /* PopularSector.swift in Sources */,
 				CFAE83EA2BE2C86A00999945 /* CompanyAdvertiseViewController.swift in Sources */,
 				CFAE83E82BE2C7D600999945 /* CompanyHomeTabbarController.swift in Sources */,
 				CF8EC0CF2C03C5F300A2905B /* ApplicationDetailViewController.swift in Sources */,
 				CF62B3FC2BDEA5030020E29E /* UserRegisterViewController.swift in Sources */,
 				CF62B3E02BDEA0B60020E29E /* SceneDelegate.swift in Sources */,
+				CF23E40A2C091CE8000003BF /* PopularJob.swift in Sources */,
 				CF8EC0E72C07C06E00A2905B /* EmployeeSizeEnum.swift in Sources */,
 				CF92D1832C0378FB00148E71 /* UserJobApplicationViewController.swift in Sources */,
 				CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */,
@@ -591,6 +636,8 @@
 				CF92D17C2C023A7900148E71 /* JobApplicationProtocol.swift in Sources */,
 				CF1675912BEB8AB70026A4C0 /* AdvertiseProtocol.swift in Sources */,
 				CFAE83E42BE2C79900999945 /* CompanyLoginViewController.swift in Sources */,
+				CF23E4122C091DEE000003BF /* AnalysisProtocol.swift in Sources */,
+				CF23E4042C091CA4000003BF /* AverageSalaryBySector.swift in Sources */,
 				CF92D1812C03787C00148E71 /* UserAdvertisesTableViewCell.swift in Sources */,
 				CF1675932BEB8DA60026A4C0 /* AdvertiseService.swift in Sources */,
 				CF1675952BEB93EE0026A4C0 /* GlobalVeriables.swift in Sources */,
@@ -598,6 +645,7 @@
 				CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */,
 				CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */,
 				CFAE83DB2BE2C1B000999945 /* Company.swift in Sources */,
+				CF23E4082C091CCE000003BF /* ActiveCompany.swift in Sources */,
 				CF92D17F2C023AA900148E71 /* JobApplicationService.swift in Sources */,
 				CF92D16C2C0226A400148E71 /* UserApplyApplicationViewController.swift in Sources */,
 				CFAE83EC2BE2C89B00999945 /* CompanyJobApplicationViewController.swift in Sources */,

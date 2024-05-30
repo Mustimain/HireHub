@@ -87,10 +87,10 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
         Task { @MainActor in
             
             var newCompany = Company()
-            newCompany.avarageSalary = .high
+            newCompany.avarageSalary = selectedSalaryLevel
             newCompany.description = descriptionInput.text ?? ""
             newCompany.email = emailInput.text ?? ""
-            newCompany.employeeSize = .medium
+            newCompany.employeeSize = selectedEmployeeSize
             newCompany.locationLat = marker.position.latitude
             newCompany.locationLong = marker.position.longitude
             newCompany.name = companyNameInput.text ?? ""

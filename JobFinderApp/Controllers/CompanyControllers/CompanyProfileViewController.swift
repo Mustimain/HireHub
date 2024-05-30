@@ -30,7 +30,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     
     var isEditable = false;
-    var selectedSector : Sector = Sector()
+    var selectedSector : Sector?
     var sectorPicker = UIPickerView();
     var employeeSizePicker = UIPickerView();
     var averageSalaryPicker = UIPickerView();
@@ -121,10 +121,16 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
     @IBAction func updateProfileButton(_ sender: Any) {
         Task { @MainActor in
             
+            
             if isEditable == true{
                 var updateCompany = GlobalVeriables.currentCompany?.company
                 updateCompany?.name = companyNameInput.text;
-                updateCompany?.sectorID = selectedSector.sectorID
+                if selectedSector != nil {
+                    updateCompany?.sectorID = selectedSector?.sectorID
+
+                }else{
+                    updateCompany?.sectorID = GlobalVeriables.currentCompany?.sector?.sectorID
+                }
                 updateCompany?.employeeSize = selectedEmployeeSize
                 updateCompany?.avarageSalary = selectedSalaryLevel
                 updateCompany?.description = descriptionInput.text;
