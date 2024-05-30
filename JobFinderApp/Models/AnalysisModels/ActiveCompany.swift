@@ -1,7 +1,7 @@
 import Foundation
 
 struct ActiveCompany {
-    var companyID: String?
+    var companyDetail: CompanyDetail?
     var totalJobAdvertisements: Int?
 }
 

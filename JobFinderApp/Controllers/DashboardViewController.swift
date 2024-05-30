@@ -37,7 +37,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func sendDataButton(_ sender: Any) {
         Task{
-            var result = try await AnalysisService().getAverageSalariesBySector()
+            var result = try await AnalysisService().getActiveCompanies()
         }
         
     }

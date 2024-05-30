@@ -88,9 +88,17 @@ class AnalysisService : AnalysisProtocol{
     
     
     func getActiveCompanies()  async throws -> [ActiveCompany]{
-        var newPopularSector :  [ActiveCompany] = [];
+        var newActiveCompanies :  [ActiveCompany] = [];
+        var allCompanies = try await AuthService().GetAllCompanyDetails()
+        var allAdvertiseList = try await AdvertiseService().GetAllAdvertiseDetail()
         
-        return newPopularSector
+        for companyDetail in allCompanies {
+            var newActiveCompany = ActiveCompany()
+            newActiveCompany.companyDetail = companyDetail
+            newActiveCompany.totalJobAdvertisements = allAdvertiseList.filter({$0.companyDetail?.company?.companyID == companyDetail.company?.companyID}).count
+            newActiveCompanies.append(newActiveCompany)
+        }
+        return newActiveCompanies
     }
     
     
