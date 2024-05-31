@@ -17,10 +17,13 @@ class UserJobApplicationViewController: UIViewController,UITableViewDelegate,UIT
         super.viewDidLoad()
         jobApplicationTableView.delegate = self;
         jobApplicationTableView.dataSource = self;
+        
         Task { @MainActor in
             jobApplicationDetailList.removeAll(keepingCapacity:false)
             jobApplicationTableView.reloadData();
             await GetAllJobApplicationDetails();
+            jobApplicationTableView.reloadData();
+
         }
     }
     

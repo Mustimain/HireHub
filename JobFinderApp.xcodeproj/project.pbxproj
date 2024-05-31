@@ -53,8 +53,6 @@
 		CF8EC0D32C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D22C0637DF00A2905B /* AdvertiseCompanyDetailViewController.swift */; };
 		CF8EC0D52C06630C00A2905B /* CompanyApplicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D42C06630C00A2905B /* CompanyApplicationDetailViewController.swift */; };
 		CF8EC0D72C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0D62C0678BA00A2905B /* CompanyJobApplicationTableViewCell.swift */; };
-		CF8EC0DA2C0763B500A2905B /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0D92C0763B500A2905B /* OpenAIKit */; };
-		CF8EC0DF2C07672C00A2905B /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0DE2C07672C00A2905B /* OpenAISwift */; };
 		CF8EC0E22C076FD100A2905B /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = CF8EC0E12C076FD100A2905B /* GoogleGenerativeAI */; };
 		CF8EC0E52C07BF5C00A2905B /* AverageSalaryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0E42C07BF5C00A2905B /* AverageSalaryEnum.swift */; };
 		CF8EC0E72C07C06E00A2905B /* EmployeeSizeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8EC0E62C07C06E00A2905B /* EmployeeSizeEnum.swift */; };
@@ -78,6 +76,7 @@
 		CFAE83EE2BE2C8B200999945 /* CompanyReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83ED2BE2C8B100999945 /* CompanyReportsViewController.swift */; };
 		CFAE83F02BE2C8C400999945 /* CompanyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAE83EF2BE2C8C400999945 /* CompanyProfileViewController.swift */; };
 		CFAFE2702C07CB98009BBDE8 /* ApplicationStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE26F2C07CB98009BBDE8 /* ApplicationStatusEnum.swift */; };
+		CFD77C872C0A1DDF0095E5EE /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = CFD77C862C0A1DDF0095E5EE /* DGCharts */; };
 		CFEDDC602BEFEC8A0064CF0F /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC5F2BEFEC8A0064CF0F /* Sector.swift */; };
 		CFEDDC632BEFF16A0064CF0F /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC622BEFF16A0064CF0F /* Jobs.swift */; };
 		CFEDDC692BEFF6EF0064CF0F /* SectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDDC682BEFF6EF0064CF0F /* SectorProtocol.swift */; };
@@ -164,16 +163,15 @@
 				CF19D2E42BE6AC850090C7C7 /* GoogleMapsBase in Frameworks */,
 				CF19D2ED2BE6ADF60090C7C7 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				CF19D2E62BE6AC850090C7C7 /* GoogleMapsCore in Frameworks */,
-				CF8EC0DA2C0763B500A2905B /* OpenAIKit in Frameworks */,
 				CF19D2F62BE6B1AC0090C7C7 /* FirebaseFirestore in Frameworks */,
 				CF19D2E22BE6AC850090C7C7 /* GoogleMaps in Frameworks */,
-				CF8EC0DF2C07672C00A2905B /* OpenAISwift in Frameworks */,
 				CF8EC0D12C05FB4F00A2905B /* FirebaseStorage in Frameworks */,
 				CF19D2EF2BE6ADF60090C7C7 /* FirebaseAnalyticsSwift in Frameworks */,
 				CF19D2EB2BE6ADF60090C7C7 /* FirebaseAnalytics in Frameworks */,
 				CF19D2F82BE6B1C00090C7C7 /* FirebaseAuth in Frameworks */,
 				CF19D2E82BE6AC850090C7C7 /* GoogleMapsM4B in Frameworks */,
 				CF19D2F32BE6ADF60090C7C7 /* FirebaseAppCheck in Frameworks */,
+				CFD77C872C0A1DDF0095E5EE /* DGCharts in Frameworks */,
 				CF19D2F12BE6ADF60090C7C7 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,9 +527,8 @@
 				CF19D2F52BE6B1AC0090C7C7 /* FirebaseFirestore */,
 				CF19D2F72BE6B1C00090C7C7 /* FirebaseAuth */,
 				CF8EC0D02C05FB4F00A2905B /* FirebaseStorage */,
-				CF8EC0D92C0763B500A2905B /* OpenAIKit */,
-				CF8EC0DE2C07672C00A2905B /* OpenAISwift */,
 				CF8EC0E12C076FD100A2905B /* GoogleGenerativeAI */,
+				CFD77C862C0A1DDF0095E5EE /* DGCharts */,
 			);
 			productName = JobFinderApp;
 			productReference = CF62B3DA2BDEA0B60020E29E /* JobFinderApp.app */;
@@ -564,9 +561,8 @@
 			packageReferences = (
 				CF19D2E02BE6AC850090C7C7 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
 				CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				CF8EC0D82C0763B500A2905B /* XCRemoteSwiftPackageReference "OpenAI" */,
-				CF8EC0DD2C07672B00A2905B /* XCRemoteSwiftPackageReference "OpenAISwift" */,
 				CF8EC0E02C076FD100A2905B /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+				CFD77C852C0A1DDF0095E5EE /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = CF62B3DB2BDEA0B60020E29E /* Products */;
 			projectDirPath = "";
@@ -957,28 +953,20 @@
 				minimumVersion = 10.25.0;
 			};
 		};
-		CF8EC0D82C0763B500A2905B /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/FuturraGroup/OpenAI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.3;
-			};
-		};
-		CF8EC0DD2C07672B00A2905B /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.1;
-			};
-		};
 		CF8EC0E02C076FD100A2905B /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google-gemini/generative-ai-swift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.5.3;
+			};
+		};
+		CFD77C852C0A1DDF0095E5EE /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1044,20 +1032,15 @@
 			package = CF19D2E92BE6ADF60090C7C7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		CF8EC0D92C0763B500A2905B /* OpenAIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF8EC0D82C0763B500A2905B /* XCRemoteSwiftPackageReference "OpenAI" */;
-			productName = OpenAIKit;
-		};
-		CF8EC0DE2C07672C00A2905B /* OpenAISwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF8EC0DD2C07672B00A2905B /* XCRemoteSwiftPackageReference "OpenAISwift" */;
-			productName = OpenAISwift;
-		};
 		CF8EC0E12C076FD100A2905B /* GoogleGenerativeAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CF8EC0E02C076FD100A2905B /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
 			productName = GoogleGenerativeAI;
+		};
+		CFD77C862C0A1DDF0095E5EE /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFD77C852C0A1DDF0095E5EE /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

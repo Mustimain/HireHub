@@ -1119,14 +1119,42 @@
                     <view key="view" contentMode="scaleToFill" id="LvS-bp-cy3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juH-1U-Jon" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="70" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kt6-md-v2G" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="246" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-0W-qdl" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="416" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zwv-KN-c8o" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="589" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Oqy-53-l0r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Raporlar" image="doc" catalog="system" id="Ids-xa-Ltq"/>
+                    <connections>
+                        <outlet property="activeCompanyChartView" destination="V5X-0W-qdl" id="PiW-5S-KYw"/>
+                        <outlet property="avarageSalaryBySectorChartView" destination="Zwv-KN-c8o" id="ZSE-XQ-5DP"/>
+                        <outlet property="popularJobChartView" destination="Kt6-md-v2G" id="i5h-ZW-58M"/>
+                        <outlet property="popularSectorChartView" destination="juH-1U-Jon" id="Ecm-Sf-ElK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpl-M7-spr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5297" y="1198"/>
+            <point key="canvasLocation" x="5296.9465648854957" y="1197.8873239436621"/>
         </scene>
         <!--Hesabım-->
         <scene sceneID="HQv-aT-QqP">
@@ -1635,10 +1663,38 @@
                     <view key="view" contentMode="scaleToFill" id="WQ7-Oz-gFS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-gk-io9" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="59" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9cW-RC-fx5" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="235" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vtM-ZI-V17" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="405" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gd4-CB-KSJ" customClass="BarChartView" customModule="DGCharts">
+                                <rect key="frame" x="16" y="578" width="361" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4cl-xA-lbR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Raporlar" image="doc" catalog="system" id="wGW-kx-E53"/>
+                    <connections>
+                        <outlet property="activeCompanyChartView" destination="vtM-ZI-V17" id="RHl-fb-hW0"/>
+                        <outlet property="avarageSalaryBySectorChartView" destination="gd4-CB-KSJ" id="g8F-yj-B8a"/>
+                        <outlet property="popularJobChartView" destination="9cW-RC-fx5" id="SdQ-Mx-IdS"/>
+                        <outlet property="popularSectorChartView" destination="rbB-gk-io9" id="Dza-1G-weU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78m-6M-gdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2485,6 +2541,15 @@
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
