@@ -105,9 +105,13 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
         descriptionInput.text =  GlobalVeriables.currentCompany?.company?.description
         phoneNumberInput.text =  GlobalVeriables.currentCompany?.company?.phoneNumber
         addressInput.text =  GlobalVeriables.currentCompany?.company?.address
+        selectedSector = GlobalVeriables.currentCompany?.sector
+        selectedSalaryLevel = GlobalVeriables.currentCompany?.company?.avarageSalary
+        selectedEmployeeSize = GlobalVeriables.currentCompany?.company?.employeeSize
         marker.position.latitude = GlobalVeriables.currentCompany?.company?.locationLat ?? 0
         marker.position.longitude = GlobalVeriables.currentCompany?.company?.locationLong ?? 0
         marker.map = googleMapView // Haritada marker'ı güncelle
+        
         
     }
     
@@ -140,9 +144,9 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
                 updateCompany?.locationLat = marker.position.latitude
                 updateCompany?.locationLong = marker.position.longitude
                 
-                if companyNameInput.text!.count > 0 && companySectorInput.text!.count > 0 && employeeSizeInput.text!.count > 0 && avarageSalaryInput.text!.count > 0 && emailInput.text!.count > 0 && descriptionInput.text!.count > 0 && phoneNumberInput.text!.count > 0 && addressInput.text!.count > 0{
+                if companyNameInput.text!.count > 0 && avarageSalaryInput.text!.count > 0 && emailInput.text!.count > 0 && descriptionInput.text!.count > 0 && phoneNumberInput.text!.count > 0 && addressInput.text!.count > 0{
                     
-                    var result = try await AuthService().UpdateCompany(company: updateCompany!)
+                    let result = try await AuthService().UpdateCompany(company: updateCompany!)
                     
                     if result == true{
                         self.showCustomAlert(title: "İşlem Başarılı", message: "Bilgiler başarıyla güncellendi.")
@@ -306,7 +310,7 @@ class CompanyProfileViewController: UIViewController,UIPickerViewDelegate, UIPic
             avarageSalaryInput.text = salaryLevels[row].description
             self.selectedSalaryLevel = salaryLevels[row]
 
-            employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+            avarageSalaryInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
 
         default:
             break

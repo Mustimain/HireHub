@@ -102,7 +102,7 @@ class UserProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 updateUser?.email = emailInput.text;
                 updateUser?.phoneNumber = phoneNumberInput.text;
                 
-                if userFirstNameInput.text!.count > 0 && userLastNameInput.text!.count > 0 && emailInput.text!.count > 0 && phoneNumberInput.text?.count ?? 0 > 0  && selectedJob != nil {
+                if userFirstNameInput.text!.count > 0 && userLastNameInput.text!.count > 0 && emailInput.text!.count > 0 && phoneNumberInput.text?.count ?? 0 > 0 {
                     var result = try await AuthService().UpdateUser(user: updateUser!)
                     
                     if newResumePdfURL == nil{

@@ -15,7 +15,6 @@ class AuthService : AuthProtocol {
    
       
     let db = Firestore.firestore()
-    var companyDetailList : [CompanyDetail] = []
     
 
     func UserRegister(user: User) async throws -> Bool {
@@ -56,6 +55,10 @@ class AuthService : AuthProtocol {
         if (company.companyID?.count ?? 0 > 0){
             do {
                 try db.collection("Companies").document(company.companyID!).setData(from: company)
+                var updateCompany = company
+                updateCompany.avarageSalary = company.avarageSalary
+                updateCompany.employeeSize = company.employeeSize
+                try await self.UpdateCompany(company: updateCompany)
                 return true;
             } catch _ {
                 return false;

@@ -230,7 +230,7 @@ class CompanyRegisterViewController: UIViewController, CLLocationManagerDelegate
             avarageSalaryInput.text = salaryLevels[row].description
             self.selectedSalaryLevel = salaryLevels[row]
 
-            employeeSizeInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
+            avarageSalaryInput.resignFirstResponder() // UIPickerView seçildikten sonra klavyeyi kapat
 
         default:
             break
