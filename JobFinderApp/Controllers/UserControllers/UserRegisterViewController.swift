@@ -149,9 +149,9 @@ class UserRegisterViewController: UIViewController, UITextFieldDelegate, UIPicke
         var label = view as? UILabel
         if label == nil {
             label = UILabel()
-            label?.font = UIFont.systemFont(ofSize: 18.0) // Metin boyutu ayarlayabilirsiniz
+            label?.font = UIFont.systemFont(ofSize: 18.0)
             label?.textAlignment = .center
-            label?.textColor = UIColor.black // Metin rengini burada değiştirin
+            label?.textColor = UIColor.black
 
         }
         

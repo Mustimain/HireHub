@@ -10,7 +10,6 @@ import Foundation
 protocol JobApplicationProtocol{
     func AddJobApplication(jobApplication : JobApplication) async throws -> Bool
     func ChangeJobApplicationStatus(jobApplication : JobApplication) async throws -> Bool
-
     func GetAllJobApplications() async throws -> [JobApplication]
     func GetAllJobApplicationDetails() async throws -> [JobApplicationDetail]
     func GetJobApplicationById(jobApplicationID : String) async throws -> JobApplication
